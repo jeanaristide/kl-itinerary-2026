@@ -500,12 +500,15 @@ a {
     background: transparent !important;
     box-shadow: none !important;
     overflow: visible !important;
+    padding: 0 !important;
+    margin-bottom: 1.5rem !important;
   }
 
   .master-itinerary-table {
     display: block !important;
     width: 100% !important;
-    min-width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
     border: none !important;
     background: transparent !important;
     box-shadow: none !important;
@@ -516,28 +519,31 @@ a {
   }
 
   .master-itinerary-table tbody {
-    display: flex !important;
-    flex-direction: column !important;
-    gap: 1.4rem !important;
+    display: block !important;
     width: 100% !important;
+    min-width: 0 !important;
   }
 
   .master-itinerary-table tr {
-    display: flex !important;
-    flex-direction: column !important;
+    display: block !important;
+    width: 100% !important;
     background: #ffffff !important;
     border: 1px solid var(--border-subtle) !important;
     border-radius: var(--radius-lg) !important;
     box-shadow: var(--shadow-table) !important;
     overflow: hidden !important;
-    width: 100% !important;
+    margin-bottom: 1.4rem !important;
+    box-sizing: border-box !important;
   }
 
   .master-itinerary-table td {
     display: block !important;
     width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
     border-bottom: 1px solid var(--border-subtle) !important;
-    padding: 1rem 1.25rem !important;
+    padding: 1rem 1.15rem !important;
     background: #ffffff !important;
   }
 
@@ -564,3 +570,4 @@ a {
     background: #fafafa !important;
   }
 }
+

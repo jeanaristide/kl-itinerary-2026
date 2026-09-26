@@ -191,3 +191,104 @@ document.addEventListener("DOMContentLoaded", () => {
   renderMasterTable("all");
   setupFilterBar();
 });
+
+/**
+ * Render Master Itinerary Table
+ */
+function renderMasterTable(filter) {
+  const tbody = document.getElementById("itineraryTableBody");
+  if (!tbody) return;
+
+  tbody.innerHTML = "";
+
+  const filteredDays = itineraryData.filter(day => {
+    if (filter === "all") return true;
+    if (filter === day.dayId) return true;
+    if (filter === day.phase) return true;
+    return false;
+  });
+
+  filteredDays.forEach(day => {
+    const tr = document.createElement("tr");
+    tr.id = `row-${day.dayId}`;
+    tr.setAttribute("data-day", day.dayId);
+
+    // Col 1: Day & Date
+    const tdDay = document.createElement("td");
+    tdDay.className = "col-day-date";
+    tdDay.innerHTML = `
+      <div class="day-date-wrapper">
+        <div class="day-badge-pill">${day.dayNum}</div>
+        <div class="date-label">${day.date}</div>
+      </div>
+      <div class="phase-pill ${day.phase}">
+        <i class="fa-solid fa-circle-dot" style="font-size: 0.55rem;"></i>
+        ${day.phaseLabel}
+      </div>
+    `;
+
+    // Col 2: Location & Cultural Badges
+    const tdLoc = document.createElement("td");
+    tdLoc.className = "col-location";
+    tdLoc.innerHTML = `
+      <div class="loc-title"><strong>${day.city}</strong></div>
+      <div class="loc-landmarks">${day.landmarks}</div>
+      <div class="table-pin-culture-badge ${day.badgeClass}">${day.cultureBadge}</div>
+    `;
+
+    // Col 3: Action / Activity (Atomic Bullet Points with Daiki)
+    const tdAct = document.createElement("td");
+    tdAct.className = "col-activity";
+    const ul = document.createElement("ul");
+    ul.className = "activity-bullets";
+    day.activities.forEach(bullet => {
+      const li = document.createElement("li");
+      li.innerHTML = bullet;
+      ul.appendChild(li);
+    });
+    tdAct.appendChild(ul);
+
+    // Col 4: Cost
+    const tdCost = document.createElement("td");
+    tdCost.className = "col-cost";
+    let costRowsHtml = "";
+    day.costs.forEach(c => {
+      const isFree = c.amount.toLowerCase().includes("free");
+      costRowsHtml += `
+        <div class="cost-row">
+          <span>${c.item}:</span>
+          ${isFree ? `<span class="cost-free">Free</span>` : `<strong>${c.amount}</strong>`}
+        </div>
+      `;
+    });
+    tdCost.innerHTML = `
+      <div class="cost-item-list">
+        ${costRowsHtml}
+      </div>
+      <div class="cost-daily-total">Total: ${day.dayTotal}</div>
+    `;
+
+    tr.appendChild(tdDay);
+    tr.appendChild(tdLoc);
+    tr.appendChild(tdAct);
+    tr.appendChild(tdCost);
+
+    tbody.appendChild(tr);
+  });
+}
+
+/**
+ * Filter Bar Setup
+ */
+function setupFilterBar() {
+  const buttons = document.querySelectorAll(".filter-btn");
+  buttons.forEach(btn => {
+    btn.addEventListener("click", () => {
+      buttons.forEach(b => b.classList.remove("active"));
+      btn.classList.add("active");
+      const filter = btn.getAttribute("data-filter");
+      renderMasterTable(filter);
+    });
+  });
+}
+
