@@ -17,25 +17,23 @@ const itineraryData = [
     cultureBadge: "🏙️ **Modern Metropolis & Twin Towers** · *Golden Triangle Sunset & Evening Symphony*",
     badgeClass: "badge-modern",
     activities: [
-      "Touch down at <u>KLIA Terminal 2</u> aboard AirAsia Flight AK585 at <span class=\"time-chip\">05:15 AM</span> and clear border control.",
-      "Board the <u>KLIA Ekspres</u> train at <span class=\"time-chip\">06:30 AM</span> for a 28-minute non-stop transit to <u>KL Sentral</u>.",
-      "Arrive at <u>Daiki's apartment</u> by <span class=\"time-chip\">07:30 AM</span> to greet Daiki right as his overnight tech shift concludes.",
-      "Share a warm reunion breakfast with Daiki of Kaya toast and soft-boiled eggs at a nearby kopitiam from <span class=\"time-chip\">07:45 AM</span> to <span class=\"time-chip\">08:30 AM</span>.",
-      "Allow Daiki to rest undisturbed from <span class=\"time-chip\">08:30 AM</span> while you unpack, shower, and rest to recover from your red-eye flight.",
-      "Reconnect at <span class=\"time-chip\">04:00 PM</span> as Daiki wakes up and take the LRT Kelana Jaya Line directly to <u>Suria KLCC</u>.",
+      "Depart Manila (MNL) on Wednesday 28 Oct at <span class=\"time-chip\">23:05 PM</span> and touch down at <u>KLIA Terminal 2</u> on Thursday 29 Oct at <span class=\"time-chip\">02:55 AM</span> aboard AirAsia Flight AK585.",
+      "Clear early morning customs and take a direct 24-hour Grab / taxi to <u>Daiki's apartment</u>, arriving by <span class=\"time-chip\">04:15 AM</span>.",
+      "Quietly greet Daiki during his active overnight US tech shift, take a warm shower, and sleep soundly until late morning.",
+      "Allow Daiki to complete his shift at <span class=\"time-chip\">07:00 AM</span> and enter his daytime rest window undisturbed.",
+      "Wake up refreshed at <span class=\"time-chip\">11:00 AM</span>, enjoy a light solo lunch nearby, and rest comfortably at the apartment.",
+      "Reconnect with Daiki at <span class=\"time-chip\">04:00 PM</span> as Daiki wakes up fully energized, then board the LRT directly to <u>Suria KLCC</u>.",
       "Stroll through the landscaped pathways of <u>KLCC Park</u> with Daiki and photograph the towering steel-and-glass facade of the <u>Petronas Twin Towers</u> during golden hour.",
       "Watch the musical fountain light display at <u>Lake Symphony</u> with Daiki at <span class=\"time-chip\">08:00 PM</span>.",
       "Walk over to <u>Jalan Alor Food Street</u> with Daiki at <span class=\"time-chip\">08:45 PM</span> for an alcohol-free street food feast featuring charcoal-grilled chicken satay, roti canai, and fresh coconut water before Daiki begins his 10:00 PM shift."
     ],
     costs: [
-      { item: "KLIA Ekspres Transit", amount: "RM 55.00" },
-      { item: "Grab to Residence", amount: "RM 15.00" },
-      { item: "Reunion Breakfast with Daiki", amount: "RM 12.00" },
-      { item: "Midday Rest / Lunch", amount: "RM 15.00" },
+      { item: "Airport Grab to Residence (Late Night)", amount: "RM 75.00" },
+      { item: "Midday Solo Lunch", amount: "RM 15.00" },
       { item: "LRT to KLCC", amount: "RM 2.80" },
       { item: "Dinner at Jalan Alor with Daiki", amount: "RM 35.00" }
     ],
-    dayTotal: "RM 134.80"
+    dayTotal: "RM 127.80"
   },
   {
     dayId: "day2",
@@ -169,21 +167,20 @@ const itineraryData = [
     cultureBadge: "✈️ **Homeward Transit** · *AirAsia Flight AK584 Departure to Manila*",
     badgeClass: "badge-transit",
     activities: [
-      "Greet Daiki as his final shift finishes at <span class=\"time-chip\">07:00 AM</span> and enjoy a farewell breakfast with Daiki of freshly made Roti Canai and Teh Tarik (or fruit juice) at <span class=\"time-chip\">07:45 AM</span>.",
-      "Allow Daiki to sleep peacefully from <span class=\"time-chip\">08:30 AM</span> while you pack your bags and complete any preparation.",
-      "Check out quietly at <span class=\"time-chip\">11:30 AM</span>, leaving your luggage with Daiki or at <u>KL Sentral</u> luggage storage.",
-      "Spend a leisurely afternoon picking up Malaysian souvenirs (such as white coffee packets, Beryl's chocolates, or snacks) at <u>Nu Sentral</u> or Central Market.",
-      "Enjoy a relaxed lunch at <span class=\"time-chip\">01:30 PM</span> at a comfortable cafe.",
-      "Reconnect with Daiki around <span class=\"time-chip\">04:00 PM</span> for final warm goodbyes before Daiki begins his evening routine.",
-      "Board the <u>KLIA Ekspres</u> from <u>KL Sentral</u> at <span class=\"time-chip\">04:45 PM</span>, arriving at <u>KLIA Terminal 2</u> at <span class=\"time-chip\">05:15 PM</span>.",
-      "Check baggage, clear customs and immigration with ample time, and enjoy a sit-down airport dinner at <u>Gateway@klia2</u> by <span class=\"time-chip\">06:45 PM</span>.",
-      "Board AirAsia Flight AK584 at gate boarding time <span class=\"time-chip\">19:45 PM</span> for your confirmed <span class=\"time-chip\">20:25 PM</span> departure back to Manila."
+      "Greet Daiki as his final shift finishes at <span class=\"time-chip\">07:00 AM</span> and share a heartfelt farewell breakfast together with Daiki from <span class=\"time-chip\">07:30 AM</span> to <span class=\"time-chip\">08:30 AM</span>.",
+      "Allow Daiki to sleep peacefully from <span class=\"time-chip\">08:30 AM</span> while you finish packing your bags.",
+      "Check out quietly at <span class=\"time-chip\">11:30 AM</span>, leaving your luggage with Daiki or taking it to <u>KL Sentral</u>.",
+      "Spend a relaxed midday browsing Malaysian souvenirs (Beryl's chocolates, pewter, white coffee) and enjoying lunch at <u>Nu Sentral</u> from <span class=\"time-chip\">12:00 PM</span> to <span class=\"time-chip\">01:45 PM</span>.",
+      "Say your final warm goodbyes to Daiki before heading into transit.",
+      "Board the <u>KLIA Ekspres</u> from <u>KL Sentral</u> at <span class=\"time-chip\">02:45 PM</span>, arriving at <u>KLIA Terminal 2</u> non-stop by <span class=\"time-chip\">03:15 PM</span>.",
+      "Check in bags, clear border control with plenty of cushion time, and enjoy a sit-down pre-flight meal at <u>Gateway@klia2</u> by <span class=\"time-chip\">04:15 PM</span>.",
+      "Head to your departure gate for boarding at <span class=\"time-chip\">17:30 PM</span> aboard revised AirAsia Flight AK584 for your confirmed <span class=\"time-chip\">18:10 PM</span> departure, touching down in Manila at <span class=\"time-chip\">22:20 PM</span>."
     ],
     costs: [
       { item: "Farewell Breakfast with Daiki", amount: "RM 15.00" },
       { item: "Lunch & Cafe Refreshments", amount: "RM 25.00" },
       { item: "KLIA Ekspres to KLIA2", amount: "RM 55.00" },
-      { item: "Airport Dinner at Gateway@klia2", amount: "RM 30.00" }
+      { item: "Airport Meal at Gateway@klia2", amount: "RM 30.00" }
     ],
     dayTotal: "RM 125.00"
   }
