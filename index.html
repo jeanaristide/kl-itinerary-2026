@@ -44,23 +44,7 @@
   <!-- Master Itinerary Table Section (Table-First Focus) -->
   <main class="itinerary-container">
     
-    <!-- Mobile View Mode Toggle -->
-    <div class="view-mode-bar">
-      <span class="view-mode-label">Layout:</span>
-      <div class="view-mode-toggle">
-        <button type="button" class="view-btn active" id="viewStackedBtn" data-view="stacked">
-          <i class="fa-solid fa-list-ul"></i> Mobile View
-        </button>
-        <button type="button" class="view-btn" id="viewTableBtn" data-view="table">
-          <i class="fa-solid fa-table-cells"></i> Full Table
-        </button>
-      </div>
-    </div>
 
-    <!-- Swipe Indicator for Full Table on Mobile -->
-    <div class="mobile-swipe-hint" id="mobileSwipeHint">
-      <i class="fa-solid fa-arrow-left"></i> Swipe sideways to inspect activities &amp; costs <i class="fa-solid fa-arrow-right"></i>
-    </div>
 
     <!-- Interactive Filter Bar (Chip Carousel on Mobile) -->
     <div class="itinerary-filter-bar">
@@ -76,8 +60,8 @@
       <button type="button" class="filter-btn" data-filter="worship"><i class="fa-solid fa-church"></i> LDS Worship</button>
     </div>
 
-    <!-- Responsive Master Table Wrapper (Supports Stacked and Full Table) -->
-    <div class="table-responsive-wrapper stacked-view-mode" id="tableWrapper">
+    <!-- Responsive Master Table Wrapper -->
+    <div class="table-responsive-wrapper" id="tableWrapper">
       <table class="master-itinerary-table" id="masterItineraryTable">
         <thead>
           <tr>
