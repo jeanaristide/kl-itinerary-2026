@@ -1,6 +1,6 @@
 /* ==========================================================================
    KL VISUAL ITINERARY - PURE WHITE MINIMALIST DESIGN SYSTEM
-   Standard: White Background Only • Table-First Architecture
+   Standard: White Background Only • Mobile-Optimized Table Architecture
    Tailored for 6-Day Visit with Daiki (Oct 29 – Nov 3, 2026)
    ========================================================================== */
 
@@ -134,8 +134,70 @@ a {
 /* Master Itinerary Section */
 .itinerary-container {
   max-width: 1320px;
-  margin: 2.5rem auto 4rem;
+  margin: 2.2rem auto 4rem;
   padding: 0 1.5rem;
+}
+
+/* Mobile View Mode Switcher */
+.view-mode-bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  margin-bottom: 1.2rem;
+}
+
+.view-mode-label {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.view-mode-toggle {
+  display: inline-flex;
+  background: #f1f5f9;
+  padding: 3px;
+  border-radius: var(--radius-full);
+  border: 1px solid var(--border-subtle);
+}
+
+.view-btn {
+  padding: 0.35rem 0.95rem;
+  border-radius: var(--radius-full);
+  font-size: 0.82rem;
+  font-weight: 600;
+  border: none;
+  background: transparent;
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: var(--transition);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.view-btn.active {
+  background: #ffffff;
+  color: var(--text-primary);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+}
+
+/* Mobile Swipe Hint */
+.mobile-swipe-hint {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-size: 0.78rem;
+  color: var(--accent-gold-dark);
+  background: #fffbeb;
+  border: 1px solid #fde68a;
+  padding: 0.4rem 0.9rem;
+  border-radius: var(--radius-full);
+  margin-bottom: 1rem;
+  text-align: center;
 }
 
 /* Interactive Filter Bar */
@@ -185,6 +247,8 @@ a {
   border: 1px solid var(--border-subtle);
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow-table);
+  position: relative;
+  transition: var(--transition);
 }
 
 /* Master 4-Column Table */
@@ -207,6 +271,9 @@ a {
   font-family: 'Outfit', sans-serif;
   letter-spacing: 0.02em;
   font-size: 0.92rem;
+  position: sticky;
+  top: 0;
+  z-index: 3;
 }
 
 .master-itinerary-table td {
@@ -222,6 +289,27 @@ a {
 
 .master-itinerary-table tr:last-child td {
   border-bottom: none;
+}
+
+/* Sticky First Column in Table Mode */
+.table-view-mode .master-itinerary-table th:first-child {
+  position: sticky;
+  left: 0;
+  z-index: 5;
+  background: #f8fafc;
+  box-shadow: 2px 0 6px rgba(0, 0, 0, 0.05);
+}
+
+.table-view-mode .master-itinerary-table td:first-child {
+  position: sticky;
+  left: 0;
+  z-index: 2;
+  background: #ffffff;
+  box-shadow: 2px 0 6px rgba(0, 0, 0, 0.05);
+}
+
+.table-view-mode .master-itinerary-table tr:hover td:first-child {
+  background: var(--bg-hover);
 }
 
 /* Col 1: Day & Date */
@@ -447,6 +535,75 @@ a {
   font-family: 'Outfit', sans-serif;
 }
 
+/* ==========================================================================
+   STACKED MOBILE VIEW MODE (ACCOMMODATES PHONE SCREENS PERFECTLY)
+   ========================================================================== */
+.stacked-view-mode .master-itinerary-table {
+  min-width: 100% !important;
+  border: none;
+  background: transparent;
+  box-shadow: none;
+}
+
+.stacked-view-mode.table-responsive-wrapper {
+  border: none;
+  background: transparent;
+  box-shadow: none;
+  overflow: visible;
+}
+
+.stacked-view-mode .master-itinerary-table thead {
+  display: none;
+}
+
+.stacked-view-mode .master-itinerary-table tbody {
+  display: flex;
+  flex-direction: column;
+  gap: 1.4rem;
+}
+
+.stacked-view-mode .master-itinerary-table tr {
+  display: flex;
+  flex-direction: column;
+  background: #ffffff;
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-table);
+  overflow: hidden;
+}
+
+.stacked-view-mode .master-itinerary-table td {
+  width: 100% !important;
+  border-bottom: 1px solid var(--border-subtle);
+  padding: 1rem 1.25rem;
+  background: #ffffff;
+}
+
+.stacked-view-mode .master-itinerary-table td.col-day-date {
+  background: #f8fafc;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  border-bottom: 1px solid var(--border-header);
+  position: static;
+  box-shadow: none;
+}
+
+.stacked-view-mode .master-itinerary-table td.col-location {
+  background: #ffffff;
+}
+
+.stacked-view-mode .master-itinerary-table td.col-activity {
+  background: #ffffff;
+}
+
+.stacked-view-mode .master-itinerary-table td.col-cost {
+  border-bottom: none;
+  background: #fafafa;
+}
+
 /* Clean Minimal Footer */
 .site-footer {
   border-top: 1px solid var(--border-subtle);
@@ -461,10 +618,30 @@ a {
   color: var(--text-primary);
 }
 
-/* Mobile Responsive */
+/* Mobile Responsive Optimization (< 768px) */
 @media (max-width: 768px) {
   .site-header { padding: 1.8rem 1rem 1.4rem; }
-  .main-title { font-size: 1.9rem; }
-  .main-subtitle { font-size: 0.95rem; }
-  .itinerary-container { margin: 1.5rem auto 3rem; padding: 0 1rem; }
+  .main-title { font-size: 1.85rem; }
+  .main-subtitle { font-size: 0.92rem; }
+  .flight-info-pill { font-size: 0.78rem; gap: 0.6rem; padding: 0.5rem 0.9rem; }
+  .itinerary-container { margin: 1.2rem auto 3rem; padding: 0 0.85rem; }
+  
+  /* Chip Carousel for Filter Pills */
+  .itinerary-filter-bar {
+    justify-content: flex-start;
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 8px;
+    margin-bottom: 1.2rem;
+  }
+  
+  .filter-btn {
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+  
+  .table-view-mode .mobile-swipe-hint {
+    display: flex;
+  }
 }

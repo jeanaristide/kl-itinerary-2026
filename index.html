@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Kuala Lumpur Trip Itinerary | Visiting Daiki • Oct 29 – Nov 3, 2026</title>
-  <meta name="description" content="A tailored 6-day travel itinerary for visiting Daiki in Kuala Lumpur, Malaysia. Features the Master Itinerary Table with night-shift synchronization, LDS Sunday worship, and mountain day trip.">
+  <meta name="description" content="A tailored 6-day travel itinerary for visiting Daiki in Kuala Lumpur, Malaysia. Features the Master Itinerary Table with mobile-adaptive layout, night-shift synchronization, LDS Sunday worship, and mountain day trip.">
   
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -43,7 +43,26 @@
 
   <!-- Master Itinerary Table Section (Table-First Focus) -->
   <main class="itinerary-container">
-    <!-- Interactive Filter Bar -->
+    
+    <!-- Mobile View Mode Toggle -->
+    <div class="view-mode-bar">
+      <span class="view-mode-label">Layout:</span>
+      <div class="view-mode-toggle">
+        <button type="button" class="view-btn active" id="viewStackedBtn" data-view="stacked">
+          <i class="fa-solid fa-list-ul"></i> Mobile View
+        </button>
+        <button type="button" class="view-btn" id="viewTableBtn" data-view="table">
+          <i class="fa-solid fa-table-cells"></i> Full Table
+        </button>
+      </div>
+    </div>
+
+    <!-- Swipe Indicator for Full Table on Mobile -->
+    <div class="mobile-swipe-hint" id="mobileSwipeHint">
+      <i class="fa-solid fa-arrow-left"></i> Swipe sideways to inspect activities &amp; costs <i class="fa-solid fa-arrow-right"></i>
+    </div>
+
+    <!-- Interactive Filter Bar (Chip Carousel on Mobile) -->
     <div class="itinerary-filter-bar">
       <button type="button" class="filter-btn active" data-filter="all">All (6 Days)</button>
       <button type="button" class="filter-btn" data-filter="day1">Day 1 • Oct 29</button>
@@ -57,8 +76,8 @@
       <button type="button" class="filter-btn" data-filter="worship"><i class="fa-solid fa-church"></i> LDS Worship</button>
     </div>
 
-    <!-- Responsive Master Table Wrapper -->
-    <div class="table-responsive-wrapper">
+    <!-- Responsive Master Table Wrapper (Supports Stacked and Full Table) -->
+    <div class="table-responsive-wrapper stacked-view-mode" id="tableWrapper">
       <table class="master-itinerary-table" id="masterItineraryTable">
         <thead>
           <tr>

@@ -1,7 +1,7 @@
 /**
  * Kuala Lumpur Interactive Itinerary & Master Table
  * Tailored for 6-Day Synchronized Visit with Daiki (Oct 29 – Nov 3, 2026)
- * Pure White Minimalist Table-First Architecture
+ * Pure White Minimalist Table-First Architecture with Mobile Adaptive Views
  */
 
 // Master 6-Day Itinerary Data Store Personalized for Daiki
@@ -193,6 +193,7 @@ const itineraryData = [
 document.addEventListener("DOMContentLoaded", () => {
   renderMasterTable("all");
   setupFilterBar();
+  setupViewModeSwitcher();
 });
 
 /**
@@ -220,8 +221,10 @@ function renderMasterTable(filter) {
     const tdDay = document.createElement("td");
     tdDay.className = "col-day-date";
     tdDay.innerHTML = `
-      <div class="day-badge-pill">${day.dayNum}</div>
-      <div class="date-label">${day.date}</div>
+      <div>
+        <div class="day-badge-pill">${day.dayNum}</div>
+        <div class="date-label">${day.date}</div>
+      </div>
       <div class="phase-pill ${day.phase}">
         <i class="fa-solid fa-circle-dot" style="font-size: 0.55rem;"></i>
         ${day.phaseLabel}
@@ -290,5 +293,60 @@ function setupFilterBar() {
       const filter = btn.getAttribute("data-filter");
       renderMasterTable(filter);
     });
+  });
+}
+
+/**
+ * Setup Mobile View Mode Switcher
+ */
+function setupViewModeSwitcher() {
+  const wrapper = document.getElementById("tableWrapper");
+  const stackedBtn = document.getElementById("viewStackedBtn");
+  const tableBtn = document.getElementById("viewTableBtn");
+  const swipeHint = document.getElementById("mobileSwipeHint");
+
+  if (!wrapper || !stackedBtn || !tableBtn) return;
+
+  // Determine initial mode
+  const savedMode = localStorage.getItem("kl_view_mode");
+  let currentMode = savedMode;
+  if (!currentMode) {
+    // Default to stacked on mobile, table on desktop
+    currentMode = window.innerWidth <= 768 ? "stacked" : "table";
+  }
+
+  applyViewMode(currentMode);
+
+  stackedBtn.addEventListener("click", () => {
+    applyViewMode("stacked");
+  });
+
+  tableBtn.addEventListener("click", () => {
+    applyViewMode("table");
+  });
+
+  function applyViewMode(mode) {
+    if (mode === "stacked") {
+      wrapper.classList.add("stacked-view-mode");
+      wrapper.classList.remove("table-view-mode");
+      stackedBtn.classList.add("active");
+      tableBtn.classList.remove("active");
+      if (swipeHint) swipeHint.style.display = "none";
+      localStorage.setItem("kl_view_mode", "stacked");
+    } else {
+      wrapper.classList.remove("stacked-view-mode");
+      wrapper.classList.add("table-view-mode");
+      tableBtn.classList.add("active");
+      stackedBtn.classList.remove("active");
+      if (swipeHint) swipeHint.style.display = window.innerWidth <= 768 ? "flex" : "none";
+      localStorage.setItem("kl_view_mode", "table");
+    }
+  }
+
+  // Handle window resize dynamically
+  window.addEventListener("resize", () => {
+    if (wrapper.classList.contains("table-view-mode") && swipeHint) {
+      swipeHint.style.display = window.innerWidth <= 768 ? "flex" : "none";
+    }
   });
 }
