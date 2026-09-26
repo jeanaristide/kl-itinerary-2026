@@ -3,214 +3,57 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Kuala Lumpur Synchronized Itinerary | Oct 29 – Nov 3, 2026</title>
-  <meta name="description" content="A tailored 6-day travel itinerary for visiting a Japanese LDS friend working US tech night shifts in Kuala Lumpur, Malaysia. Features the Master Itinerary Table, Leaflet route maps, and saved landmarks.">
+  <title>Kuala Lumpur Trip Itinerary | Visiting Daiki • Oct 29 – Nov 3, 2026</title>
+  <meta name="description" content="A tailored 6-day travel itinerary for visiting Daiki in Kuala Lumpur, Malaysia. Features the Master Itinerary Table with night-shift synchronization, LDS Sunday worship, and mountain day trip.">
   
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
   
   <!-- FontAwesome Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   
-  <!-- Leaflet CSS for Map -->
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
-
   <link rel="stylesheet" href="styles.css">
 </head>
-<body class="dark-mode">
+<body>
 
-  <!-- Floating Navigation -->
-  <header class="navbar" id="navbar">
-    <div class="nav-container">
-      <a href="#hero" class="nav-logo">
-        <span class="logo-icon"><i class="fa-solid fa-kaaba"></i></span>
-        <span class="logo-text">KL<span>Synchronized</span></span>
-      </a>
+  <!-- Minimal Header -->
+  <header class="site-header">
+    <div class="header-container">
+      <div class="trip-badge">
+        <i class="fa-solid fa-plane"></i>
+        <span>Kuala Lumpur, Malaysia • Oct 29 – Nov 3, 2026</span>
+      </div>
+      <h1 class="main-title">Kuala Lumpur Itinerary</h1>
+      <p class="main-subtitle">
+        Visiting Daiki • Synchronized for his US tech night shift, daytime rest, evening reunions, Saturday Titiwangsa mountain trip, and Sunday LDS worship.
+      </p>
 
-      <nav class="nav-links">
-        <a href="#hero" class="nav-link"><i class="fa-solid fa-plane"></i> Flights</a>
-        <a href="#shift-protocol" class="nav-link"><i class="fa-solid fa-moon"></i> Shift Sync</a>
-        <a href="#master-itinerary" class="nav-link active"><i class="fa-solid fa-table-list"></i> Master Itinerary</a>
-        <a href="#map-section" class="nav-link"><i class="fa-solid fa-map-location-dot"></i> Interactive Map</a>
-        <a href="#places-guide" class="nav-link"><i class="fa-solid fa-landmark"></i> 13 Saved Sights</a>
-        <a href="#halal-guide" class="nav-link"><i class="fa-solid fa-utensils"></i> Faith & Dining</a>
-      </nav>
-
-      <div class="nav-actions">
-        <button id="mode-toggle-btn" class="pill-btn mode-btn" title="Toggle Light/Dark Mode">
-          <i class="fa-solid fa-moon"></i>
-        </button>
-        <button id="print-itinerary-btn" class="pill-btn primary-btn">
-          <i class="fa-solid fa-print"></i> Print / PDF
-        </button>
+      <!-- Flight Summary Pill -->
+      <div class="flight-info-pill">
+        <span><i class="fa-solid fa-plane-arrival" style="color: #0284c7;"></i> Inbound: <strong>AirAsia AK585</strong> (MNL 01:10 ➔ KUL 05:15, Thu 29 Oct)</span>
+        <span>•</span>
+        <span><i class="fa-solid fa-plane-departure" style="color: #ea580c;"></i> Outbound: <strong>AirAsia AK584</strong> (KUL 20:25 ➔ MNL 00:35, Tue 03 Nov)</span>
+        <span>•</span>
+        <span>Booking: <strong>PG8J4A</strong></span>
       </div>
     </div>
   </header>
 
-  <!-- Hero Section & Confirmed Flight Widget -->
-  <section id="hero" class="hero-section">
-    <div class="hero-content">
-      <div class="hero-badge">
-        <span class="pulse-dot"></span>
-        <span>Kuala Lumpur, Malaysia • Oct 29 – Nov 3, 2026 • 6-Day Visit</span>
-      </div>
-      <h1 class="hero-title">Kuala Lumpur Field Guide</h1>
-      <p class="hero-subtitle">
-        A considerate, night-shift synchronized itinerary visiting my Japanese friend working for a US tech company. 
-        Structured for restful daytime sleep, golden evening reunions, Sunday LDS worship, and a weekend Titiwangsa mountain escape.
-      </p>
-
-      <!-- Confirmed AirAsia Flight Details -->
-      <div class="flight-hero-card">
-        <div class="flight-hero-grid">
-          <div class="flight-leg">
-            <span class="flight-badge-tag inbound"><i class="fa-solid fa-plane-arrival"></i> Inbound Flight • Confirmed</span>
-            <div class="flight-cities">
-              <span>Manila (MNL)</span>
-              <span class="flight-plane-arrow"><i class="fa-solid fa-arrow-right-long"></i></span>
-              <span>Kuala Lumpur (KUL)</span>
-            </div>
-            <div class="flight-meta">
-              <strong>AirAsia AK 585</strong> • Booking: <strong>PG8J4A</strong><br>
-              Departs: <strong>Thu, 29 Oct 2026 • 01:10</strong> ➔ Arrives: <strong>05:15 AM (Terminal 2)</strong>
-            </div>
-          </div>
-
-          <div class="flight-connector">
-            <i class="fa-solid fa-plane"></i>
-            <span>6 Days</span>
-          </div>
-
-          <div class="flight-leg">
-            <span class="flight-badge-tag outbound"><i class="fa-solid fa-plane-departure"></i> Outbound Flight • Confirmed</span>
-            <div class="flight-cities">
-              <span>Kuala Lumpur (KUL)</span>
-              <span class="flight-plane-arrow"><i class="fa-solid fa-arrow-right-long"></i></span>
-              <span>Manila (MNL)</span>
-            </div>
-            <div class="flight-meta">
-              <strong>AirAsia AK 584</strong> • Booking: <strong>PG8J4A</strong><br>
-              Departs: <strong>Tue, 03 Nov 2026 • 20:25</strong> ➔ Arrives: <strong>00:35 (+1 day)</strong>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Quick Metrics Ribbon -->
-      <div class="hero-stats-grid">
-        <div class="stat-card">
-          <i class="fa-solid fa-calendar-check stat-icon"></i>
-          <div>
-            <div class="stat-val">6 Full Days</div>
-            <div class="stat-desc">Thu 29 Oct – Tue 03 Nov</div>
-          </div>
-        </div>
-        <div class="stat-card">
-          <i class="fa-solid fa-map-pin stat-icon"></i>
-          <div>
-            <div class="stat-val">13 Starred Sights</div>
-            <div class="stat-desc">Google Maps Synced</div>
-          </div>
-        </div>
-        <div class="stat-card">
-          <i class="fa-solid fa-church stat-icon"></i>
-          <div>
-            <div class="stat-val">LDS Sunday Worship</div>
-            <div class="stat-desc">Kuala Lumpur Branch (10 AM)</div>
-          </div>
-        </div>
-        <div class="stat-card">
-          <i class="fa-solid fa-receipt stat-icon"></i>
-          <div>
-            <div class="stat-val">RM 662.60 Total</div>
-            <div class="stat-desc">≈ $145 USD / ₱8,200 PHP</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Night Shift Synchronization Protocol Section -->
-  <section id="shift-protocol" class="section">
-    <div class="section-header">
-      <span class="sub-heading"><i class="fa-solid fa-clock"></i> Circadian Rhythm Protocol</span>
-      <h2 class="section-title">Night Shift Synchronization Strategy</h2>
-      <p class="section-desc">
-        Because your host works overnight for a US tech company (10:00 PM – 07:00 AM), our schedule is harmonized so he gets uninterrupted rest while you explore comfortably, coming together during his peak awake windows.
-      </p>
-    </div>
-
-    <div class="shift-protocol-grid">
-      <!-- Daytime Sleep -->
-      <div class="shift-card sleep">
-        <div class="shift-card-header">
-          <div class="shift-icon"><i class="fa-solid fa-bed"></i></div>
-          <div>
-            <span class="shift-badge">Daytime Rest Protocol</span>
-            <h3 class="shift-title">Friend Sleeps • Solo Morning Treks</h3>
-          </div>
-        </div>
-        <div class="shift-time"><i class="fa-regular fa-clock"></i> 08:30 AM – 03:30 PM (Weekdays)</div>
-        <p class="shift-desc">
-          Maintain strict quiet inside the apartment. You embark on independent morning treks (beating the midday tropical heat at Batu Caves, strolling Kwai Chai Hong murals, and photographing Merdeka Square) while your friend enjoys deep, restorative sleep.
-        </p>
-      </div>
-
-      <!-- Evening Reunion -->
-      <div class="shift-card reunion">
-        <div class="shift-card-header">
-          <div class="shift-icon"><i class="fa-solid fa-utensils"></i></div>
-          <div>
-            <span class="shift-badge">Reunion Golden Hours</span>
-            <h3 class="shift-title">Friend Awake • Evening Outings</h3>
-          </div>
-        </div>
-        <div class="shift-time"><i class="fa-regular fa-clock"></i> 04:00 PM – 09:30 PM (Daily)</div>
-        <p class="shift-desc">
-          Your friend wakes up refreshed and ready to eat and socialize. Head out together for golden-hour photography at KLCC Park, marvel at the illuminated Petronas Twin Towers, and share alcohol-free street food at Jalan Alor before his evening shift starts.
-        </p>
-      </div>
-
-      <!-- Weekend Off-Duty -->
-      <div class="shift-card weekend">
-        <div class="shift-card-header">
-          <div class="shift-icon"><i class="fa-solid fa-mountain-sun"></i></div>
-          <div>
-            <span class="shift-badge">Zero Work Fatigue</span>
-            <h3 class="shift-title">Weekend Off • Full Days Together</h3>
-          </div>
-        </div>
-        <div class="shift-time"><i class="fa-regular fa-clock"></i> Saturday Oct 31 &amp; Sunday Nov 01</div>
-        <p class="shift-desc">
-          US tech companies observe weekend breaks. Saturday is dedicated to a scenic day trip to the cool Titiwangsa Mountains (Genting Highlands &amp; Chin Swee Caves Temple). Sunday is anchored by sacred LDS Sabbath worship and fellowship in Taman U Thant.
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Master Itinerary Table Section (Skill Compliant) -->
-  <section id="master-itinerary" class="section">
-    <div class="section-header">
-      <span class="sub-heading"><i class="fa-solid fa-table"></i> Verified 4-Column Schema</span>
-      <h2 class="section-title">Master Itinerary Table</h2>
-      <p class="section-desc">
-        Compact, responsive, and itemized day-by-day plan with atomic bullet points, embedded timestamps, underlined landmarks, and cost breakdowns.
-      </p>
-    </div>
-
-    <!-- Filter Bar Pills -->
+  <!-- Master Itinerary Table Section (Table-First Focus) -->
+  <main class="itinerary-container">
+    <!-- Interactive Filter Bar -->
     <div class="itinerary-filter-bar">
       <button type="button" class="filter-btn active" data-filter="all">All (6 Days)</button>
       <button type="button" class="filter-btn" data-filter="day1">Day 1 • Oct 29</button>
       <button type="button" class="filter-btn" data-filter="day2">Day 2 • Oct 30</button>
-      <button type="button" class="filter-btn" data-filter="day3">Day 3 • Oct 31 (Genting)</button>
-      <button type="button" class="filter-btn" data-filter="day4">Day 4 • Nov 01 (Church)</button>
+      <button type="button" class="filter-btn" data-filter="day3">Day 3 • Oct 31 (Genting with Daiki)</button>
+      <button type="button" class="filter-btn" data-filter="day4">Day 4 • Nov 01 (Church with Daiki)</button>
       <button type="button" class="filter-btn" data-filter="day5">Day 5 • Nov 02 (Batu Caves)</button>
       <button type="button" class="filter-btn" data-filter="day6">Day 6 • Nov 03</button>
-      <button type="button" class="filter-btn" data-filter="joint"><i class="fa-solid fa-user-group"></i> Joint Window</button>
-      <button type="button" class="filter-btn" data-filter="solo"><i class="fa-solid fa-person-walking"></i> Solo Treks</button>
+      <button type="button" class="filter-btn" data-filter="joint"><i class="fa-solid fa-user-group"></i> With Daiki</button>
+      <button type="button" class="filter-btn" data-filter="solo"><i class="fa-solid fa-person-walking"></i> Solo Morning</button>
       <button type="button" class="filter-btn" data-filter="worship"><i class="fa-solid fa-church"></i> LDS Worship</button>
     </div>
 
@@ -219,8 +62,8 @@
       <table class="master-itinerary-table" id="masterItineraryTable">
         <thead>
           <tr>
-            <th scope="col" style="width: 14%;">Day &amp; Date</th>
-            <th scope="col" style="width: 24%;">Location</th>
+            <th scope="col" style="width: 15%;">Day &amp; Date</th>
+            <th scope="col" style="width: 23%;">Location</th>
             <th scope="col" style="width: 48%;">Action / Activity</th>
             <th scope="col" style="width: 14%;">Cost</th>
           </tr>
@@ -230,139 +73,14 @@
         </tbody>
       </table>
     </div>
-  </section>
+  </main>
 
-  <!-- Interactive Map Section -->
-  <section id="map-section" class="section">
-    <div class="section-header">
-      <span class="sub-heading"><i class="fa-solid fa-location-crosshairs"></i> Geographical Orientation</span>
-      <h2 class="section-title">Interactive Route &amp; Landmarks Map</h2>
-      <p class="section-desc">
-        Click any marker or table row to inspect coordinates, stop details, and travel connections across Kuala Lumpur and the Titiwangsa Mountains.
-      </p>
-    </div>
-
-    <div class="map-layout">
-      <div id="map" class="map-container"></div>
-      <div class="map-sidebar">
-        <div class="map-sidebar-title">
-          <i class="fa-solid fa-list-check" style="color: var(--accent-gold);"></i> 15 Starred Destinations
-        </div>
-        <div class="map-legend-list">
-          <div class="legend-item"><span class="legend-dot" style="background: #f59e0b;"></span> 13 Google Maps Places</div>
-          <div class="legend-item"><span class="legend-dot" style="background: #10b981;"></span> LDS Meetinghouse</div>
-          <div class="legend-item"><span class="legend-dot" style="background: #06b6d4;"></span> Airport &amp; Transit Hubs</div>
-        </div>
-        <hr style="border: none; border-top: 1px solid var(--border-subtle); margin: 0.5rem 0;">
-        <div class="stop-sequence-list" id="mapStopsList">
-          <!-- Populated by app.js -->
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- 13 Google Maps Starred Places Dossier -->
-  <section id="places-guide" class="section">
-    <div class="section-header">
-      <span class="sub-heading"><i class="fa-solid fa-star"></i> Curated Field Guide</span>
-      <h2 class="section-title">13 Google Maps Saved Sights</h2>
-      <p class="section-desc">
-        Deep dives and visitor tips for every location saved in your trip map, plus the Kuala Lumpur LDS meetinghouse.
-      </p>
-    </div>
-
-    <div class="places-grid" id="placesGridContainer">
-      <!-- Populated by app.js -->
-    </div>
-  </section>
-
-  <!-- Word of Wisdom & Halal Dining Guide -->
-  <section id="halal-guide" class="section">
-    <div class="section-header">
-      <span class="sub-heading"><i class="fa-solid fa-bowl-rice"></i> Gastronomy &amp; Word of Wisdom</span>
-      <h2 class="section-title">Halal &amp; Alcohol-Free Street Food Guide</h2>
-      <p class="section-desc">
-        Malaysia's rich culinary scene makes adhering to the Word of Wisdom effortless. Here are delicious, alcohol-free and tea/coffee-free highlights.
-      </p>
-    </div>
-
-    <div class="food-guide-grid">
-      <div class="food-card">
-        <div class="food-card-header">
-          <div class="food-icon"><i class="fa-solid fa-fire-burner"></i></div>
-          <div>
-            <h3 class="food-card-title">Jalan Alor Night Market</h3>
-            <span class="food-card-sub">Bukit Bintang Hawker Hub</span>
-          </div>
-        </div>
-        <ul class="food-item-list">
-          <li><strong>Charcoal Chicken Satay</strong>: Tender skewers marinated in lemongrass and turmeric, grilled over open coals and served with thick peanut sauce.</li>
-          <li><strong>Roti Canai &amp; Murtabak</strong>: Crispy, flaky pan-fried flatbreads served with dhal lentils and mild vegetable curry.</li>
-          <li><strong>Grilled Chicken Wings (Wong Ah Wah)</strong>: Legendary smoky glazed wings seasoned with soy and mild spices.</li>
-          <li><strong>Fresh Young Coconut Water</strong>: Chilled whole green coconuts sliced fresh before your eyes.</li>
-        </ul>
-      </div>
-
-      <div class="food-card">
-        <div class="food-card-header">
-          <div class="food-icon"><i class="fa-solid fa-mug-saucer"></i></div>
-          <div>
-            <h3 class="food-card-title">Kopitiam Drinks (Word of Wisdom)</h3>
-            <span class="food-card-sub">Alcohol, Tea &amp; Coffee Free</span>
-          </div>
-        </div>
-        <ul class="food-item-list">
-          <li><strong>Barley Ice (Air Barli)</strong>: Slow-boiled pearled barley sweetened with rock sugar and pandan leaf; deeply cooling in the heat.</li>
-          <li><strong>Milo Dinosaur</strong>: Iced chocolate-malt drink topped with a heaping mountain of un-dissolved Milo powder.</li>
-          <li><strong>Fresh Sugarcane Juice</strong>: Stalks pressed through rollers with a squeeze of fresh calamansi lime.</li>
-          <li><strong>Air Mata Kucing</strong>: Refreshing iced longan, winter melon, and luo han guo infusion.</li>
-        </ul>
-      </div>
-
-      <div class="food-card">
-        <div class="food-card-header">
-          <div class="food-icon"><i class="fa-solid fa-church"></i></div>
-          <div>
-            <h3 class="food-card-title">LDS Sunday Worship Protocol</h3>
-            <span class="food-card-sub">Kuala Lumpur Branch</span>
-          </div>
-        </div>
-        <ul class="food-item-list">
-          <li><strong>Meetinghouse Address</strong>: No. 4 Jalan Ampang Tengah, Taman U Thant, 55000 Kuala Lumpur.</li>
-          <li><strong>Service Time</strong>: <span class="time-chip">10:00 AM – 12:00 PM</span> (Sacrament Meeting + Sunday School / Priesthood / Relief Society).</li>
-          <li><strong>Attire</strong>: Sunday best (collared shirt/tie or dress/skirt).</li>
-          <li><strong>Community</strong>: Vibrant international expat and local Malaysian membership. Visitors warmly welcomed.</li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer class="footer">
-    <div class="footer-container">
-      <div class="footer-brand">
-        <div class="logo-text">KL<span>Synchronized</span></div>
-        <p>Crafted for Jean Aristide Aquino • October 29 – November 3, 2026</p>
-      </div>
-
-      <div class="footer-actions">
-        <button class="pill-btn primary-btn" onclick="window.print()">
-          <i class="fa-solid fa-print"></i> Print Itinerary
-        </button>
-        <a href="#hero" class="pill-btn mode-btn" title="Back to top">
-          <i class="fa-solid fa-arrow-up"></i>
-        </a>
-      </div>
-
-      <div class="footer-note">
-        <div>Synchronized with AirAsia Flights AK585 &amp; AK584</div>
-        <div class="copyright">Built with standard Leaflet, CartoDB &amp; Master Itinerary Table standards.</div>
-      </div>
-    </div>
+  <!-- Minimal Footer -->
+  <footer class="site-footer">
+    <div>Crafted for <strong>Jean Aristide Aquino</strong> &amp; <strong>Daiki</strong> • Kuala Lumpur Trip 2026</div>
+    <div style="margin-top: 4px; font-size: 0.8rem;">Clean White Minimalist Table Architecture • Synchronized with AirAsia AK585 &amp; AK584</div>
   </footer>
 
-  <!-- Leaflet JS -->
-  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
   <!-- App JS -->
   <script src="app.js"></script>
 </body>
