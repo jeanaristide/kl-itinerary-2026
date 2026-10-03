@@ -300,8 +300,8 @@ const tripCalendarData = {
     countryClass: 'country-worship',
     flag: '🏛️',
     city: 'Taman U Thant & Robson',
-    title: 'Sabbath Worship & Thean Hou Shrine',
-    summary: 'Sunday LDS sacrament & classes at Kuala Lumpur Meetinghouse (10:00 AM – 12:00 PM), Ampang fellowship lunch, and afternoon visit to six-tiered Thean Hou Temple.',
+    title: 'Sabbath Worship & Suggested Afternoon Option',
+    summary: 'Sunday LDS sacrament & classes at Kuala Lumpur Meetinghouse (10:00 AM – 12:00 PM), followed by a flexible afternoon (Suggested: Ampang lunch & Thean Hou Temple; Daiki may have other plans).',
     coords: [3.1577, 101.7371],
     zoom: 14,
     tableDayId: 'row-day4'
@@ -465,26 +465,27 @@ const itineraryData = [
     city: "Taman U Thant & Robson Heights",
     landmarks: [
       { name: "Kuala Lumpur Meetinghouse (LDS Church)", pin: "#12" },
-      { name: "Ampang Hilir Fellowship Lunch", pin: "🍽️" },
-      { name: "Thean Hou Temple (Robson Heights)", pin: "#13" },
-      { name: "Little India / Brickfields Evening", pin: "🏮" }
+      { name: "Ampang Hilir Fellowship Lunch (Suggested)", pin: "🍽️" },
+      { name: "Thean Hou Temple (Suggested Option)", pin: "#13" },
+      { name: "Evening Fellowship (Daiki's Choice)", pin: "🏮" }
     ],
-    cultureBadge: "✨ Sacred LDS Sunday Worship · Kuala Lumpur Branch Sabbath Service & Six-Tiered Shrine",
+    cultureBadge: "✨ Sacred LDS Sunday Worship · Kuala Lumpur Branch Sabbath Service & Suggested Afternoon Option",
     activities: [
       "Dress in Sunday attire and depart together with Daiki at <span class=\"time-chip\">09:15 AM</span> for the embassy precinct of Ampang Hilir.",
       "Arrive with Daiki at the <u>Kuala Lumpur Meetinghouse</u> (No. 4 Jalan Ampang Tengah, Taman U Thant) by <span class=\"time-chip\">09:45 AM</span> for personal reverent preparation.",
       "Participate with Daiki in the 2-hour Sunday worship block (Sacrament Meeting followed by Sunday School / Priesthood / Relief Society) from <span class=\"time-chip\">10:00 AM</span> to <span class=\"time-chip\">12:00 PM</span>.",
       "Meet local members, international expats, and friends with Daiki for fellowship in the foyer following the conclusion of meetings at <span class=\"time-chip\">12:15 PM</span>.",
-      "Travel together with Daiki to a tranquil restaurant in Ampang for a peaceful Sabbath fellowship lunch at <span class=\"time-chip\">01:00 PM</span>.",
-      "Take an afternoon ride with Daiki up to the crest of Robson Heights to tour the six-tiered Chinese sanctuary <u>Thean Hou Temple</u> at <span class=\"time-chip\">03:00 PM</span>.",
-      "Admire the syncretic blend of Buddhism, Taoism, and Confucianism, walk beneath hundreds of traditional red hanging lanterns, and take in panoramic skyline views of Kuala Lumpur.",
-      "Return home with Daiki by <span class=\"time-chip\">05:30 PM</span> for a relaxed, restorative evening together sharing memories and an early quiet dinner."
+      "<div class=\"suggested-callout\">💡 <strong>Suggested Option (Daiki may have other plans for us):</strong> The Sunday afternoon activities below are a suggested route, fully open to whatever Daiki prefers to do:</div>",
+      "<span class=\"suggested-badge\">Suggested Option</span> Travel together with Daiki to a tranquil restaurant in <u>Ampang</u> for a peaceful Sabbath fellowship lunch at <span class=\"time-chip\">01:00 PM</span>.",
+      "<span class=\"suggested-badge\">Suggested Option</span> Take an afternoon ride with Daiki up to the crest of <u>Robson Heights</u> to tour the six-tiered Chinese sanctuary <u>Thean Hou Temple</u> at <span class=\"time-chip\">03:00 PM</span>.",
+      "<span class=\"suggested-badge\">Suggested Option</span> Admire the syncretic blend of Buddhism, Taoism, and Confucianism, walk beneath hundreds of traditional red hanging lanterns, and take in panoramic skyline views of <u>Kuala Lumpur</u>.",
+      "<span class=\"suggested-badge\">Suggested Option</span> Return home with Daiki by <span class=\"time-chip\">05:30 PM</span> for a relaxed, restorative evening together sharing memories and an early quiet dinner."
     ],
     costs: [
       { item: "Grab to Church & Thean Hou", amount: "RM 35.00" },
-      { item: "Sunday Fellowship Lunch with Daiki", amount: "RM 35.00" },
+      { item: "Sunday Fellowship Lunch (Est)", amount: "RM 35.00" },
       { item: "Thean Hou Temple Entry", amount: "Free" },
-      { item: "Quiet Evening Sabbath Meal", amount: "RM 35.00" }
+      { item: "Quiet Evening Sabbath Meal (Est)", amount: "RM 35.00" }
     ],
     dayTotal: "RM 105.00",
     dayTotalPhp: "₱1,386 PHP"
