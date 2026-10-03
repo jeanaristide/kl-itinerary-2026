@@ -3,409 +3,568 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Kuala Lumpur Trip Itinerary | Visiting Daiki • Oct 29 – Nov 3, 2026</title>
-  <meta name="description" content="A tailored 6-day travel itinerary for visiting Daiki in Kuala Lumpur, Malaysia. Features the Master Itinerary Table with mobile-adaptive layout, night-shift synchronization, LDS Sunday worship, and mountain day trip.">
-  
+  <title>6-Day Kuala Lumpur &amp; Genting Journey · Jean Aristide Aquino &amp; Daiki</title>
+  <meta name="description" content="Comprehensive 6-Day Travel Itinerary for Jean Aristide Belleza Aquino visiting friend Daiki in Kuala Lumpur and Genting Highlands, Malaysia (29 Oct – 03 Nov 2026). Features interactive Google route maps, night-shift synchronization, LDS Sunday worship, and Batu Caves.">
+
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-  
-  <!-- FontAwesome Icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-  
-  <link rel="stylesheet" href="styles.css?v=2.2">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Leaflet Map CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+
+  <!-- Custom Styles with Cache Buster -->
+  <link rel="stylesheet" href="styles.css?v=3.0">
+
+  <!-- Guaranteed Inline High-Contrast Underline Styles -->
+  <style>
+    u,
+    .act-bullet-item u,
+    .master-itinerary-table td u {
+      text-decoration: underline !important;
+      text-decoration-color: #0284c7 !important;
+      text-decoration-thickness: 2.5px !important;
+      text-underline-offset: 3.5px !important;
+      font-weight: 700 !important;
+      color: #0f172a !important;
+    }
+    u:hover,
+    .act-bullet-item u:hover,
+    .master-itinerary-table td u:hover {
+      text-decoration-color: #0369a1 !important;
+      color: #0369a1 !important;
+    }
+  </style>
 </head>
 <body>
 
-  <!-- Minimal Header -->
-  <header class="site-header">
-    <div class="header-container">
-      <div class="trip-badge">
-        <i class="fa-solid fa-plane"></i>
-        <span>Kuala Lumpur, Malaysia • Oct 29 – Nov 3, 2026</span>
+  <!-- HERO SECTION -->
+  <header class="hero">
+    <div class="container hero-content">
+      <div class="hero-badge">
+        <span>🇲🇾 Tailored Travel Schedule</span> · <span>Host-Synchronized &amp; Night-Shift Friendly</span>
       </div>
-      <h1 class="main-title">Kuala Lumpur Itinerary</h1>
-      <p class="main-subtitle">
-        Visiting Daiki • Synchronized for his US tech night shift, daytime rest, evening reunions, Saturday Titiwangsa mountain trip, and Sunday LDS worship.
+      <h1 class="hero-title">6-Day Kuala Lumpur &amp; Genting Highlands Journey<br><span>Jean Aristide Aquino &amp; Daiki</span></h1>
+      <p class="hero-subtitle">
+        A seamless 6-day travel itinerary visiting Daiki in Kuala Lumpur, carefully synchronized with his US tech night shift, daytime sleep windows, golden-hour reunions, Saturday Titiwangsa mountain trip, and Sunday LDS worship (29 Oct – 03 Nov 2026).
       </p>
-
-      <!-- Flight Summary Pill -->
-      <div class="flight-info-pill">
-        <span><i class="fa-solid fa-plane-arrival" style="color: #0284c7;"></i> Inbound: <strong>AirAsia AK585</strong> (MNL 23:05 • 28 Oct ➔ KUL 02:55 AM • 29 Oct)</span>
-        <span>•</span>
-        <span><i class="fa-solid fa-plane-departure" style="color: #ea580c;"></i> Outbound: <strong>AirAsia AK584</strong> (KUL 18:10 ➔ MNL 22:20, Tue 03 Nov)</span>
-        <span>•</span>
-        <span>Booking: <strong>PG8J4A</strong></span>
+      <div class="hero-meta-bar">
+        <span class="hero-meta-item">📅 29 Oct – 03 Nov 2026</span>
+        <span class="hero-meta-item">✈️ Inbound: AK585 (MNL 23:05 ➔ KUL 02:55 AM, 29 Oct)</span>
+        <span class="hero-meta-item">✈️ Outbound: AK584 (KUL 18:10 ➔ MNL 22:20, 03 Nov)</span>
+        <span class="hero-meta-item">🎫 Booking: PG8J4A</span>
+        <span class="hero-meta-item">👥 Host: Daiki (US Tech Night Shift)</span>
+        <span class="hero-meta-item">📍 13 Custom Pin Landmarks</span>
+        <span class="hero-meta-item">🏛️ Sunday LDS Worship (Kuala Lumpur Branch)</span>
       </div>
     </div>
   </header>
 
-  <!-- Master Itinerary Table Section (Table-First Focus) -->
-  <main class="itinerary-container">
-    
+  <!-- QUICK STATS BAR -->
+  <div class="container">
+    <div class="stats-grid">
+      <div class="stat-card">
+        <div class="stat-icon" style="background: #eff6ff; color: #0284c7;">🏙️</div>
+        <div>
+          <div class="stat-val">4 Nights</div>
+          <div class="stat-label">KL Base (Daiki's Flat)</div>
+        </div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon" style="background: #ecfdf5; color: #059669;">🚠</div>
+        <div>
+          <div class="stat-val">1 Day Excursion</div>
+          <div class="stat-label">Genting Highlands (Sat 31 Oct)</div>
+        </div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon" style="background: #fef3c7; color: #b45309;">🏛️</div>
+        <div>
+          <div class="stat-val">1 Sabbath Day</div>
+          <div class="stat-label">LDS Worship &amp; Thean Hou (Sun)</div>
+        </div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon" style="background: #f5f3ff; color: #7c3aed;">💰</div>
+        <div>
+          <div class="stat-val">RM 655</div>
+          <div class="stat-label">Total Shared Budget (~₱8,650 PHP)</div>
+        </div>
+      </div>
+    </div>
+  </div>
 
+  <!-- INTERACTIVE ROUTE MAP SECTION -->
+  <section class="container" id="interactiveMap">
+    <div class="map-container">
+      <div class="section-header" style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 12px;">
+        <div>
+          <h2>🗺️ Interactive Route &amp; Visited Locations</h2>
+          <p>Click any place in the itinerary bar, city dot, or sight star to explore! <i>(Click any pin to inspect live Google Reviews &amp; nearby places)</i></p>
+        </div>
+        <div class="map-layer-toggles">
+          <button type="button" class="layer-btn active" data-layer="roadmap">🗺️ Google Roadmap</button>
+          <button type="button" class="layer-btn" data-layer="terrain">🏔️ Google Terrain</button>
+          <button type="button" class="layer-btn" data-layer="satellite">🛰️ Satellite</button>
+          <button type="button" class="layer-btn temple-toggle-btn active" id="templeToggleBtn" title="Toggle LDS Meetinghouse Marker">🏛️ LDS Meetinghouse</button>
+        </div>
+      </div>
 
-    <!-- Interactive Filter Bar (Chip Carousel on Mobile) -->
-    <div class="itinerary-filter-bar">
-      <button type="button" class="filter-btn active" data-filter="all">All (6 Days)</button>
-      <button type="button" class="filter-btn" data-filter="day1">Day 1 • Oct 29</button>
-      <button type="button" class="filter-btn" data-filter="day2">Day 2 • Oct 30</button>
-      <button type="button" class="filter-btn" data-filter="day3">Day 3 • Oct 31 (Genting with Daiki)</button>
-      <button type="button" class="filter-btn" data-filter="day4">Day 4 • Nov 01 (Church with Daiki)</button>
-      <button type="button" class="filter-btn" data-filter="day5">Day 5 • Nov 02 (Batu Caves)</button>
-      <button type="button" class="filter-btn" data-filter="day6">Day 6 • Nov 03</button>
-      <button type="button" class="filter-btn" data-filter="joint"><i class="fa-solid fa-user-group"></i> With Daiki</button>
-      <button type="button" class="filter-btn" data-filter="solo"><i class="fa-solid fa-person-walking"></i> Solo Morning</button>
-      <button type="button" class="filter-btn" data-filter="worship"><i class="fa-solid fa-church"></i> LDS Worship</button>
+      <!-- Itinerary Route Overview Navigation Bar on Top of Map -->
+      <div class="itinerary-nav-pane">
+        <div class="itinerary-nav-header">
+          <span class="itinerary-nav-label">
+            <span>✈️ Itinerary Route Overview</span>
+            <span class="itinerary-route-badge">6 Days · 17 Must-Visit Pins</span>
+          </span>
+          <span class="itinerary-nav-hint">👆 Tap any stop to focus map</span>
+        </div>
+        <div class="itinerary-nav-bar" id="itineraryNavBar"></div>
+      </div>
+
+      <div id="leafletMap"></div>
+    </div>
+  </section>
+
+  <!-- MASTER ITINERARY TABLE SECTION -->
+  <section class="container itinerary-section" id="itinerarySection">
+    <div class="section-header">
+      <h2>📅 6-Day Master Trip Itinerary</h2>
+      <p>Chronological schedule with bulleted activities, verified transport connections, and itemized cost estimates.</p>
     </div>
 
-    <!-- Responsive Master Table Wrapper -->
-    <div class="table-responsive-wrapper" id="tableWrapper">
-      <table class="master-itinerary-table" id="masterItineraryTable">
+    <!-- Smart Host Synchronization & Logistics Strategy Card -->
+    <div class="luggage-strategy-box">
+      <div class="luggage-strategy-header">
+        <span class="luggage-strategy-title">
+          🤝 Host Synchronization Strategy &amp; Night-Shift Coordination
+        </span>
+        <span class="luggage-inventory-tag">
+          Daiki's Shift: 22:00 – 07:00 · Sleep: 08:00 – 15:30
+        </span>
+      </div>
+      <div class="luggage-strategy-grid">
+        <div class="luggage-strategy-item">
+          <strong>🌙 1. Daiki's Overnight US Tech Shift (22:00 – 07:00)</strong>
+          <p>
+            Daiki works active overnight shifts for a US technology enterprise. On Day 1 arrival (<span class="time-chip">04:15 AM</span>), quiet greeting upon check-in. During work hours, the apartment remains quiet with high-speed fiber internet dedicated to his tasks.
+          </p>
+        </div>
+        <div class="luggage-strategy-item">
+          <strong>🛌 2. Daytime Quiet Rest Window (08:00 – 15:30)</strong>
+          <p>
+            Daiki completes his shifts at <span class="time-chip">07:00 AM</span> and rests during the day. This provides the ideal window for your solo morning cultural walks (Chinatown temples on Friday; Batu Caves on Monday) without disturbing Daiki's essential sleep.
+          </p>
+        </div>
+        <div class="luggage-strategy-item">
+          <strong>🌇 3. Late Afternoon &amp; Evening Reunions (16:00 – 21:30)</strong>
+          <p>
+            Each weekday afternoon, Daiki wakes up refreshed at <span class="time-chip">15:30 – 16:00 PM</span>. You head out together for prime evening activities: <u>KLCC Park</u> golden hour, <u>Lake Symphony</u>, <u>Jalan Alor</u> feast, <u>Pavilion KL</u>, and <u>Saloma Link</u>.
+          </p>
+        </div>
+        <div class="luggage-strategy-item">
+          <strong>🚠 4. Weekend Freedom (Saturday Genting &amp; Sunday Worship)</strong>
+          <p>
+            Daiki is fully off duty for the entire weekend! Saturday is dedicated to an all-day alpine trip up the <u>Awana SkyWay</u> to <u>Chin Swee Caves</u> and <u>Genting Highlands</u>; Sunday is dedicated to joint LDS worship at the <u>Kuala Lumpur Meetinghouse</u>.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Region & Phase Filters -->
+    <div class="filter-tabs">
+      <button type="button" class="filter-btn active" data-filter="all">All Stops (6 Days)</button>
+      <button type="button" class="filter-btn" data-filter="klcc">🏙️ KLCC &amp; Downtown</button>
+      <button type="button" class="filter-btn" data-filter="chinatown">🏮 Chinatown &amp; Heritage</button>
+      <button type="button" class="filter-btn" data-filter="genting">🚠 Genting Highlands</button>
+      <button type="button" class="filter-btn" data-filter="worship">🏛️ Sunday LDS Worship</button>
+      <button type="button" class="filter-btn" data-filter="batucaves">🪔 Batu Caves</button>
+      <button type="button" class="filter-btn" data-filter="transit">✈️ Transit &amp; Flights</button>
+      <button type="button" class="filter-btn" data-filter="joint">👥 Joint with Daiki</button>
+      <button type="button" class="filter-btn" data-filter="solo">🚶 Solo Morning</button>
+    </div>
+
+    <!-- Master Table -->
+    <div class="table-responsive">
+      <table class="master-itinerary-table">
         <thead>
           <tr>
-            <th scope="col" style="width: 15%;">Day &amp; Date</th>
-            <th scope="col" style="width: 23%;">Location</th>
-            <th scope="col" style="width: 48%;">Action / Activity</th>
-            <th scope="col" style="width: 14%;">Cost</th>
+            <th style="width: 14%;">Day</th>
+            <th style="width: 26%;">Location (Exact Place / Store / Landmark)</th>
+            <th style="width: 44%;">Action / Activity</th>
+            <th style="width: 16%;">Cost (Itemized &amp; Daily Total)</th>
           </tr>
         </thead>
         <tbody id="itineraryTableBody">
-          <tr id="row-day1" data-day="day1">
-            <td class="col-day-date">
-              <div class="day-date-wrapper">
-                <div class="day-badge-pill">Day 1</div>
-                <div class="date-label">Thu 29 Oct 2026</div>
-              </div>
-              <div class="phase-pill joint">
-                <i class="fa-solid fa-circle-dot" style="font-size: 0.55rem;"></i>
-                Arrival & Reunion with Daiki
+          <!-- Day 1 -->
+          <tr class="itinerary-table-row" id="row-day1" data-region="klcc">
+            <td>
+              <div class="col-day-wrap">
+                <span class="day-badge">Day 1</span>
+                <span class="day-date-str">Thu, 29 Oct 2026</span>
+                <span class="phase-tag tag-joint">Arrival &amp; Reunion</span>
               </div>
             </td>
-            <td class="col-location">
-              <div class="loc-title"><strong>Kuala Lumpur & KLCC</strong></div>
-              <div class="loc-landmarks">• KLIA Terminal 2<br>• KL Sentral<br>• KLCC Precinct</div>
-              <div class="table-pin-culture-badge badge-modern">🏙️ **Modern Metropolis & Twin Towers** · *Golden Triangle Sunset & Evening Symphony*</div>
+            <td>
+              <div class="loc-title">Kuala Lumpur &amp; KLCC Precinct</div>
+              <ul class="loc-pins-list">
+                <li class="loc-pin-item"><span class="pin-num-badge">#17</span> <strong>KLIA Terminal 2 (AirAsia AK585)</strong></li>
+                <li class="loc-pin-item"><span class="pin-num-badge">🏠</span> <strong>Daiki's Apartment (Host Base)</strong></li>
+                <li class="loc-pin-item"><span class="pin-num-badge">#2</span> <strong>Petronas Twin Towers &amp; Suria KLCC</strong></li>
+                <li class="loc-pin-item"><span class="pin-num-badge">#1</span> <strong>KLCC Park &amp; Lake Symphony</strong></li>
+                <li class="loc-pin-item"><span class="pin-num-badge">#3</span> <strong>Jalan Alor Food Street</strong></li>
+              </ul>
+              <div class="culture-badge-pill">🏙️ Modern Metropolis &amp; Golden Triangle Sunset</div>
             </td>
-            <td class="col-activity">
-              <ul class="activity-bullets">
-              <li>Depart Manila (MNL) on Wednesday 28 Oct at <span class="time-chip">23:05 PM</span> and touch down at <u>KLIA Terminal 2</u> on Thursday 29 Oct at <span class="time-chip">02:55 AM</span> aboard AirAsia Flight AK585.</li>
-              <li>Clear early morning customs and take a direct 24-hour Grab / taxi to <u>Daiki's apartment</u>, arriving by <span class="time-chip">04:15 AM</span>.</li>
-              <li>Quietly greet Daiki during his active overnight US tech shift, take a warm shower, and sleep soundly until late morning.</li>
-              <li>Allow Daiki to complete his shift at <span class="time-chip">07:00 AM</span> and enter his daytime rest window undisturbed.</li>
-              <li>Wake up refreshed at <span class="time-chip">11:00 AM</span>, enjoy a light solo lunch nearby, and rest comfortably at the apartment.</li>
-              <li>Reconnect with Daiki at <span class="time-chip">04:00 PM</span> as Daiki wakes up fully energized, then board the LRT directly to <u>Suria KLCC</u>.</li>
-              <li>Stroll through the landscaped pathways of <u>KLCC Park</u> with Daiki and photograph the towering steel-and-glass facade of the <u>Petronas Twin Towers</u> during golden hour.</li>
-              <li>Watch the musical fountain light display at <u>Lake Symphony</u> with Daiki at <span class="time-chip">08:00 PM</span>.</li>
-              <li>Walk over to <u>Jalan Alor Food Street</u> with Daiki at <span class="time-chip">08:45 PM</span> for an alcohol-free street food feast featuring charcoal-grilled chicken satay, roti canai, and fresh coconut water before Daiki begins his 10:00 PM shift.</li>
+            <td>
+              <ul class="act-bullets-list">
+                <li class="act-bullet-item">Depart Manila (MNL) on Wednesday 28 Oct at <span class="time-chip">23:05 PM</span> and touch down at <u>KLIA Terminal 2</u> on Thursday 29 Oct at <span class="time-chip">02:55 AM</span> aboard AirAsia Flight AK585.</li>
+                <li class="act-bullet-item">Clear early morning customs and take a direct 24-hour Grab / taxi to <u>Daiki's apartment</u>, arriving by <span class="time-chip">04:15 AM</span>.</li>
+                <li class="act-bullet-item">Quietly greet Daiki during his active overnight US tech shift, take a warm shower, and sleep soundly until late morning.</li>
+                <li class="act-bullet-item">Allow Daiki to complete his shift at <span class="time-chip">07:00 AM</span> and enter his daytime rest window undisturbed.</li>
+                <li class="act-bullet-item">Wake up refreshed at <span class="time-chip">11:00 AM</span>, enjoy a light solo lunch nearby, and rest comfortably at the apartment.</li>
+                <li class="act-bullet-item">Reconnect with Daiki at <span class="time-chip">04:00 PM</span> as Daiki wakes up fully energized, then board the LRT directly to <u>Suria KLCC</u>.</li>
+                <li class="act-bullet-item">Stroll through the landscaped pathways of <u>KLCC Park</u> with Daiki and photograph the towering steel-and-glass facade of the <u>Petronas Twin Towers</u> during golden hour.</li>
+                <li class="act-bullet-item">Watch the musical fountain light display at <u>Lake Symphony</u> with Daiki at <span class="time-chip">08:00 PM</span>.</li>
+                <li class="act-bullet-item">Walk over to <u>Jalan Alor Food Street</u> with Daiki at <span class="time-chip">08:45 PM</span> for an alcohol-free street food feast featuring charcoal-grilled chicken satay, roti canai, and fresh coconut water before Daiki begins his 10:00 PM shift.</li>
               </ul>
             </td>
-            <td class="col-cost">
-              <div class="cost-item-list">
-              <div class="cost-row">
-                <span>Airport Grab to Residence (Late Night):</span>
-                <strong>RM 75.00</strong>
+            <td>
+              <div class="cost-box">
+                <div class="cost-row"><span>Airport Grab:</span> <strong>RM 75.00</strong></div>
+                <div class="cost-row"><span>Midday Solo Lunch:</span> <strong>RM 15.00</strong></div>
+                <div class="cost-row"><span>LRT to KLCC:</span> <strong>RM 2.80</strong></div>
+                <div class="cost-row"><span>Jalan Alor Dinner:</span> <strong>RM 35.00</strong></div>
+                <div class="cost-total-line">
+                  <span class="cost-total-val">RM 127.80</span>
+                  <span class="cost-total-php">(₱1,687 PHP)</span>
+                </div>
               </div>
-              <div class="cost-row">
-                <span>Midday Solo Lunch:</span>
-                <strong>RM 15.00</strong>
-              </div>
-              <div class="cost-row">
-                <span>LRT to KLCC:</span>
-                <strong>RM 2.80</strong>
-              </div>
-              <div class="cost-row">
-                <span>Dinner at Jalan Alor with Daiki:</span>
-                <strong>RM 35.00</strong>
-              </div>
-              </div>
-              <div class="cost-daily-total">Total: RM 127.80</div>
             </td>
           </tr>
-          <tr id="row-day2" data-day="day2">
-            <td class="col-day-date">
-              <div class="day-date-wrapper">
-                <div class="day-badge-pill">Day 2</div>
-                <div class="date-label">Fri 30 Oct 2026</div>
-              </div>
-              <div class="phase-pill solo">
-                <i class="fa-solid fa-circle-dot" style="font-size: 0.55rem;"></i>
-                Chinatown (Solo AM / Joint PM)
+
+          <!-- Day 2 -->
+          <tr class="itinerary-table-row" id="row-day2" data-region="chinatown">
+            <td>
+              <div class="col-day-wrap">
+                <span class="day-badge">Day 2</span>
+                <span class="day-date-str">Fri, 30 Oct 2026</span>
+                <span class="phase-tag tag-solo">Solo AM / Joint PM</span>
               </div>
             </td>
-            <td class="col-location">
-              <div class="loc-title"><strong>Chinatown & Colonial District</strong></div>
-              <div class="loc-landmarks">• Petaling Street<br>• Dataran Merdeka<br>• Bukit Bintang</div>
-              <div class="table-pin-culture-badge badge-heritage">🏮 **Old Malaya & Heritage Enclaves** · *Pre-War Shophouses, Guild Temples & River of Life*</div>
+            <td>
+              <div class="loc-title">Chinatown &amp; Colonial Heritage District</div>
+              <ul class="loc-pins-list">
+                <li class="loc-pin-item"><span class="pin-num-badge">#4</span> <strong>Kwai Chai Hong 1960s Murals</strong></li>
+                <li class="loc-pin-item"><span class="pin-num-badge">#5</span> <strong>Guan Di Temple Chinatown (1888)</strong></li>
+                <li class="loc-pin-item"><span class="pin-num-badge">#6</span> <strong>Sri Maha Mariamman Temple (1873)</strong></li>
+                <li class="loc-pin-item"><span class="pin-num-badge">#7</span> <strong>Petaling Street Market Bazaar</strong></li>
+                <li class="loc-pin-item"><span class="pin-num-badge">#8</span> <strong>Bangunan Sultan Abdul Samad &amp; Merdeka</strong></li>
+                <li class="loc-pin-item"><span class="pin-num-badge">🛍️</span> <strong>Pavilion Kuala Lumpur (Joint PM)</strong></li>
+              </ul>
+              <div class="culture-badge-pill">🏮 Old Malaya Heritage, Guild Temples &amp; River of Life</div>
             </td>
-            <td class="col-activity">
-              <ul class="activity-bullets">
-              <li>Quietly exit the apartment at <span class="time-chip">08:30 AM</span> so Daiki can sleep soundly through the morning.</li>
-              <li>Arrive at <u>Kwai Chai Hong</u> at <span class="time-chip">09:00 AM</span> to photograph the restored 1960s shophouse murals and historic red timber bridge in serene morning light.</li>
-              <li>Visit the 1888 Taoist temple <u>Guan Di Temple Chinatown Tun H.S Lee</u> at <span class="time-chip">09:45 AM</span> and admire the historic statues of Guan Sheng Di Jun and intricate ceramic roof carvings.</li>
-              <li>Walk directly across the street at <span class="time-chip">10:15 AM</span> to inspect the 75-foot Raja Gopuram tower of <u>Sri Maha Mariamman Temple</u>, the oldest functioning Hindu temple in Kuala Lumpur.</li>
-              <li>Browse traditional tea shops, dried fruit stalls, and woven goods along pedestrianized <u>Petaling Street Market</u> from <span class="time-chip">10:45 AM</span>.</li>
-              <li>Walk across the River of Life pedestrian bridge at <span class="time-chip">11:45 AM</span> to marvel at the 41-meter copper-domed clock tower of <u>Bangunan Sultan Abdul Samad</u>.</li>
-              <li>Step onto the sweeping manicured lawn of <u>Merdeka Square</u> at <span class="time-chip">12:15 PM</span> where the Malayan flag was first raised in 1957.</li>
-              <li>Enjoy a lunch of claypot chicken rice and fresh calamansi juice at a sheltered heritage cafe at <span class="time-chip">01:00 PM</span>.</li>
-              <li>Return to Daiki's flat by <span class="time-chip">03:00 PM</span> for afternoon refreshments as Daiki completes his daytime sleep cycle.</li>
-              <li>Head out together with Daiki at <span class="time-chip">04:30 PM</span> to explore <u>Pavilion Kuala Lumpur</u> and share dinner together by <span class="time-chip">07:30 PM</span> before his final work shift of the week.</li>
+            <td>
+              <ul class="act-bullets-list">
+                <li class="act-bullet-item">Quietly exit the apartment at <span class="time-chip">08:30 AM</span> so Daiki can sleep soundly through the morning.</li>
+                <li class="act-bullet-item">Arrive at <u>Kwai Chai Hong</u> at <span class="time-chip">09:00 AM</span> to photograph the restored 1960s shophouse murals and historic red timber bridge in serene morning light.</li>
+                <li class="act-bullet-item">Visit the 1888 Taoist temple <u>Guan Di Temple Chinatown Tun H.S Lee</u> at <span class="time-chip">09:45 AM</span> and admire the historic statues of Guan Sheng Di Jun and intricate ceramic roof carvings.</li>
+                <li class="act-bullet-item">Walk directly across the street at <span class="time-chip">10:15 AM</span> to inspect the 75-foot Raja Gopuram tower of <u>Sri Maha Mariamman Temple</u>, the oldest functioning Hindu temple in Kuala Lumpur.</li>
+                <li class="act-bullet-item">Browse traditional tea shops, dried fruit stalls, and woven goods along pedestrianized <u>Petaling Street Market</u> from <span class="time-chip">10:45 AM</span>.</li>
+                <li class="act-bullet-item">Walk across the River of Life pedestrian bridge at <span class="time-chip">11:45 AM</span> to marvel at the 41-meter copper-domed clock tower of <u>Bangunan Sultan Abdul Samad</u>.</li>
+                <li class="act-bullet-item">Step onto the sweeping manicured lawn of <u>Merdeka Square</u> at <span class="time-chip">12:15 PM</span> where the Malayan flag was first raised in 1957.</li>
+                <li class="act-bullet-item">Enjoy a lunch of claypot chicken rice and fresh calamansi juice at a sheltered heritage cafe at <span class="time-chip">01:00 PM</span>.</li>
+                <li class="act-bullet-item">Return to Daiki's flat by <span class="time-chip">03:00 PM</span> for afternoon refreshments as Daiki completes his daytime sleep cycle.</li>
+                <li class="act-bullet-item">Head out together with Daiki at <span class="time-chip">04:30 PM</span> to explore <u>Pavilion Kuala Lumpur</u> and share dinner together by <span class="time-chip">07:30 PM</span> before his final work shift of the week.</li>
               </ul>
             </td>
-            <td class="col-cost">
-              <div class="cost-item-list">
-              <div class="cost-row">
-                <span>RapidKL Subway Transit:</span>
-                <strong>RM 5.60</strong>
+            <td>
+              <div class="cost-box">
+                <div class="cost-row"><span>RapidKL Transit:</span> <strong>RM 5.60</strong></div>
+                <div class="cost-row"><span>Chinatown Snacks:</span> <strong>RM 12.00</strong></div>
+                <div class="cost-row"><span>Heritage Lunch:</span> <strong>RM 18.00</strong></div>
+                <div class="cost-row"><span>Refreshments:</span> <strong>RM 10.00</strong></div>
+                <div class="cost-row"><span>Dinner with Daiki:</span> <strong>RM 40.00</strong></div>
+                <div class="cost-total-line">
+                  <span class="cost-total-val">RM 85.60</span>
+                  <span class="cost-total-php">(₱1,130 PHP)</span>
+                </div>
               </div>
-              <div class="cost-row">
-                <span>Chinatown Snacks & Soy Milk:</span>
-                <strong>RM 12.00</strong>
-              </div>
-              <div class="cost-row">
-                <span>Heritage Cafe Lunch:</span>
-                <strong>RM 18.00</strong>
-              </div>
-              <div class="cost-row">
-                <span>Refreshments & Fruit:</span>
-                <strong>RM 10.00</strong>
-              </div>
-              <div class="cost-row">
-                <span>Evening Shared Dinner with Daiki:</span>
-                <strong>RM 40.00</strong>
-              </div>
-              </div>
-              <div class="cost-daily-total">Total: RM 85.60</div>
             </td>
           </tr>
-          <tr id="row-day3" data-day="day3">
-            <td class="col-day-date">
-              <div class="day-date-wrapper">
-                <div class="day-badge-pill">Day 3</div>
-                <div class="date-label">Sat 31 Oct 2026</div>
-              </div>
-              <div class="phase-pill joint">
-                <i class="fa-solid fa-circle-dot" style="font-size: 0.55rem;"></i>
-                Full-Day Mountain Trip with Daiki
+
+          <!-- Day 3 -->
+          <tr class="itinerary-table-row" id="row-day3" data-region="genting">
+            <td>
+              <div class="col-day-wrap">
+                <span class="day-badge">Day 3</span>
+                <span class="day-date-str">Sat, 31 Oct 2026</span>
+                <span class="phase-tag tag-joint">Full-Day Mountain Trip</span>
               </div>
             </td>
-            <td class="col-location">
-              <div class="loc-title"><strong>Titiwangsa Mountains (Genting)</strong></div>
-              <div class="loc-landmarks">• Awana SkyWay<br>• Chin Swee Caves<br>• Genting Highlands</div>
-              <div class="table-pin-culture-badge badge-highland">🚠 **Highland Scenic Escape** · *Breezy Mountain Gondola & Cloud Mist Pagoda*</div>
+            <td>
+              <div class="loc-title">Titiwangsa Mountains (Genting Highlands)</div>
+              <ul class="loc-pins-list">
+                <li class="loc-pin-item"><span class="pin-num-badge">🚌</span> <strong>KL Sentral Express Coach Terminal</strong></li>
+                <li class="loc-pin-item"><span class="pin-num-badge">🚠</span> <strong>Awana SkyWay Gondola Cable Car</strong></li>
+                <li class="loc-pin-item"><span class="pin-num-badge">#10</span> <strong>Chin Swee Caves Temple &amp; Pagoda</strong></li>
+                <li class="loc-pin-item"><span class="pin-num-badge">#11</span> <strong>SkyAvenue &amp; Genting Peak Promenade</strong></li>
+                <li class="loc-pin-item"><span class="pin-num-badge">🎡</span> <strong>Genting SkyWorlds Cloud Walk</strong></li>
+              </ul>
+              <div class="culture-badge-pill">🚠 Highland Scenic Escape · Breezy Mountain Gondola &amp; Cloud Mist Pagoda</div>
             </td>
-            <td class="col-activity">
-              <ul class="activity-bullets">
-              <li>Enjoy a relaxed morning departure together with Daiki at <span class="time-chip">08:30 AM</span> with Daiki on his first weekend morning completely free of work duties.</li>
-              <li>Board the express coach with Daiki from <u>KL Sentral</u> at <span class="time-chip">09:00 AM</span> heading north toward the mountain foothills of Pahang.</li>
-              <li>Arrive at <u>Awana Transportation Hub</u> at <span class="time-chip">10:00 AM</span> and board the <u>Awana SkyWay</u> cable car with Daiki for a panoramic ascent through lush 130-million-year-old rainforest canopy.</li>
-              <li>Disembark at the midway station with Daiki at <span class="time-chip">10:30 AM</span> to explore the multi-tiered <u>Chin Swee Caves Temple</u> and take in dramatic cliffside vistas of the Titiwangsa mountains.</li>
-              <li>Re-board the gondola with Daiki at <span class="time-chip">12:00 PM</span> to reach the peak station at <u>Genting Highlands</u>.</li>
-              <li>Walk together through the breezy mountain air (refreshing 18°C to 22°C) and explore the entertainment avenues and sky gardens inside <u>SkyAvenue</u>.</li>
-              <li>Share lunch with Daiki at an artisan noodle eatery at <span class="time-chip">01:00 PM</span>.</li>
-              <li>Stroll the mountain promenade and view the outdoor roller coasters and cloud landscapes at <u>Genting SkyWorlds</u> from <span class="time-chip">02:30 PM</span>.</li>
-              <li>Descend on the return cable car with Daiki at <span class="time-chip">04:30 PM</span> and catch the return transport back into Kuala Lumpur by <span class="time-chip">06:30 PM</span>.</li>
-              <li>Savor a celebratory weekend dinner with Daiki in the city, enjoying leisurely conversation without any evening shift alarms.</li>
+            <td>
+              <ul class="act-bullets-list">
+                <li class="act-bullet-item">Enjoy a relaxed morning departure together with Daiki at <span class="time-chip">08:30 AM</span> with Daiki on his first weekend morning completely free of work duties.</li>
+                <li class="act-bullet-item">Board the express coach with Daiki from <u>KL Sentral</u> at <span class="time-chip">09:00 AM</span> heading north toward the mountain foothills of Pahang.</li>
+                <li class="act-bullet-item">Arrive at <u>Awana Transportation Hub</u> at <span class="time-chip">10:00 AM</span> and board the <u>Awana SkyWay</u> cable car with Daiki for a panoramic ascent through lush 130-million-year-old rainforest canopy.</li>
+                <li class="act-bullet-item">Disembark at the midway station with Daiki at <span class="time-chip">10:30 AM</span> to explore the multi-tiered <u>Chin Swee Caves Temple</u> and take in dramatic cliffside vistas of the Titiwangsa mountains.</li>
+                <li class="act-bullet-item">Re-board the gondola with Daiki at <span class="time-chip">12:00 PM</span> to reach the peak station at <u>Genting Highlands</u>.</li>
+                <li class="act-bullet-item">Walk together through the breezy mountain air (refreshing 18°C to 22°C) and explore the entertainment avenues and sky gardens inside <u>SkyAvenue</u>.</li>
+                <li class="act-bullet-item">Share lunch with Daiki at an artisan noodle eatery at <span class="time-chip">01:00 PM</span>.</li>
+                <li class="act-bullet-item">Stroll the mountain promenade and view the outdoor roller coasters and cloud landscapes at <u>Genting SkyWorlds</u> from <span class="time-chip">02:30 PM</span>.</li>
+                <li class="act-bullet-item">Descend on the return cable car with Daiki at <span class="time-chip">04:30 PM</span> and catch the return transport back into Kuala Lumpur by <span class="time-chip">06:30 PM</span>.</li>
+                <li class="act-bullet-item">Savor a celebratory weekend dinner with Daiki in the city, enjoying leisurely conversation without any evening shift alarms.</li>
               </ul>
             </td>
-            <td class="col-cost">
-              <div class="cost-item-list">
-              <div class="cost-row">
-                <span>KL Sentral to Awana Bus (Return):</span>
-                <strong>RM 20.00</strong>
+            <td>
+              <div class="cost-box">
+                <div class="cost-row"><span>KL ⇄ Awana Coach:</span> <strong>RM 20.00</strong></div>
+                <div class="cost-row"><span>Awana SkyWay Gondola:</span> <strong>RM 18.00</strong></div>
+                <div class="cost-row"><span>Chin Swee Entry:</span> <span class="cost-free">Free</span></div>
+                <div class="cost-row"><span>Mountain Lunch:</span> <strong>RM 45.00</strong></div>
+                <div class="cost-row"><span>Weekend Dinner:</span> <strong>RM 40.00</strong></div>
+                <div class="cost-total-line">
+                  <span class="cost-total-val">RM 123.00</span>
+                  <span class="cost-total-php">(₱1,624 PHP)</span>
+                </div>
               </div>
-              <div class="cost-row">
-                <span>Awana SkyWay Gondola Return:</span>
-                <strong>RM 18.00</strong>
-              </div>
-              <div class="cost-row">
-                <span>Chin Swee Temple Entry:</span>
-                <span class="cost-free">Free</span>
-              </div>
-              <div class="cost-row">
-                <span>Mountain Lunch with Daiki:</span>
-                <strong>RM 45.00</strong>
-              </div>
-              <div class="cost-row">
-                <span>Weekend Dinner with Daiki:</span>
-                <strong>RM 40.00</strong>
-              </div>
-              </div>
-              <div class="cost-daily-total">Total: RM 123.00</div>
             </td>
           </tr>
-          <tr id="row-day4" data-day="day4">
-            <td class="col-day-date">
-              <div class="day-date-wrapper">
-                <div class="day-badge-pill">Day 4</div>
-                <div class="date-label">Sun 01 Nov 2026</div>
-              </div>
-              <div class="phase-pill worship">
-                <i class="fa-solid fa-circle-dot" style="font-size: 0.55rem;"></i>
-                Sunday Worship with Daiki
+
+          <!-- Day 4 -->
+          <tr class="itinerary-table-row" id="row-day4" data-region="worship">
+            <td>
+              <div class="col-day-wrap">
+                <span class="day-badge">Day 4</span>
+                <span class="day-date-str">Sun, 01 Nov 2026</span>
+                <span class="phase-tag tag-worship">Sunday LDS Worship</span>
               </div>
             </td>
-            <td class="col-location">
-              <div class="loc-title"><strong>Taman U Thant & Robson Heights</strong></div>
-              <div class="loc-landmarks">• Ampang Hilir<br>• Robson Heights<br>• Little India</div>
-              <div class="table-pin-culture-badge badge-temple">✨ **Sacred LDS Sunday Worship** · *Kuala Lumpur Branch Sabbath Service & Six-Tiered Shrine*</div>
+            <td>
+              <div class="loc-title">Taman U Thant &amp; Robson Heights</div>
+              <ul class="loc-pins-list">
+                <li class="loc-pin-item"><span class="pin-num-badge">#12</span> <strong>Kuala Lumpur Meetinghouse (LDS Church)</strong></li>
+                <li class="loc-pin-item"><span class="pin-num-badge">🍽️</span> <strong>Ampang Hilir Fellowship Lunch</strong></li>
+                <li class="loc-pin-item"><span class="pin-num-badge">#13</span> <strong>Thean Hou Temple (Robson Heights)</strong></li>
+                <li class="loc-pin-item"><span class="pin-num-badge">🏮</span> <strong>Little India / Brickfields Evening</strong></li>
+              </ul>
+              <div class="culture-badge-pill">✨ Sacred LDS Sunday Worship · Kuala Lumpur Branch Sabbath Service &amp; Six-Tiered Shrine</div>
             </td>
-            <td class="col-activity">
-              <ul class="activity-bullets">
-              <li>Dress in Sunday attire and depart together with Daiki at <span class="time-chip">09:15 AM</span> for the embassy precinct of Ampang Hilir.</li>
-              <li>Arrive with Daiki at the <u>Kuala Lumpur Meetinghouse</u> (No. 4 Jalan Ampang Tengah, Taman U Thant) by <span class="time-chip">09:45 AM</span> for personal reverent preparation.</li>
-              <li>Participate with Daiki in the 2-hour Sunday worship block (Sacrament Meeting followed by Sunday School / Priesthood / Relief Society) from <span class="time-chip">10:00 AM</span> to <span class="time-chip">12:00 PM</span>.</li>
-              <li>Meet local members, international expats, and friends with Daiki for fellowship in the foyer following the conclusion of meetings at <span class="time-chip">12:15 PM</span>.</li>
-              <li>Travel together with Daiki to a tranquil restaurant in Ampang for a peaceful Sabbath fellowship lunch at <span class="time-chip">01:00 PM</span>.</li>
-              <li>Take an afternoon ride with Daiki up to the crest of Robson Heights to tour the six-tiered Chinese sanctuary <u>Thean Hou Temple</u> at <span class="time-chip">03:00 PM</span>.</li>
-              <li>Admire the syncretic blend of Buddhism, Taoism, and Confucianism, walk beneath hundreds of traditional red hanging lanterns, and take in panoramic skyline views of Kuala Lumpur.</li>
-              <li>Return home with Daiki by <span class="time-chip">05:30 PM</span> for a relaxed, restorative evening together sharing memories and an early quiet dinner.</li>
+            <td>
+              <ul class="act-bullets-list">
+                <li class="act-bullet-item">Dress in Sunday attire and depart together with Daiki at <span class="time-chip">09:15 AM</span> for the embassy precinct of Ampang Hilir.</li>
+                <li class="act-bullet-item">Arrive with Daiki at the <u>Kuala Lumpur Meetinghouse</u> (No. 4 Jalan Ampang Tengah, Taman U Thant) by <span class="time-chip">09:45 AM</span> for personal reverent preparation.</li>
+                <li class="act-bullet-item">Participate with Daiki in the 2-hour Sunday worship block (Sacrament Meeting followed by Sunday School / Priesthood / Relief Society) from <span class="time-chip">10:00 AM</span> to <span class="time-chip">12:00 PM</span>.</li>
+                <li class="act-bullet-item">Meet local members, international expats, and friends with Daiki for fellowship in the foyer following the conclusion of meetings at <span class="time-chip">12:15 PM</span>.</li>
+                <li class="act-bullet-item">Travel together with Daiki to a tranquil restaurant in Ampang for a peaceful Sabbath fellowship lunch at <span class="time-chip">01:00 PM</span>.</li>
+                <li class="act-bullet-item">Take an afternoon ride with Daiki up to the crest of Robson Heights to tour the six-tiered Chinese sanctuary <u>Thean Hou Temple</u> at <span class="time-chip">03:00 PM</span>.</li>
+                <li class="act-bullet-item">Admire the syncretic blend of Buddhism, Taoism, and Confucianism, walk beneath hundreds of traditional red hanging lanterns, and take in panoramic skyline views of Kuala Lumpur.</li>
+                <li class="act-bullet-item">Return home with Daiki by <span class="time-chip">05:30 PM</span> for a relaxed, restorative evening together sharing memories and an early quiet dinner.</li>
               </ul>
             </td>
-            <td class="col-cost">
-              <div class="cost-item-list">
-              <div class="cost-row">
-                <span>Grab to Church & Thean Hou:</span>
-                <strong>RM 35.00</strong>
+            <td>
+              <div class="cost-box">
+                <div class="cost-row"><span>Grab to Church &amp; Temple:</span> <strong>RM 35.00</strong></div>
+                <div class="cost-row"><span>Fellowship Lunch:</span> <strong>RM 35.00</strong></div>
+                <div class="cost-row"><span>Thean Hou Entry:</span> <span class="cost-free">Free</span></div>
+                <div class="cost-row"><span>Evening Sabbath Meal:</span> <strong>RM 35.00</strong></div>
+                <div class="cost-total-line">
+                  <span class="cost-total-val">RM 105.00</span>
+                  <span class="cost-total-php">(₱1,386 PHP)</span>
+                </div>
               </div>
-              <div class="cost-row">
-                <span>Sunday Fellowship Lunch with Daiki:</span>
-                <strong>RM 35.00</strong>
-              </div>
-              <div class="cost-row">
-                <span>Thean Hou Temple Entry:</span>
-                <span class="cost-free">Free</span>
-              </div>
-              <div class="cost-row">
-                <span>Quiet Evening Sabbath Meal:</span>
-                <strong>RM 35.00</strong>
-              </div>
-              </div>
-              <div class="cost-daily-total">Total: RM 105.00</div>
             </td>
           </tr>
-          <tr id="row-day5" data-day="day5">
-            <td class="col-day-date">
-              <div class="day-date-wrapper">
-                <div class="day-badge-pill">Day 5</div>
-                <div class="date-label">Mon 02 Nov 2026</div>
-              </div>
-              <div class="phase-pill solo">
-                <i class="fa-solid fa-circle-dot" style="font-size: 0.55rem;"></i>
-                Batu Caves (Solo AM / Joint PM)
+
+          <!-- Day 5 -->
+          <tr class="itinerary-table-row" id="row-day5" data-region="batucaves">
+            <td>
+              <div class="col-day-wrap">
+                <span class="day-badge">Day 5</span>
+                <span class="day-date-str">Mon, 02 Nov 2026</span>
+                <span class="phase-tag tag-solo">Solo AM / Joint PM</span>
               </div>
             </td>
-            <td class="col-location">
-              <div class="loc-title"><strong>Gombak & Modern KL</strong></div>
-              <div class="loc-landmarks">• Batu Caves<br>• Central Market<br>• Saloma Link</div>
-              <div class="table-pin-culture-badge badge-cave">🪔 **Spiritual & Geological Wonder** · *Ancient Limestone Caverns & 272 Rainbow Steps*</div>
+            <td>
+              <div class="loc-title">Gombak Limestone Caves &amp; City Center</div>
+              <ul class="loc-pins-list">
+                <li class="loc-pin-item"><span class="pin-num-badge">🚆</span> <strong>KTM Komuter from KL Sentral</strong></li>
+                <li class="loc-pin-item"><span class="pin-num-badge">#14</span> <strong>Lord Murugan &amp; 272 Rainbow Steps</strong></li>
+                <li class="loc-pin-item"><span class="pin-num-badge">#15</span> <strong>Ramayana Cave - Suyambu Lingam</strong></li>
+                <li class="loc-pin-item"><span class="pin-num-badge">🎨</span> <strong>Central Market (Pasar Seni)</strong></li>
+                <li class="loc-pin-item"><span class="pin-num-badge">#16</span> <strong>Saloma Link Footbridge (Joint PM)</strong></li>
+              </ul>
+              <div class="culture-badge-pill">🪔 Spiritual &amp; Geological Wonder · Ancient Limestone Caverns &amp; 272 Rainbow Steps</div>
             </td>
-            <td class="col-activity">
-              <ul class="activity-bullets">
-              <li>Step out quietly at <span class="time-chip">07:30 AM</span> while Daiki begins his Monday daytime sleep cycle following his Sunday night shift.</li>
-              <li>Board the KTM Komuter train at <u>KL Sentral</u> at <span class="time-chip">08:00 AM</span> heading straight to <u>Batu Caves Station</u>.</li>
-              <li>Arrive at <u>Batu Caves</u> by <span class="time-chip">08:45 AM</span> to beat the tropical midday heat and gaze upon the 140-foot golden statue of Lord Murugan.</li>
-              <li>Ascend the iconic 272 rainbow-colored limestone steps to explore the grand interior cavern of <u>Temple Cave (Cathedral Cave)</u>.</li>
-              <li>Descend to the foot of the hill at <span class="time-chip">10:15 AM</span> to enter <u>Ramayana Cave - Suyambu Lingam</u>, marveling at the vibrant epic dioramas and naturally formed stalactite lingam.</li>
-              <li>Rehydrate with fresh green coconut water and savor a South Indian thali lunch near the temple entrance at <span class="time-chip">11:45 AM</span>.</li>
-              <li>Take the KTM Komuter back to the city center and browse Malaysian pewter, wood carvings, and batik prints at <u>Central Market (Pasar Seni)</u> from <span class="time-chip">01:30 PM</span>.</li>
-              <li>Return to the flat by <span class="time-chip">03:30 PM</span> as Daiki wakes up.</li>
-              <li>Spend the final full evening together with Daiki walking the illuminated pedestrian bridge <u>Saloma Link</u> at <span class="time-chip">06:30 PM</span> for glittering skyline views, followed by a special farewell dinner with Daiki at <span class="time-chip">07:30 PM</span>.</li>
+            <td>
+              <ul class="act-bullets-list">
+                <li class="act-bullet-item">Step out quietly at <span class="time-chip">07:30 AM</span> while Daiki begins his Monday daytime sleep cycle following his Sunday night shift.</li>
+                <li class="act-bullet-item">Board the KTM Komuter train at <u>KL Sentral</u> at <span class="time-chip">08:00 AM</span> heading straight to <u>Batu Caves Station</u>.</li>
+                <li class="act-bullet-item">Arrive at <u>Batu Caves</u> by <span class="time-chip">08:45 AM</span> to beat the tropical midday heat and gaze upon the 140-foot golden statue of Lord Murugan.</li>
+                <li class="act-bullet-item">Ascend the iconic 272 rainbow-colored limestone steps to explore the grand interior cavern of <u>Temple Cave (Cathedral Cave)</u>.</li>
+                <li class="act-bullet-item">Descend to the foot of the hill at <span class="time-chip">10:15 AM</span> to enter <u>Ramayana Cave - Suyambu Lingam</u>, marveling at the vibrant epic dioramas and naturally formed stalactite lingam.</li>
+                <li class="act-bullet-item">Rehydrate with fresh green coconut water and savor a South Indian thali lunch near the temple entrance at <span class="time-chip">11:45 AM</span>.</li>
+                <li class="act-bullet-item">Take the KTM Komuter back to the city center and browse Malaysian pewter, wood carvings, and batik prints at <u>Central Market (Pasar Seni)</u> from <span class="time-chip">01:30 PM</span>.</li>
+                <li class="act-bullet-item">Return to the flat by <span class="time-chip">03:30 PM</span> as Daiki wakes up.</li>
+                <li class="act-bullet-item">Spend the final full evening together with Daiki walking the illuminated pedestrian bridge <u>Saloma Link</u> at <span class="time-chip">06:30 PM</span> for glittering skyline views, followed by a special farewell dinner with Daiki at <span class="time-chip">07:30 PM</span>.</li>
               </ul>
             </td>
-            <td class="col-cost">
-              <div class="cost-item-list">
-              <div class="cost-row">
-                <span>KTM Komuter Return Train:</span>
-                <strong>RM 5.20</strong>
+            <td>
+              <div class="cost-box">
+                <div class="cost-row"><span>KTM Komuter Return:</span> <strong>RM 5.20</strong></div>
+                <div class="cost-row"><span>Main Cave Entry:</span> <span class="cost-free">Free</span></div>
+                <div class="cost-row"><span>Ramayana Cave:</span> <strong>RM 5.00</strong></div>
+                <div class="cost-row"><span>Indian Thali Lunch:</span> <strong>RM 20.00</strong></div>
+                <div class="cost-row"><span>LRT / Monorail:</span> <strong>RM 4.00</strong></div>
+                <div class="cost-row"><span>Farewell Dinner:</span> <strong>RM 55.00</strong></div>
+                <div class="cost-total-line">
+                  <span class="cost-total-val">RM 89.20</span>
+                  <span class="cost-total-php">(₱1,177 PHP)</span>
+                </div>
               </div>
-              <div class="cost-row">
-                <span>Batu Caves Main Cave Entry:</span>
-                <span class="cost-free">Free</span>
-              </div>
-              <div class="cost-row">
-                <span>Ramayana Cave Admission:</span>
-                <strong>RM 5.00</strong>
-              </div>
-              <div class="cost-row">
-                <span>Coconut Water & Indian Thali:</span>
-                <strong>RM 20.00</strong>
-              </div>
-              <div class="cost-row">
-                <span>Monorail / LRT Transit:</span>
-                <strong>RM 4.00</strong>
-              </div>
-              <div class="cost-row">
-                <span>Farewell Feast with Daiki:</span>
-                <strong>RM 55.00</strong>
-              </div>
-              </div>
-              <div class="cost-daily-total">Total: RM 89.20</div>
             </td>
           </tr>
-          <tr id="row-day6" data-day="day6">
-            <td class="col-day-date">
-              <div class="day-date-wrapper">
-                <div class="day-badge-pill">Day 6</div>
-                <div class="date-label">Tue 03 Nov 2026</div>
-              </div>
-              <div class="phase-pill joint">
-                <i class="fa-solid fa-circle-dot" style="font-size: 0.55rem;"></i>
-                Farewell & Departure
+
+          <!-- Day 6 -->
+          <tr class="itinerary-table-row" id="row-day6" data-region="transit">
+            <td>
+              <div class="col-day-wrap">
+                <span class="day-badge">Day 6</span>
+                <span class="day-date-str">Tue, 03 Nov 2026</span>
+                <span class="phase-tag tag-joint">Farewell &amp; Departure</span>
               </div>
             </td>
-            <td class="col-location">
-              <div class="loc-title"><strong>KL City Center & Sepang</strong></div>
-              <div class="loc-landmarks">• KL Sentral<br>• KLIA Terminal 2<br>• Manila (MNL)</div>
-              <div class="table-pin-culture-badge badge-transit">✈️ **Homeward Transit** · *AirAsia Flight AK584 Departure to Manila*</div>
+            <td>
+              <div class="loc-title">KL City Center &amp; Sepang Gateway</div>
+              <ul class="loc-pins-list">
+                <li class="loc-pin-item"><span class="pin-num-badge">☕</span> <strong>Farewell Breakfast with Daiki</strong></li>
+                <li class="loc-pin-item"><span class="pin-num-badge">🛍️</span> <strong>KL Sentral &amp; Nu Sentral Mall</strong></li>
+                <li class="loc-pin-item"><span class="pin-num-badge">🚄</span> <strong>KLIA Ekspres Non-Stop Train</strong></li>
+                <li class="loc-pin-item"><span class="pin-num-badge">#17</span> <strong>KLIA Terminal 2 (AirAsia AK584)</strong></li>
+                <li class="loc-pin-item"><span class="pin-num-badge">🇵🇭</span> <strong>Manila (MNL) Arrival 22:20 PM</strong></li>
+              </ul>
+              <div class="culture-badge-pill">✈️ Homeward Transit · AirAsia Flight AK584 Departure to Manila</div>
             </td>
-            <td class="col-activity">
-              <ul class="activity-bullets">
-              <li>Greet Daiki as his final shift finishes at <span class="time-chip">07:00 AM</span> and share a heartfelt farewell breakfast together with Daiki from <span class="time-chip">07:30 AM</span> to <span class="time-chip">08:30 AM</span>.</li>
-              <li>Allow Daiki to sleep peacefully from <span class="time-chip">08:30 AM</span> while you finish packing your bags.</li>
-              <li>Check out quietly at <span class="time-chip">11:30 AM</span>, leaving your luggage with Daiki or taking it to <u>KL Sentral</u>.</li>
-              <li>Spend a relaxed midday browsing Malaysian souvenirs (Beryl's chocolates, pewter, white coffee) and enjoying lunch at <u>Nu Sentral</u> from <span class="time-chip">12:00 PM</span> to <span class="time-chip">01:45 PM</span>.</li>
-              <li>Say your final warm goodbyes to Daiki before heading into transit.</li>
-              <li>Board the <u>KLIA Ekspres</u> from <u>KL Sentral</u> at <span class="time-chip">02:45 PM</span>, arriving at <u>KLIA Terminal 2</u> non-stop by <span class="time-chip">03:15 PM</span>.</li>
-              <li>Check in bags, clear border control with plenty of cushion time, and enjoy a sit-down pre-flight meal at <u>Gateway@klia2</u> by <span class="time-chip">04:15 PM</span>.</li>
-              <li>Head to your departure gate for boarding at <span class="time-chip">17:30 PM</span> aboard revised AirAsia Flight AK584 for your confirmed <span class="time-chip">18:10 PM</span> departure, touching down in Manila at <span class="time-chip">22:20 PM</span>.</li>
+            <td>
+              <ul class="act-bullets-list">
+                <li class="act-bullet-item">Greet Daiki as his final shift finishes at <span class="time-chip">07:00 AM</span> and share a heartfelt farewell breakfast together with Daiki from <span class="time-chip">07:30 AM</span> to <span class="time-chip">08:30 AM</span>.</li>
+                <li class="act-bullet-item">Allow Daiki to sleep peacefully from <span class="time-chip">08:30 AM</span> while you finish packing your bags.</li>
+                <li class="act-bullet-item">Check out quietly at <span class="time-chip">11:30 AM</span>, leaving your luggage with Daiki or taking it to <u>KL Sentral</u>.</li>
+                <li class="act-bullet-item">Spend a relaxed midday browsing Malaysian souvenirs (Beryl's chocolates, pewter, white coffee) and enjoying lunch at <u>Nu Sentral</u> from <span class="time-chip">12:00 PM</span> to <span class="time-chip">01:45 PM</span>.</li>
+                <li class="act-bullet-item">Say your final warm goodbyes to Daiki before heading into transit.</li>
+                <li class="act-bullet-item">Board the <u>KLIA Ekspres</u> from <u>KL Sentral</u> at <span class="time-chip">02:45 PM</span>, arriving at <u>KLIA Terminal 2</u> non-stop by <span class="time-chip">03:15 PM</span>.</li>
+                <li class="act-bullet-item">Check in bags, clear border control with plenty of cushion time, and enjoy a sit-down pre-flight meal at <u>Gateway@klia2</u> by <span class="time-chip">04:15 PM</span>.</li>
+                <li class="act-bullet-item">Head to your departure gate for boarding at <span class="time-chip">17:30 PM</span> aboard revised AirAsia Flight AK584 for your confirmed <span class="time-chip">18:10 PM</span> departure, touching down in Manila at <span class="time-chip">22:20 PM</span>.</li>
               </ul>
             </td>
-            <td class="col-cost">
-              <div class="cost-item-list">
-              <div class="cost-row">
-                <span>Farewell Breakfast with Daiki:</span>
-                <strong>RM 15.00</strong>
+            <td>
+              <div class="cost-box">
+                <div class="cost-row"><span>Farewell Breakfast:</span> <strong>RM 15.00</strong></div>
+                <div class="cost-row"><span>Lunch &amp; Refreshments:</span> <strong>RM 25.00</strong></div>
+                <div class="cost-row"><span>KLIA Ekspres:</span> <strong>RM 55.00</strong></div>
+                <div class="cost-row"><span>Airport Meal:</span> <strong>RM 30.00</strong></div>
+                <div class="cost-total-line">
+                  <span class="cost-total-val">RM 125.00</span>
+                  <span class="cost-total-php">(₱1,650 PHP)</span>
+                </div>
               </div>
-              <div class="cost-row">
-                <span>Lunch & Cafe Refreshments:</span>
-                <strong>RM 25.00</strong>
-              </div>
-              <div class="cost-row">
-                <span>KLIA Ekspres to KLIA2:</span>
-                <strong>RM 55.00</strong>
-              </div>
-              <div class="cost-row">
-                <span>Airport Meal at Gateway@klia2:</span>
-                <strong>RM 30.00</strong>
-              </div>
-              </div>
-              <div class="cost-daily-total">Total: RM 125.00</div>
             </td>
           </tr>
+
         </tbody>
       </table>
     </div>
-  </main>
+  </section>
 
-  <!-- Minimal Footer -->
-  <footer class="site-footer">
-    <div>Crafted for <strong>Jean Aristide Aquino</strong> &amp; <strong>Daiki</strong> • Kuala Lumpur Trip 2026</div>
-    <div style="margin-top: 4px; font-size: 0.8rem;">Clean White Minimalist Table Architecture • Synchronized with AirAsia AK585 &amp; AK584</div>
+  <!-- BUDGET & DOSSIER BREAKDOWN -->
+  <section class="container">
+    <div class="summary-grid">
+      <div class="summary-card">
+        <h3>💰 Budget &amp; Estimated Shared Costs</h3>
+        <table class="summary-table">
+          <tbody>
+            <tr><td>🏨 Host Accommodation (4 Nights with Daiki):</td><td style="text-align: right;"><strong>RM 0.00</strong> (Guest of Host)</td></tr>
+            <tr><td>✈️ Airport Transit (Late Grab &amp; KLIA Ekspres):</td><td style="text-align: right;"><strong>RM 130.00</strong> (~₱1,716 PHP)</td></tr>
+            <tr><td>🚠 Genting Express Coach &amp; Awana SkyWay:</td><td style="text-align: right;"><strong>RM 38.00</strong> (~₱502 PHP)</td></tr>
+            <tr><td>🚆 Subway, LRT, &amp; KTM Komuter Transit:</td><td style="text-align: right;"><strong>RM 17.60</strong> (~₱232 PHP)</td></tr>
+            <tr><td>🚕 Sunday &amp; City Center Grab Rides:</td><td style="text-align: right;"><strong>RM 35.00</strong> (~₱462 PHP)</td></tr>
+            <tr><td>🎟️ Cave Admissions &amp; Attractions:</td><td style="text-align: right;"><strong>RM 5.00</strong> (~₱66 PHP)</td></tr>
+            <tr><td>🍜 Meals, Satay Feasts, Cafe, &amp; Fruit:</td><td style="text-align: right;"><strong>RM 429.20</strong> (~₱5,665 PHP)</td></tr>
+            <tr style="font-size: 15px; color: #059669; border-top: 2px solid #0f172a;">
+              <td><strong>TOTAL ESTIMATED EXPENSES:</strong></td>
+              <td style="text-align: right;"><strong>RM 654.80</strong> (~₱8,643 PHP / $150 USD)</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="summary-card">
+        <h3>📍 All 13 Custom Pin Landmarks Verified</h3>
+        <table class="summary-table">
+          <tbody>
+            <tr><td>Day 1 (KLCC):</td><td>#1 KLCC Park · #2 Petronas Twin Towers · #3 Jalan Alor Food Street</td></tr>
+            <tr><td>Day 2 (Chinatown):</td><td>#4 Kwai Chai Hong · #5 Guan Di Temple · #6 Sri Maha Mariamman · #7 Petaling Street · #8 Sultan Abdul Samad · #9 Merdeka Square</td></tr>
+            <tr><td>Day 3 (Genting):</td><td>#10 Chin Swee Caves Temple · #11 Genting Highlands (SkyAvenue &amp; Awana SkyWay)</td></tr>
+            <tr><td>Day 4 (Worship):</td><td>#12 Kuala Lumpur Meetinghouse (LDS Church) · #13 Thean Hou Temple</td></tr>
+            <tr><td>Day 5 (Batu Caves):</td><td>#14 Batu Caves &amp; Temple Cave · #15 Ramayana Cave · #16 Saloma Link &amp; Central Market</td></tr>
+            <tr><td>Day 6 (Transit):</td><td>#17 KLIA Terminal 2 (AirAsia AK584 Departure to Manila)</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="summary-card">
+        <h3>🔗 Essential Travel Links &amp; Transit Guides</h3>
+        <table class="summary-table">
+          <tbody>
+            <tr>
+              <td>✈️ <strong>AirAsia Portal:</strong></td>
+              <td><a href="https://www.airasia.com/" target="_blank" rel="noopener" style="color:#0284c7; font-weight:700;">airasia.com</a> (Booking: <strong>PG8J4A</strong>)</td>
+            </tr>
+            <tr>
+              <td>🚠 <strong>Awana SkyWay Gondola:</strong></td>
+              <td><a href="https://www.rwgenting.com/en/getting-here/awana-skyway.html" target="_blank" rel="noopener" style="color:#0284c7; font-weight:700;">rwgenting.com/awana-skyway</a></td>
+            </tr>
+            <tr>
+              <td>🚆 <strong>KTM Komuter (Batu Caves):</strong></td>
+              <td><a href="https://www.ktmb.com.my/" target="_blank" rel="noopener" style="color:#0284c7; font-weight:700;">ktmb.com.my</a> (KL Sentral ⇄ Batu Caves)</td>
+            </tr>
+            <tr>
+              <td>🚄 <strong>KLIA Ekspres Train:</strong></td>
+              <td><a href="https://www.kliaekspres.com/" target="_blank" rel="noopener" style="color:#0284c7; font-weight:700;">kliaekspres.com</a> (28-min express)</td>
+            </tr>
+            <tr>
+              <td>🏛️ <strong>LDS Meetinghouse:</strong></td>
+              <td><a href="https://maps.google.com/?q=No.+4+Jalan+Ampang+Tengah,+Taman+U+Thant,+Kuala+Lumpur" target="_blank" rel="noopener" style="color:#b45309; font-weight:700;">No. 4 Jalan Ampang Tengah</a> (10:00 AM)</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <p>Prepared for <strong>Jean Aristide Aquino</strong> &amp; <strong>Daiki</strong></p>
+      <p style="font-size: 12.5px; opacity: 0.85;">6-Day Kuala Lumpur &amp; Genting Highlands Journey · 29 Oct – 03 Nov 2026</p>
+    </div>
   </footer>
 
-  <!-- App JS -->
-  <script src="app.js?v=2.2"></script>
+  <!-- Leaflet JS -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+  <!-- Application JS with Cache Buster -->
+  <script src="app.js?v=3.0"></script>
 </body>
 </html>
