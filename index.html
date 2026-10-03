@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>6-Day Kuala Lumpur &amp; Genting Journey · Jean Aristide Aquino &amp; Daiki</title>
-  <meta name="description" content="Comprehensive 6-Day Travel Itinerary for Jean Aristide Belleza Aquino visiting friend Daiki in Kuala Lumpur and Genting Highlands, Malaysia (29 Oct – 03 Nov 2026). Features interactive Google route maps, night-shift synchronization, LDS Sunday worship, and Batu Caves.">
+  <meta name="description" content="Official 6-Day Travel Itinerary for Jean Aristide Belleza Aquino visiting friend Daiki in Kuala Lumpur and Genting Highlands, Malaysia (29 Oct – 03 Nov 2026). Features interactive calendar, Google route maps, night-shift synchronization, and LDS Sunday worship.">
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -15,7 +15,7 @@
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
 
   <!-- Custom Styles with Cache Buster -->
-  <link rel="stylesheet" href="styles.css?v=3.0">
+  <link rel="stylesheet" href="styles.css?v=3.2">
 
   <!-- Guaranteed Inline High-Contrast Underline Styles -->
   <style>
@@ -95,13 +95,13 @@
     </div>
   </div>
 
-  <!-- INTERACTIVE ROUTE MAP SECTION -->
+  <!-- INTERACTIVE MAP & CALENDAR SECTION (SCHENGEN TRIP FORMAT) -->
   <section class="container" id="interactiveMap">
     <div class="map-container">
       <div class="section-header" style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 12px;">
         <div>
           <h2>🗺️ Interactive Route &amp; Visited Locations</h2>
-          <p>Click any place in the itinerary bar, city dot, or sight star to explore! <i>(Click any pin to inspect live Google Reviews &amp; nearby places)</i></p>
+          <p>Click any day in the calendar grid, city dot, or sight star to explore! <i>(Click any pin to inspect live Google Reviews &amp; nearby places)</i></p>
         </div>
         <div class="map-layer-toggles">
           <button type="button" class="layer-btn active" data-layer="roadmap">🗺️ Google Roadmap</button>
@@ -111,27 +111,93 @@
         </div>
       </div>
 
-      <!-- Itinerary Route Overview Navigation Bar on Top of Map -->
-      <div class="itinerary-nav-pane">
-        <div class="itinerary-nav-header">
-          <span class="itinerary-nav-label">
-            <span>✈️ Itinerary Route Overview</span>
-            <span class="itinerary-route-badge">6 Days · 17 Must-Visit Pins</span>
-          </span>
-          <span class="itinerary-nav-hint">👆 Tap any stop to focus map</span>
+      <!-- Interactive Master Trip Calendar Overview (Oct 2026 & Nov 2026) -->
+      <div class="itinerary-calendar-pane" id="itineraryCalendarPane">
+        <div class="cal-pane-header">
+          <div class="cal-pane-title-group">
+            <span class="cal-pane-title">
+              <span>📅 Trip Calendar Overview</span>
+              <span class="cal-route-badge">6 Days · 29 Oct – 03 Nov 2026</span>
+            </span>
+            <span class="cal-pane-hint">👆 Tap any day to focus map &amp; inspect daily schedule</span>
+          </div>
+          <!-- Category Filter & Legend Chips -->
+          <div class="cal-legend-bar" id="calLegendBar">
+            <button type="button" class="cal-legend-chip active" data-country="all">All (6 Days)</button>
+            <button type="button" class="cal-legend-chip chip-klcc" data-country="KLCC &amp; Downtown">🏙️ KLCC (Day 1)</button>
+            <button type="button" class="cal-legend-chip chip-chinatown" data-country="Chinatown &amp; Heritage">🏮 Chinatown (Day 2)</button>
+            <button type="button" class="cal-legend-chip chip-genting" data-country="Genting Highlands">🚠 Genting (Day 3)</button>
+            <button type="button" class="cal-legend-chip chip-worship" data-country="Sunday LDS Worship">🏛️ LDS Worship (Day 4)</button>
+            <button type="button" class="cal-legend-chip chip-batucaves" data-country="Batu Caves &amp; Saloma">🪔 Batu Caves (Day 5)</button>
+            <button type="button" class="cal-legend-chip chip-transit" data-country="Transit &amp; Manila Flight">✈️ Transit &amp; Flight (Day 6)</button>
+          </div>
         </div>
-        <div class="itinerary-nav-bar" id="itineraryNavBar"></div>
+
+        <!-- Month Switcher Tabs (For mobile screens) -->
+        <div class="cal-month-tabs" id="calMonthTabs">
+          <button type="button" class="cal-month-tab active" data-month="oct">🎃 October 2026 (Days 1–3)</button>
+          <button type="button" class="cal-month-tab" data-month="nov">✨ November 2026 (Days 4–6)</button>
+        </div>
+
+        <!-- Dual Month Calendar Container -->
+        <div class="cal-months-wrapper" id="calMonthsWrapper">
+          <!-- October 2026 -->
+          <div class="cal-month-card active-tab" id="calMonthOct">
+            <div class="cal-month-header">
+              <span class="cal-month-name">🎃 October 2026</span>
+              <span class="cal-month-badge">3 Days in Trip (Oct 29–31)</span>
+            </div>
+            <div class="cal-weekdays">
+              <span>Sun</span><span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span>
+            </div>
+            <div class="cal-days-grid" id="calGridOct"></div>
+          </div>
+
+          <!-- November 2026 -->
+          <div class="cal-month-card" id="calMonthNov">
+            <div class="cal-month-header">
+              <span class="cal-month-name">✨ November 2026</span>
+              <span class="cal-month-badge">3 Days in Trip (Nov 1–3)</span>
+            </div>
+            <div class="cal-weekdays">
+              <span>Sun</span><span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span>
+            </div>
+            <div class="cal-days-grid" id="calGridNov"></div>
+          </div>
+        </div>
+
+        <!-- Selected Day Detail Drawer / Quick Action Bar -->
+        <div class="cal-selected-drawer" id="calSelectedDrawer">
+          <div class="cal-drawer-content" id="calDrawerContent"></div>
+        </div>
       </div>
 
       <div id="leafletMap"></div>
     </div>
   </section>
 
-  <!-- MASTER ITINERARY TABLE SECTION -->
+  <!-- DAY-BY-DAY MASTER ITINERARY SECTION -->
   <section class="container itinerary-section" id="itinerarySection">
-    <div class="section-header">
-      <h2>📅 6-Day Master Trip Itinerary</h2>
-      <p>Chronological schedule with bulleted activities, verified transport connections, and itemized cost estimates.</p>
+    <div class="section-header" style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 14px;">
+      <div>
+        <h2>📅 6-Day Detailed Trip Itinerary</h2>
+        <p>Complete chronological day-by-day itinerary with bulleted activities, verified transport connections, and itemized cost estimates.</p>
+      </div>
+    </div>
+
+    <!-- Sightseeing Admission & Transport Cost Summary (Schengen Format) -->
+    <div class="itinerary-admission-summary">
+      <div class="summary-title">
+        <span>🎟️</span>
+        <span>Sightseeing Admission &amp; Transport Cost Overview (1 MYR ≈ 13.2 PHP)</span>
+      </div>
+      <div class="summary-stats">
+        <span class="stat-chip highlight">Total Estimated Trip: ~RM 655 (~₱8,650 PHP)</span>
+        <span class="stat-chip">🚠 Awana SkyWay &amp; Coach: RM 38 (~₱502 PHP)</span>
+        <span class="stat-chip">🚆 KTM Komuter &amp; LRT: RM 17.60 (~₱232 PHP)</span>
+        <span class="stat-chip">✈️ Airport Grab &amp; KLIA Ekspres: RM 130 (~₱1,716 PHP)</span>
+        <span class="stat-chip" style="background: #f0fdf4; color: #15803d; border-color: #bbf7d0;">✨ Temples, Caves &amp; LDS Meetinghouse: Free / RM 5</span>
+      </div>
     </div>
 
     <!-- Smart Host Synchronization & Logistics Strategy Card -->
@@ -172,7 +238,7 @@
       </div>
     </div>
 
-    <!-- Region & Phase Filters -->
+    <!-- Category & Region Filters -->
     <div class="filter-tabs">
       <button type="button" class="filter-btn active" data-filter="all">All Stops (6 Days)</button>
       <button type="button" class="filter-btn" data-filter="klcc">🏙️ KLCC &amp; Downtown</button>
@@ -187,7 +253,7 @@
 
     <!-- Master Table -->
     <div class="table-responsive">
-      <table class="master-itinerary-table">
+      <table class="master-itinerary-table" id="masterItineraryTable">
         <thead>
           <tr>
             <th style="width: 14%;">Day</th>
@@ -565,6 +631,6 @@
   <!-- Leaflet JS -->
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
   <!-- Application JS with Cache Buster -->
-  <script src="app.js?v=3.0"></script>
+  <script src="app.js?v=3.2"></script>
 </body>
 </html>

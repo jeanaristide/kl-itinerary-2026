@@ -1,7 +1,7 @@
 /**
  * Kuala Lumpur & Genting Highlands Trip Itinerary
  * Tailored for Jean Aristide Aquino & Daiki (Oct 29 – Nov 03, 2026)
- * Executive Travel Dossier Architecture with Interactive Google Leaflet Engine
+ * Schengen & Taiwan Trip Architecture with Dual-Month Interactive Calendar & Leaflet Map
  */
 
 // 17 Custom Google Maps List Pins + LDS Meetinghouse & Major Hubs
@@ -212,16 +212,6 @@ const visitedLocations = [
   }
 ];
 
-// Chronological Overview Navigation Stops (Top Bar of Map)
-const itineraryOverviewStops = [
-  { id: "leg1", step: 1, flag: "✈️", title: "Arrival & KLCC", sub: "29 Oct · Day 1", coords: [3.1554, 101.7145], zoom: 14 },
-  { id: "leg2", step: 2, flag: "🏮", title: "Chinatown & Merdeka", sub: "30 Oct · Day 2", coords: [3.1444, 101.6978], zoom: 14 },
-  { id: "leg3", step: 3, flag: "🚠", title: "Genting Mountain Trip", sub: "31 Oct · Day 3", coords: [3.4240, 101.7932], zoom: 13 },
-  { id: "leg4", step: 4, flag: "🏛️", title: "Sunday LDS Worship", sub: "01 Nov · Day 4", coords: [3.1577, 101.7371], zoom: 14 },
-  { id: "leg5", step: 5, flag: "🪔", title: "Batu Caves & Saloma", sub: "02 Nov · Day 5", coords: [3.2379, 101.6840], zoom: 14 },
-  { id: "leg6", step: 6, flag: "✈️", title: "Farewell & Manila Flight", sub: "03 Nov · Day 6", coords: [2.7433, 101.6853], zoom: 12 }
-];
-
 // Chronological Transit Polyline Across Kuala Lumpur & Genting
 const chronologicalRouteCoords = [
   [2.7433, 101.6853], // KLIA Terminal 2
@@ -246,6 +236,109 @@ const chronologicalRouteCoords = [
   [3.1343, 101.6865], // KL Sentral
   [2.7433, 101.6853]  // Return KLIA Terminal 2
 ];
+
+// Master Trip Calendar Data (Oct 2026 & Nov 2026)
+const tripCalendarData = {
+  // October 2026
+  '2026-10-29': {
+    dateKey: '2026-10-29',
+    dayNum: 29,
+    month: 'oct',
+    dayLabel: 'Day 1',
+    dayBadge: 'DAY 1',
+    country: 'KLCC & Downtown',
+    countryClass: 'country-klcc',
+    flag: '🏙️',
+    city: 'KLCC & Golden Triangle',
+    title: 'Arrival & Reunion with Daiki',
+    summary: 'AirAsia AK585 arrival (02:55 AM), check-in at Daiki\'s flat, daytime rest, KLCC Park golden hour, Lake Symphony light show & Jalan Alor street feast.',
+    coords: [3.1554, 101.7145],
+    zoom: 14,
+    tableDayId: 'row-day1'
+  },
+  '2026-10-30': {
+    dateKey: '2026-10-30',
+    dayNum: 30,
+    month: 'oct',
+    dayLabel: 'Day 2',
+    dayBadge: 'DAY 2',
+    country: 'Chinatown & Heritage',
+    countryClass: 'country-chinatown',
+    flag: '🏮',
+    city: 'Chinatown & Merdeka',
+    title: 'Heritage Enclaves & Pavilion Dinner',
+    summary: 'Solo morning walking tour: Kwai Chai Hong 1960s murals, Guan Di Temple, Sri Maha Mariamman, Petaling Street, Merdeka Square & evening Pavilion reunion with Daiki.',
+    coords: [3.1444, 101.6978],
+    zoom: 14,
+    tableDayId: 'row-day2'
+  },
+  '2026-10-31': {
+    dateKey: '2026-10-31',
+    dayNum: 31,
+    month: 'oct',
+    dayLabel: 'Day 3',
+    dayBadge: 'DAY 3',
+    country: 'Genting Highlands',
+    countryClass: 'country-genting',
+    flag: '🚠',
+    city: 'Titiwangsa Mountains',
+    title: 'Full-Day Mountain Trip with Daiki',
+    summary: 'Weekend off-shift excursion with Daiki: Awana SkyWay gondola over ancient rainforest, cliffside Chin Swee Caves Temple, cool 20°C alpine air, and SkyAvenue promenade.',
+    coords: [3.4240, 101.7932],
+    zoom: 13,
+    tableDayId: 'row-day3'
+  },
+
+  // November 2026
+  '2026-11-01': {
+    dateKey: '2026-11-01',
+    dayNum: 1,
+    month: 'nov',
+    dayLabel: 'Day 4',
+    dayBadge: 'DAY 4',
+    country: 'Sunday LDS Worship',
+    countryClass: 'country-worship',
+    flag: '🏛️',
+    city: 'Taman U Thant & Robson',
+    title: 'Sabbath Worship & Thean Hou Shrine',
+    summary: 'Sunday LDS sacrament & classes at Kuala Lumpur Meetinghouse (10:00 AM – 12:00 PM), Ampang fellowship lunch, and afternoon visit to six-tiered Thean Hou Temple.',
+    coords: [3.1577, 101.7371],
+    zoom: 14,
+    tableDayId: 'row-day4'
+  },
+  '2026-11-02': {
+    dateKey: '2026-11-02',
+    dayNum: 2,
+    month: 'nov',
+    dayLabel: 'Day 5',
+    dayBadge: 'DAY 5',
+    country: 'Batu Caves & Saloma',
+    countryClass: 'country-batucaves',
+    flag: '🪔',
+    city: 'Batu Caves & City Center',
+    title: 'Ancient Caverns & Farewell Dinner',
+    summary: 'Solo morning KTM Komuter to 140-ft Lord Murugan, 272 rainbow steps, Temple Cave & Ramayana Cave; evening walk across illuminated Saloma Link & special dinner with Daiki.',
+    coords: [3.2379, 101.6840],
+    zoom: 14,
+    tableDayId: 'row-day5'
+  },
+  '2026-11-03': {
+    dateKey: '2026-11-03',
+    dayNum: 3,
+    month: 'nov',
+    dayLabel: 'Day 6',
+    dayBadge: 'DAY 6',
+    country: 'Transit & Manila Flight',
+    countryClass: 'country-transit',
+    flag: '✈️',
+    city: 'KL Sentral ➔ KLIA2',
+    title: 'Farewell Breakfast & Homeward Flight',
+    summary: 'Farewell breakfast with Daiki, Nu Sentral shopping, 28-min KLIA Ekspres to KLIA Terminal 2, boarding AirAsia AK584 (18:10 PM) touching down in Manila at 22:20 PM.',
+    coords: [2.7433, 101.6853],
+    zoom: 12,
+    tableDayId: 'row-day6'
+  }
+};
 
 // Master 6-Day Itinerary Data Store
 const itineraryData = [
@@ -648,55 +741,263 @@ function initMap() {
       }
     });
   }
-
-  // Populate Top Navigation Bar
-  renderItineraryNavBar();
 }
 
-// Render Top Itinerary Nav Bar Above Map
-function renderItineraryNavBar() {
-  const navBar = document.getElementById('itineraryNavBar');
-  if (!navBar) return;
+// Render Master Trip Calendar (October 2026 & November 2026)
+function renderTripCalendar() {
+  const octGrid = document.getElementById('calGridOct');
+  const novGrid = document.getElementById('calGridNov');
+  if (!octGrid || !novGrid) return;
 
-  navBar.innerHTML = '';
-  itineraryOverviewStops.forEach((stop, index) => {
-    const chip = document.createElement('button');
-    chip.type = 'button';
-    chip.className = 'itinerary-stop-chip';
-    chip.setAttribute('data-stop-id', stop.id);
-    chip.innerHTML = `
-      <span class="itinerary-step-num" style="background: var(--primary);">${stop.step}</span>
-      <div class="itinerary-stop-text">
-        <span class="itinerary-stop-title">${stop.flag} ${stop.title}</span>
-        <span class="itinerary-stop-sub">${stop.sub}</span>
-      </div>
-    `;
+  octGrid.innerHTML = '';
+  novGrid.innerHTML = '';
 
+  // 1. October 2026: 1 Oct 2026 is Thursday -> 4 leading pad days: 27, 28, 29, 30 Sep
+  const octPadPre = [27, 28, 29, 30];
+  octPadPre.forEach(num => {
+    const pad = document.createElement('div');
+    pad.className = 'cal-day-cell pad-day';
+    pad.innerHTML = `<div class="cal-day-top"><span class="cal-day-num">${num}</span></div>`;
+    octGrid.appendChild(pad);
+  });
+
+  // 31 days in October
+  for (let d = 1; d <= 31; d++) {
+    const dateKey = `2026-10-${String(d).padStart(2, '0')}`;
+    const cell = document.createElement('div');
+    const info = tripCalendarData[dateKey];
+
+    if (info) {
+      cell.className = `cal-day-cell ${info.countryClass}`;
+      cell.setAttribute('data-date', dateKey);
+      cell.setAttribute('data-country', info.country);
+      cell.setAttribute('title', `${info.dayLabel}: ${info.city}`);
+      cell.innerHTML = `
+        <div class="cal-day-top">
+          <span class="cal-day-num">${d}</span>
+          <span class="cal-day-badge">${info.dayBadge}</span>
+        </div>
+        <div class="cal-day-body">
+          <span class="cal-day-flag">${info.flag}</span>
+          <span class="cal-day-city">${info.city}</span>
+        </div>
+      `;
+      cell.addEventListener('click', () => {
+        selectCalendarDay(dateKey);
+      });
+    } else {
+      cell.className = 'cal-day-cell non-trip-day';
+      cell.setAttribute('title', `${d} Oct 2026`);
+      cell.innerHTML = `
+        <div class="cal-day-top">
+          <span class="cal-day-num">${d}</span>
+        </div>
+      `;
+    }
+    octGrid.appendChild(cell);
+  }
+
+  // 2. November 2026: 1 Nov 2026 is Sunday -> 0 leading pad days!
+  // 30 days in November
+  for (let d = 1; d <= 30; d++) {
+    const dateKey = `2026-11-${String(d).padStart(2, '0')}`;
+    const cell = document.createElement('div');
+    const info = tripCalendarData[dateKey];
+
+    if (info) {
+      cell.className = `cal-day-cell ${info.countryClass}`;
+      cell.setAttribute('data-date', dateKey);
+      cell.setAttribute('data-country', info.country);
+      cell.setAttribute('title', `${info.dayLabel}: ${info.city}`);
+      cell.innerHTML = `
+        <div class="cal-day-top">
+          <span class="cal-day-num">${d}</span>
+          <span class="cal-day-badge">${info.dayBadge}</span>
+        </div>
+        <div class="cal-day-body">
+          <span class="cal-day-flag">${info.flag}</span>
+          <span class="cal-day-city">${info.city}</span>
+        </div>
+      `;
+      cell.addEventListener('click', () => {
+        selectCalendarDay(dateKey);
+      });
+    } else {
+      cell.className = 'cal-day-cell non-trip-day';
+      cell.setAttribute('title', `${d} Nov 2026`);
+      cell.innerHTML = `
+        <div class="cal-day-top">
+          <span class="cal-day-num">${d}</span>
+        </div>
+      `;
+    }
+    novGrid.appendChild(cell);
+  }
+
+  // Trailing pad days for Nov (30 Nov is Mon -> Tue 1 to Sat 5 Dec to complete 5 weeks: 35 cells)
+  const novPadPost = [1, 2, 3, 4, 5];
+  novPadPost.forEach(num => {
+    const pad = document.createElement('div');
+    pad.className = 'cal-day-cell pad-day';
+    pad.innerHTML = `<div class="cal-day-top"><span class="cal-day-num">${num}</span></div>`;
+    novGrid.appendChild(pad);
+  });
+
+  // 3. Category Filter Chips
+  const legendChips = document.querySelectorAll('#calLegendBar .cal-legend-chip');
+  legendChips.forEach(chip => {
     chip.addEventListener('click', () => {
-      document.querySelectorAll('.itinerary-stop-chip').forEach(c => c.classList.remove('active'));
-      chip.classList.add('active');
+      const country = chip.getAttribute('data-country');
+      filterCalendarByCountry(country);
+    });
+  });
 
-      if (map) {
-        map.flyTo(stop.coords, stop.zoom, { duration: 1.2 });
+  // 4. Mobile Month Tabs Switcher
+  const monthTabs = document.querySelectorAll('#calMonthTabs .cal-month-tab');
+  monthTabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      const targetMonth = tab.getAttribute('data-month');
+      switchCalendarMonth(targetMonth);
+    });
+  });
+
+  // Select Day 1 by default
+  const defaultDate = '2026-10-29';
+  selectCalendarDay(defaultDate);
+}
+
+// Select a Specific Calendar Day
+function selectCalendarDay(dateKey, shouldScrollTable = false) {
+  const info = tripCalendarData[dateKey];
+  if (!info) return;
+
+  if (info.month) {
+    switchCalendarMonth(info.month);
+  }
+
+  document.querySelectorAll('.cal-day-cell').forEach(c => c.classList.remove('is-selected'));
+  const activeCells = document.querySelectorAll(`.cal-day-cell[data-date="${dateKey}"]`);
+  activeCells.forEach(c => c.classList.add('is-selected'));
+
+  updateCalendarDrawer(info);
+
+  if (map && info.coords) {
+    map.flyTo(info.coords, info.zoom || 14, { duration: 1.2 });
+    const match = starMarkers.find(m => 
+      Math.abs(m.coords[0] - info.coords[0]) < 0.05 && 
+      Math.abs(m.coords[1] - info.coords[1]) < 0.05
+    );
+    if (match && match.marker) {
+      setTimeout(() => match.marker.openPopup(), 600);
+    }
+  }
+
+  if (shouldScrollTable && info.tableDayId) {
+    scrollToItineraryDay(info.tableDayId);
+  }
+}
+
+// Update Calendar Drawer Content
+function updateCalendarDrawer(info) {
+  const drawer = document.getElementById('calSelectedDrawer');
+  const drawerContent = document.getElementById('calDrawerContent');
+  if (!drawer || !drawerContent || !info) return;
+
+  const dateParts = info.dateKey.split('-');
+  const dateFormatted = `${parseInt(dateParts[2], 10)} ${info.month === 'oct' ? 'Oct 2026' : 'Nov 2026'}`;
+
+  drawerContent.innerHTML = `
+    <div class="cal-drawer-inner">
+      <div class="cal-drawer-info">
+        <div class="cal-drawer-title-row">
+          <span class="cal-drawer-tag ${info.countryClass}">${info.flag} ${info.dayLabel} · ${info.country}</span>
+          <span class="cal-drawer-title">${dateFormatted}: ${info.city}</span>
+        </div>
+        <div class="cal-drawer-desc">
+          <strong>${info.title}:</strong> ${info.summary}
+        </div>
+      </div>
+      <div class="cal-drawer-actions">
+        <button type="button" class="cal-action-btn btn-primary" id="calBtnFlyMap">
+          <span>🗺️ Focus Map on ${info.city.split('➔')[0].trim()}</span>
+        </button>
+        ${info.tableDayId ? `
+        <button type="button" class="cal-action-btn" id="calBtnScrollTable">
+          <span>📋 View Schedule in Table</span>
+        </button>` : ''}
+      </div>
+    </div>
+  `;
+
+  drawer.classList.add('active');
+
+  const flyBtn = document.getElementById('calBtnFlyMap');
+  if (flyBtn) {
+    flyBtn.addEventListener('click', () => {
+      if (map && info.coords) {
+        map.flyTo(info.coords, info.zoom || 14, { duration: 1.2 });
         const match = starMarkers.find(m => 
-          Math.abs(m.coords[0] - stop.coords[0]) < 0.05 && 
-          Math.abs(m.coords[1] - stop.coords[1]) < 0.05
+          Math.abs(m.coords[0] - info.coords[0]) < 0.05 && 
+          Math.abs(m.coords[1] - info.coords[1]) < 0.05
         );
         if (match && match.marker) {
           setTimeout(() => match.marker.openPopup(), 600);
         }
       }
     });
+  }
 
-    navBar.appendChild(chip);
+  const scrollBtn = document.getElementById('calBtnScrollTable');
+  if (scrollBtn && info.tableDayId) {
+    scrollBtn.addEventListener('click', () => {
+      scrollToItineraryDay(info.tableDayId);
+    });
+  }
+}
 
-    if (index < itineraryOverviewStops.length - 1) {
-      const arrow = document.createElement('span');
-      arrow.className = 'itinerary-arrow';
-      arrow.textContent = '➔';
-      navBar.appendChild(arrow);
-    }
+// Switch Mobile Calendar Month
+function switchCalendarMonth(month) {
+  const tabs = document.querySelectorAll('#calMonthTabs .cal-month-tab');
+  tabs.forEach(t => t.classList.toggle('active', t.getAttribute('data-month') === month));
+
+  const octCard = document.getElementById('calMonthOct');
+  const novCard = document.getElementById('calMonthNov');
+  if (octCard && novCard) {
+    octCard.classList.toggle('active-tab', month === 'oct');
+    novCard.classList.toggle('active-tab', month === 'nov');
+  }
+}
+
+// Filter Calendar Days by Category / Country
+function filterCalendarByCountry(country) {
+  const chips = document.querySelectorAll('#calLegendBar .cal-legend-chip');
+  chips.forEach(chip => {
+    const chipCountry = chip.getAttribute('data-country');
+    chip.classList.toggle('active', chipCountry === country);
   });
+
+  const dayCells = document.querySelectorAll('.cal-day-cell[data-country]');
+  if (country === 'all') {
+    dayCells.forEach(cell => cell.classList.remove('is-dimmed'));
+    return;
+  }
+
+  dayCells.forEach(cell => {
+    const cellCountry = cell.getAttribute('data-country');
+    cell.classList.toggle('is-dimmed', cellCountry !== country);
+  });
+}
+
+// Scroll to Itinerary Day and Flash Highlight
+function scrollToItineraryDay(rowId) {
+  const row = document.getElementById(rowId);
+  if (!row) return;
+
+  row.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  row.classList.add('table-row-highlight');
+  setTimeout(() => {
+    row.classList.remove('table-row-highlight');
+  }, 2500);
 }
 
 // Render Master Itinerary Table
@@ -810,6 +1111,7 @@ function setupFilterBar() {
 // DOM Ready
 document.addEventListener('DOMContentLoaded', () => {
   initMap();
+  renderTripCalendar();
   renderMasterTable('all');
   setupFilterBar();
 });
