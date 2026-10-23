@@ -1,6 +1,6 @@
 /**
  * Kuala Lumpur & Genting Highlands Trip Itinerary
- * Tailored for Jean Aristide Aquino & Daiki (Oct 29 – Nov 03, 2026)
+ * Tailored for Jean Aristide Aquino & Daiki (Oct 29 – Nov 05, 2026)
  * Schengen & Taiwan Trip Architecture with Dual-Month Interactive Calendar & Leaflet Map
  */
 
@@ -206,13 +206,49 @@ const visitedLocations = [
     category: "International Flight Gateways",
     color: "#64748b",
     coords: [2.7433, 101.6853],
-    day: "Days 1 & 6 (29 Oct & 03 Nov)",
-    desc: "Arrival on AirAsia AK585 (02:55 AM, 29 Oct) and departure on AirAsia AK584 (18:10 PM, 03 Nov) to Manila (MNL). Connected to KL Sentral via 28-min KLIA Ekspres.",
+    day: "Days 1 & 8 (29 Oct & 05 Nov)",
+    desc: "Arrival on AirAsia AK585 (16:55 PM, 29 Oct) and departure on AirAsia AK584 (18:20 PM, 05 Nov) to Manila (MNL). Connected to KL Sentral via 28-min KLIA Ekspres.",
     gmapsQuery: "KLIA Terminal 2, Sepang"
+  },
+  {
+    pinId: 18,
+    name: "Putra Mosque & Putrajaya Lake",
+    nativeName: "Masjid Putra & Tasik Putrajaya",
+    region: "Putrajaya (Federal Admin Centre)",
+    category: "Lakeside Rose-Granite Mosque",
+    color: "#0d9488",
+    coords: [2.9361, 101.6894],
+    day: "Day 6 (03 Nov)",
+    desc: "Magnificent rose-tinted granite sanctuary fronting Putrajaya Lake with a 116-meter minaret and pink-domed prayer hall, flanked by Perdana Putra and waterfront boulevard.",
+    gmapsQuery: "Putra Mosque, Putrajaya"
+  },
+  {
+    pinId: 19,
+    name: "Islamic Arts Museum Malaysia (IAMM)",
+    nativeName: "Muzium Kesenian Islam Malaysia",
+    region: "Perdana Botanical Gardens Precinct",
+    category: "Premier Islamic Heritage Museum",
+    color: "#4f46e5",
+    coords: [3.1419, 101.6897],
+    day: "Day 7 (04 Nov)",
+    desc: "Southeast Asia's largest museum of Islamic art, housing over 10,000 artifacts, ornate Persian turquoise tile domes, illuminated Qur'ans, and scale mosque models.",
+    gmapsQuery: "Islamic Arts Museum Malaysia, Jalan Lembah, Perdana Botanical Garden, Kuala Lumpur"
+  },
+  {
+    pinId: 20,
+    name: "Perdana Botanical Gardens",
+    nativeName: "Taman Botani Perdana (Lake Gardens)",
+    region: "Kuala Lumpur Heritage Parks",
+    category: "Historic 1888 Botanical Sanctuary",
+    color: "#15803d",
+    coords: [3.1436, 101.6836],
+    day: "Day 7 (04 Nov)",
+    desc: "KL's heritage 226-acre colonial green lung established in 1888, featuring sunken gardens, tropical bamboo playhouses, orchid collection, and tranquil lake boardwalks.",
+    gmapsQuery: "Perdana Botanical Gardens, Jalan Kebun Bunga, Tasik Perdana, Kuala Lumpur"
   }
 ];
 
-// Chronological Transit Polyline Across Kuala Lumpur & Genting
+// Chronological Transit Polyline Across Kuala Lumpur, Genting & Putrajaya
 const chronologicalRouteCoords = [
   [2.7433, 101.6853], // KLIA Terminal 2
   [3.1343, 101.6865], // KL Sentral
@@ -233,6 +269,10 @@ const chronologicalRouteCoords = [
   [3.2365, 101.6815], // Ramayana Cave
   [3.1452, 101.6957], // Central Market
   [3.1594, 101.7078], // Saloma Link
+  [2.9361, 101.6894], // Putra Mosque & Putrajaya Lake
+  [3.1436, 101.6836], // Perdana Botanical Gardens
+  [3.1419, 101.6897], // Islamic Arts Museum Malaysia
+  [3.1472, 101.7125], // Bukit Bintang & Pavilion
   [3.1343, 101.6865], // KL Sentral
   [2.7433, 101.6853]  // Return KLIA Terminal 2
 ];
@@ -250,8 +290,8 @@ const tripCalendarData = {
     countryClass: 'country-klcc',
     flag: '🏙️',
     city: 'KLCC & Golden Triangle',
-    title: 'Arrival & Reunion with Daiki',
-    summary: 'AirAsia AK585 arrival (02:55 AM), check-in at Daiki\'s flat, daytime rest, KLCC Park golden hour, Lake Symphony light show & Jalan Alor street feast.',
+    title: 'Afternoon Arrival & Reunion with Daiki',
+    summary: 'AirAsia AK585 arrival at KUL Terminal 2 (16:55 PM), 28-min KLIA Ekspres to KL Sentral, check-in at Daiki\'s flat, evening KLCC Park stroll, Lake Symphony light show & Jalan Alor street feast.',
     coords: [3.1554, 101.7145],
     zoom: 14,
     tableDayId: 'row-day1'
@@ -317,7 +357,7 @@ const tripCalendarData = {
     flag: '🪔',
     city: 'Batu Caves & City Center',
     title: 'Ancient Caverns & Flexible Exploration',
-    summary: 'Daiki is off duty (Monday morning in Malaysia is still Sunday in US). Explore 140-ft Lord Murugan, 272 rainbow steps, Temple & Ramayana Caves, Central Market, Saloma Link & farewell dinner before Daiki\'s 22:00 PM shift.',
+    summary: 'Daiki is off duty (Monday morning in Malaysia is still Sunday in US). Explore 140-ft Lord Murugan, 272 rainbow steps, Temple & Ramayana Caves, Central Market, Saloma Link & dinner before Daiki\'s 22:00 PM shift.',
     coords: [3.2379, 101.6840],
     zoom: 14,
     tableDayId: 'row-day5'
@@ -328,19 +368,51 @@ const tripCalendarData = {
     month: 'nov',
     dayLabel: 'Day 6',
     dayBadge: 'DAY 6',
+    country: 'Putrajaya Lakeside',
+    countryClass: 'country-putrajaya',
+    flag: '🕌',
+    city: 'Putrajaya Administrative Center',
+    title: 'Post-Shift Morning, Pink Mosque & Lakeside Gardens',
+    summary: 'Morning coffee with Daiki post-shift, scenic excursion to Putra Mosque\'s rose-granite dome, Putrajaya Lake boardwalk, Botanical Garden, and evening Bangsar reunion dinner with Daiki.',
+    coords: [2.9361, 101.6894],
+    zoom: 13,
+    tableDayId: 'row-day6'
+  },
+  '2026-11-04': {
+    dateKey: '2026-11-04',
+    dayNum: 4,
+    month: 'nov',
+    dayLabel: 'Day 7',
+    dayBadge: 'DAY 7',
+    country: 'Islamic Arts & Gardens',
+    countryClass: 'country-gardens',
+    flag: '🌿',
+    city: 'Perdana Lake Gardens & Bukit Bintang',
+    title: 'Islamic Arts Masterpieces & Bukit Bintang Night',
+    summary: 'Solo morning at Perdana Botanical Gardens, Southeast Asia\'s largest Islamic Arts Museum Malaysia, National Mosque, followed by evening Bukit Bintang shopping & celebratory feast with Daiki.',
+    coords: [3.1419, 101.6897],
+    zoom: 14,
+    tableDayId: 'row-day7'
+  },
+  '2026-11-05': {
+    dateKey: '2026-11-05',
+    dayNum: 5,
+    month: 'nov',
+    dayLabel: 'Day 8',
+    dayBadge: 'DAY 8',
     country: 'Transit & Manila Flight',
     countryClass: 'country-transit',
     flag: '✈️',
-    city: 'KL Sentral ➔ KLIA2',
-    title: 'Farewell Breakfast & Homeward Flight',
-    summary: 'Farewell breakfast with Daiki as his first US shift ends at 07:00 AM, Nu Sentral shopping, 28-min KLIA Ekspres to KLIA Terminal 2, boarding AirAsia AK584 (18:10 PM) touching down in Manila at 22:20 PM.',
+    city: 'KL Sentral ➔ KLIA2 ➔ Manila',
+    title: 'Farewell Breakfast & Homeward Flight AK584',
+    summary: 'Farewell breakfast with Daiki as his shift ends at 07:00 AM, Nu Sentral shopping, 28-min KLIA Ekspres to KLIA2, boarding AirAsia AK584 (18:20 PM) touching down in Manila at 22:25 PM.',
     coords: [2.7433, 101.6853],
     zoom: 12,
-    tableDayId: 'row-day6'
+    tableDayId: 'row-day8'
   }
 };
 
-// Master 6-Day Itinerary Data Store
+// Master 8-Day Itinerary Data Store
 const itineraryData = [
   {
     dayId: "day1",
@@ -348,10 +420,11 @@ const itineraryData = [
     date: "Thu, 29 Oct 2026",
     region: "klcc",
     phase: "joint",
-    phaseLabel: "Arrival & Reunion with Daiki",
+    phaseLabel: "Afternoon Arrival & Reunion",
     city: "Kuala Lumpur & KLCC Precinct",
     landmarks: [
       { name: "KLIA Terminal 2 (AirAsia AK585)", pin: "#17" },
+      { name: "KLIA Ekspres Non-Stop Train", pin: "🚄" },
       { name: "Daiki's Apartment (Host Base)", pin: "🏠" },
       { name: "Petronas Twin Towers & Suria KLCC", pin: "#2" },
       { name: "KLCC Park & Lake Symphony", pin: "#1" },
@@ -359,24 +432,22 @@ const itineraryData = [
     ],
     cultureBadge: "🏙️ Modern Metropolis & Golden Triangle Sunset",
     activities: [
-      "Depart Manila (MNL) on Wednesday 28 Oct at <span class=\"time-chip\">23:05 PM</span> and touch down at <u>KLIA Terminal 2</u> on Thursday 29 Oct at <span class=\"time-chip\">02:55 AM</span> aboard AirAsia Flight AK585.",
-      "Clear early morning customs and take a direct 24-hour Grab / taxi to <u>Daiki's apartment</u>, arriving by <span class=\"time-chip\">04:15 AM</span>.",
-      "Quietly greet Daiki during his active overnight US tech shift, take a warm shower, and sleep soundly until late morning.",
-      "Allow Daiki to complete his shift at <span class=\"time-chip\">07:00 AM</span> and enter his daytime rest window undisturbed.",
-      "Wake up refreshed at <span class=\"time-chip\">11:00 AM</span>, enjoy a light solo lunch nearby, and rest comfortably at the apartment.",
-      "Reconnect with Daiki at <span class=\"time-chip\">04:00 PM</span> as Daiki wakes up fully energized, then board the LRT directly to <u>Suria KLCC</u>.",
-      "Stroll through the landscaped pathways of <u>KLCC Park</u> with Daiki and photograph the towering steel-and-glass facade of the <u>Petronas Twin Towers</u> during golden hour.",
-      "Watch the musical fountain light display at <u>Lake Symphony</u> with Daiki at <span class=\"time-chip\">08:00 PM</span>.",
-      "Walk over to <u>Jalan Alor Food Street</u> with Daiki at <span class=\"time-chip\">08:45 PM</span> for an alcohol-free street food feast featuring charcoal-grilled chicken satay, roti canai, and fresh coconut water before Daiki begins his 10:00 PM shift."
+      "Depart Manila (MNL Terminal 3) on Thursday 29 Oct at <span class=\"time-chip\">12:55 PM</span> and touch down at <u>KLIA Terminal 2</u> at <span class=\"time-chip\">04:55 PM</span> (16:55) aboard AirAsia Flight AK585.",
+      "Clear customs, collect 20 kg checked luggage, and board the non-stop <u>KLIA Ekspres</u> at <span class=\"time-chip\">05:40 PM</span> to <u>KL Sentral</u>, reaching the city center in just 28 minutes.",
+      "Take a short Grab ride to <u>Daiki's apartment</u>, arriving by <span class=\"time-chip\">06:20 PM</span> to unpack, freshen up, and settle into your guest accommodations.",
+      "Reunite warmly with friend and host Daiki at <span class=\"time-chip\">07:00 PM</span>, heading out together via LRT to <u>Suria KLCC</u>.",
+      "Stroll through the landscaped pathways of <u>KLCC Park</u> with Daiki and photograph the illuminated steel-and-glass facade of the <u>Petronas Twin Towers</u> in the dusk sky.",
+      "Watch the colorful musical fountain light display at <u>Lake Symphony</u> with Daiki at <span class=\"time-chip\">08:00 PM</span>.",
+      "Walk over to <u>Jalan Alor Food Street</u> with Daiki at <span class=\"time-chip\">08:45 PM</span> for a celebratory dinner featuring charcoal-grilled chicken satay, roti canai, and chilled coconut water before Daiki begins his 10:00 PM shift."
     ],
     costs: [
-      { item: "Airport Grab to Residence (Late Night)", amount: "RM 75.00" },
-      { item: "Midday Solo Lunch", amount: "RM 15.00" },
+      { item: "KLIA Ekspres to KL Sentral", amount: "RM 55.00" },
+      { item: "Grab to Daiki's Flat", amount: "RM 15.00" },
       { item: "LRT to KLCC", amount: "RM 2.80" },
       { item: "Dinner at Jalan Alor with Daiki", amount: "RM 35.00" }
     ],
-    dayTotal: "RM 127.80",
-    dayTotalPhp: "₱1,687 PHP"
+    dayTotal: "RM 107.80",
+    dayTotalPhp: "₱1,423 PHP"
   },
   {
     dayId: "day2",
@@ -515,7 +586,7 @@ const itineraryData = [
       "Rehydrate with fresh green coconut water and savor a South Indian thali lunch together near the temple entrance at <span class=\"time-chip\">12:00 PM</span>.",
       "Take the KTM Komuter back to the city center and browse Malaysian pewter, wood carvings, and batik prints at <u>Central Market (Pasar Seni)</u> from <span class=\"time-chip\">01:45 PM</span> to <span class=\"time-chip\">03:30 PM</span>.",
       "Spend a relaxed late afternoon exploring the city together with Daiki or resting comfortably at the flat before Daiki's work week starts.",
-      "Walk the illuminated pedestrian bridge <u>Saloma Link</u> at <span class=\"time-chip\">06:30 PM</span> for glittering skyline views, followed by a special farewell dinner with Daiki at <span class=\"time-chip\">07:30 PM</span> before his first US tech shift begins at <span class=\"time-chip\">22:00 PM</span>."
+      "Walk the illuminated pedestrian bridge <u>Saloma Link</u> at <span class=\"time-chip\">06:30 PM</span> for glittering skyline views, followed by a special dinner with Daiki at <span class=\"time-chip\">07:30 PM</span> before his first US tech shift begins at <span class=\"time-chip\">22:00 PM</span>."
     ],
     costs: [
       { item: "KTM Komuter Return Train", amount: "RM 5.20" },
@@ -523,7 +594,7 @@ const itineraryData = [
       { item: "Ramayana Cave Admission", amount: "RM 5.00" },
       { item: "Coconut Water & Indian Thali", amount: "RM 20.00" },
       { item: "Monorail / LRT Transit", amount: "RM 4.00" },
-      { item: "Farewell Feast with Daiki", amount: "RM 55.00" }
+      { item: "Dinner with Daiki", amount: "RM 55.00" }
     ],
     dayTotal: "RM 89.20",
     dayTotalPhp: "₱1,177 PHP"
@@ -532,6 +603,81 @@ const itineraryData = [
     dayId: "day6",
     dayNum: "Day 6",
     date: "Tue, 03 Nov 2026",
+    region: "putrajaya",
+    phase: "solo",
+    phaseLabel: "Solo AM / Joint PM",
+    city: "Putrajaya Administrative Center & Lakeside",
+    landmarks: [
+      { name: "Morning Coffee with Daiki", pin: "☕" },
+      { name: "MRT Putrajaya Line / KLIA Transit", pin: "🚆" },
+      { name: "Putra Mosque & Putrajaya Lake", pin: "#18" },
+      { name: "Perdana Putra & Lake Promenade", pin: "🏛️" },
+      { name: "Putrajaya Botanical Garden", pin: "🌺" },
+      { name: "Bangsar Reunion Dinner with Daiki", pin: "🍽️" }
+    ],
+    cultureBadge: "🕌 Federal Administrative Jewel · Rose-Granite Lakeside Mosque & Waterfront Gardens",
+    activities: [
+      "Greet Daiki as his first overnight US shift finishes at <span class=\"time-chip\">07:00 AM</span> Tuesday morning, and share morning coffee and toast together at a local kopitiam until <span class=\"time-chip\">08:15 AM</span>.",
+      "Allow Daiki to rest undisturbed during his morning sleep window while you take the <u>MRT Putrajaya Line</u> or <u>KLIA Transit</u> south to <u>Putrajaya Sentral</u> at <span class=\"time-chip\">09:30 AM</span>.",
+      "Arrive at <u>Dataran Putra</u> by <span class=\"time-chip\">10:15 AM</span> and admire the architectural splendor of <u>Putra Mosque (Masjid Putra)</u>, renowned for its rose-tinted granite domes and 116-meter minaret overlooking the lake.",
+      "Take a peaceful stroll along the lakeside boardwalk fronting <u>Putrajaya Lake</u> and photograph the grand neoclassical complex of <u>Perdana Putra</u> (Prime Minister's Office) at <span class=\"time-chip\">11:30 AM</span>.",
+      "Enjoy a scenic lunch of laksa Johor or ayam percik at a waterfront cafe along <u>Putrajaya Waterfront</u> at <span class=\"time-chip\">12:45 PM</span>.",
+      "Explore the exotic flowering trees, canopy walks, and sun gardens inside <u>Putrajaya Botanical Garden (Taman Botani Putrajaya)</u> from <span class=\"time-chip\">02:00 PM</span> to <span class=\"time-chip\">03:45 PM</span>.",
+      "Ride the transit line back into central <u>Kuala Lumpur</u> by <span class=\"time-chip\">05:00 PM</span> as Daiki completes his sleep cycle.",
+      "Meet up with Daiki at <span class=\"time-chip\">06:30 PM</span> for a relaxed evening dinner together at a lively dining spot in <u>Bangsar</u>, enjoying local specialties and sharing stories before Daiki logs on for his 10:00 PM shift."
+    ],
+    costs: [
+      { item: "Kopitiam Breakfast with Daiki", amount: "RM 14.00" },
+      { item: "KLIA Transit / MRT to Putrajaya", amount: "RM 18.80" },
+      { item: "Putra Mosque Entry", amount: "Free" },
+      { item: "Botanical Garden Entry", amount: "Free" },
+      { item: "Lakeside Waterfront Lunch", amount: "RM 24.00" },
+      { item: "Evening Dinner in Bangsar with Daiki", amount: "RM 42.00" }
+    ],
+    dayTotal: "RM 98.80",
+    dayTotalPhp: "₱1,304 PHP"
+  },
+  {
+    dayId: "day7",
+    dayNum: "Day 7",
+    date: "Wed, 04 Nov 2026",
+    region: "gardens",
+    phase: "solo",
+    phaseLabel: "Solo AM / Joint PM",
+    city: "Perdana Lake Gardens & Bukit Bintang",
+    landmarks: [
+      { name: "Perdana Botanical Gardens", pin: "#20" },
+      { name: "Islamic Arts Museum Malaysia (IAMM)", pin: "#19" },
+      { name: "National Mosque of Malaysia (Masjid Negara)", pin: "🕌" },
+      { name: "Bukit Bintang & Lot 10 Hutong (Joint PM)", pin: "🛍️" },
+      { name: "Farewell Evening Feast with Daiki", pin: "🍲" }
+    ],
+    cultureBadge: "🌿 Botanical Heritage & Islamic Arts · Southeast Asia's Premier Museum & Vibrant Bukit Bintang",
+    activities: [
+      "Quietly head out at <span class=\"time-chip\">08:45 AM</span> while Daiki rests peacefully from his Tuesday overnight work shift.",
+      "Begin the morning surrounded by lush tropical greenery and heritage rain trees at <u>Perdana Botanical Gardens</u>, exploring the sunken gardens and tranquil lake pavilions from <span class=\"time-chip\">09:15 AM</span>.",
+      "Walk over to <u>Islamic Arts Museum Malaysia (IAMM)</u> at <span class=\"time-chip\">10:30 AM</span> to tour Southeast Asia's largest Islamic arts museum, marveling at hand-painted tile domes, ancient calligraphy, jeweled weapons, and scale models of world mosques.",
+      "Visit the nearby <u>National Mosque of Malaysia (Masjid Negara)</u> at <span class=\"time-chip\">12:30 PM</span> to observe its 73-meter minaret and distinctive 16-pointed blue folded star-shaped umbrella dome.",
+      "Enjoy a traditional lunch of aromatic Nasi Kandar with spiced chicken and okra at a local heritage restaurant at <span class=\"time-chip\">01:15 PM</span>.",
+      "Return to the flat by <span class=\"time-chip\">03:00 PM</span> to rest, recharge, and begin organizing luggage for the return flight.",
+      "Reconnect with Daiki at <span class=\"time-chip\">05:00 PM</span> as he wakes up, heading out together via MRT to the vibrant shopping district of <u>Bukit Bintang</u>.",
+      "Browse Malaysian snacks, specialty teas, and gift items inside <u>Pavilion Kuala Lumpur</u> and <u>Lot 10</u> from <span class=\"time-chip\">05:45 PM</span>.",
+      "Share an unforgettable final celebratory dinner with Daiki at <span class=\"time-chip\">07:30 PM</span>, reminiscing on the 8-day journey before his final weeknight shift commences at <span class=\"time-chip\">22:00 PM</span>."
+    ],
+    costs: [
+      { item: "RapidKL Transit", amount: "RM 5.60" },
+      { item: "Perdana Gardens Entry", amount: "Free" },
+      { item: "Islamic Arts Museum Admission", amount: "RM 20.00" },
+      { item: "Nasi Kandar Lunch", amount: "RM 16.00" },
+      { item: "Evening Dinner & Drinks with Daiki", amount: "RM 50.00" }
+    ],
+    dayTotal: "RM 91.60",
+    dayTotalPhp: "₱1,209 PHP"
+  },
+  {
+    dayId: "day8",
+    dayNum: "Day 8",
+    date: "Thu, 05 Nov 2026",
     region: "transit",
     phase: "joint",
     phaseLabel: "Farewell & Departure",
@@ -541,27 +687,28 @@ const itineraryData = [
       { name: "KL Sentral & Nu Sentral Mall", pin: "🛍️" },
       { name: "KLIA Ekspres Non-Stop Train", pin: "🚄" },
       { name: "KLIA Terminal 2 (AirAsia AK584)", pin: "#17" },
-      { name: "Manila (MNL) Arrival 22:20 PM", pin: "🇵🇭" }
+      { name: "Manila (MNL T3) Arrival 22:25 PM", pin: "🇵🇭" }
     ],
     cultureBadge: "✈️ Homeward Transit · AirAsia Flight AK584 Departure to Manila",
     activities: [
-      "Greet Daiki as his first overnight US shift finishes at <span class=\"time-chip\">07:00 AM</span> Tuesday morning, and share a heartfelt farewell breakfast together with Daiki from <span class=\"time-chip\">07:30 AM</span> to <span class=\"time-chip\">08:30 AM</span>.",
-      "Allow Daiki to sleep peacefully from <span class=\"time-chip\">08:30 AM</span> following his shift, while you finish packing your bags.",
-      "Check out quietly at <span class=\"time-chip\">11:30 AM</span>, leaving your luggage with Daiki or taking it to <u>KL Sentral</u>.",
-      "Spend a relaxed midday browsing Malaysian souvenirs (Beryl's chocolates, pewter, white coffee) and enjoying lunch at <u>Nu Sentral</u> from <span class=\"time-chip\">12:00 PM</span> to <span class=\"time-chip\">01:45 PM</span>.",
-      "Say your final warm goodbyes to Daiki before heading into transit.",
-      "Board the <u>KLIA Ekspres</u> from <u>KL Sentral</u> at <span class=\"time-chip\">02:45 PM</span>, arriving at <u>KLIA Terminal 2</u> non-stop by <span class=\"time-chip\">03:15 PM</span>.",
-      "Check in bags, clear border control with plenty of cushion time, and enjoy a sit-down pre-flight meal at <u>Gateway@klia2</u> by <span class=\"time-chip\">04:15 PM</span>.",
-      "Head to your departure gate for boarding at <span class=\"time-chip\">17:30 PM</span> aboard revised AirAsia Flight AK584 for your confirmed <span class=\"time-chip\">18:10 PM</span> departure, touching down in Manila at <span class=\"time-chip\">22:20 PM</span>."
+      "Greet Daiki as his final overnight shift concludes at <span class=\"time-chip\">07:00 AM</span> Thursday morning, and share a celebratory farewell breakfast together from <span class=\"time-chip\">07:30 AM</span> to <span class=\"time-chip\">08:30 AM</span>.",
+      "Allow Daiki to get restful daytime sleep starting at <span class=\"time-chip\">08:30 AM</span>, while you complete packing all belongings into your 20 kg checked bag and 7 kg carry-on.",
+      "Quietly leave the apartment at <span class=\"time-chip\">11:30 AM</span>, leaving keys as arranged, and take the short ride to <u>KL Sentral</u>.",
+      "Store baggage or stroll through <u>Nu Sentral Mall</u> from <span class=\"time-chip\">12:00 PM</span> to <span class=\"time-chip\">02:15 PM</span> for last-minute Malaysian treats (Beryl's chocolates, Boh tea, white coffee) and a leisurely sit-down lunch.",
+      "Say heartfelt digital farewells to Daiki and board the non-stop <u>KLIA Ekspres</u> at <u>KL Sentral</u> at <span class=\"time-chip\">02:45 PM</span> (14:45), gliding to <u>KLIA Terminal 2</u> in 28 minutes by <span class=\"time-chip\">03:15 PM</span>.",
+      "Drop off your 20 kg checked luggage at the AirAsia bag drop counter and clear immigration and security with a comfortable 2.5-hour cushion.",
+      "Browse duty-free shops and enjoy a relaxing tea at <u>Gateway@klia2</u> by <span class=\"time-chip\">04:30 PM</span>.",
+      "Proceed to the departure gate for boarding at <span class=\"time-chip\">05:40 PM</span> (17:40) aboard AirAsia Flight AK584 for your confirmed <span class=\"time-chip\">06:20 PM</span> (18:20) non-stop flight to Manila.",
+      "Enjoy your pre-booked Santan Bukhara Chicken Briyani meal inflight, touching down smoothly at <u>Manila (MNL Terminal 3)</u> at <span class=\"time-chip\">10:25 PM</span> (22:25)."
     ],
     costs: [
       { item: "Farewell Breakfast with Daiki", amount: "RM 15.00" },
       { item: "Lunch & Cafe Refreshments", amount: "RM 25.00" },
       { item: "KLIA Ekspres to KLIA2", amount: "RM 55.00" },
-      { item: "Airport Meal at Gateway@klia2", amount: "RM 30.00" }
+      { item: "Airport Snack at Gateway@klia2", amount: "RM 20.00" }
     ],
-    dayTotal: "RM 125.00",
-    dayTotalPhp: "₱1,650 PHP"
+    dayTotal: "RM 115.00",
+    dayTotalPhp: "₱1,518 PHP"
   }
 ];
 

@@ -392,6 +392,20 @@ body {
   box-shadow: 0 0 0 2px rgba(124, 58, 237, 0.2);
 }
 
+.cal-legend-chip.chip-putrajaya.active {
+  border-color: #0d9488;
+  background: #f0fdfa;
+  color: #0f766e;
+  box-shadow: 0 0 0 2px rgba(13, 148, 136, 0.2);
+}
+
+.cal-legend-chip.chip-gardens.active {
+  border-color: #15803d;
+  background: #f0fdf4;
+  color: #166534;
+  box-shadow: 0 0 0 2px rgba(21, 128, 61, 0.2);
+}
+
 .cal-legend-chip.chip-transit.active {
   border-color: #475569;
   background: #f1f5f9;
@@ -678,6 +692,38 @@ body {
 .cal-day-cell.country-batucaves.is-selected {
   border-color: #7c3aed !important;
   box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.35), 0 4px 12px rgba(124, 58, 237, 0.2) !important;
+}
+
+.cal-day-cell.country-putrajaya {
+  background: #f0fdfa;
+  border-color: #99f6e4;
+}
+.cal-day-cell.country-putrajaya .cal-day-badge {
+  background: #ccfbf1;
+  color: #0f766e;
+  border: 1px solid #5eead4;
+}
+.cal-day-cell.country-putrajaya .cal-day-num { color: #0d9488; }
+.cal-day-cell.country-putrajaya .cal-day-city { color: #0f766e; }
+.cal-day-cell.country-putrajaya.is-selected {
+  border-color: #0d9488 !important;
+  box-shadow: 0 0 0 3px rgba(13, 148, 136, 0.35), 0 4px 12px rgba(13, 148, 136, 0.2) !important;
+}
+
+.cal-day-cell.country-gardens {
+  background: #f0fdf4;
+  border-color: #bbf7d0;
+}
+.cal-day-cell.country-gardens .cal-day-badge {
+  background: #dcfce7;
+  color: #166534;
+  border: 1px solid #86efac;
+}
+.cal-day-cell.country-gardens .cal-day-num { color: #15803d; }
+.cal-day-cell.country-gardens .cal-day-city { color: #166534; }
+.cal-day-cell.country-gardens.is-selected {
+  border-color: #15803d !important;
+  box-shadow: 0 0 0 3px rgba(21, 128, 61, 0.35), 0 4px 12px rgba(21, 128, 61, 0.2) !important;
 }
 
 .cal-day-cell.country-transit {
