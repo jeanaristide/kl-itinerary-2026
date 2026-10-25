@@ -196,7 +196,7 @@
       </div>
       <div class="desc">Wed 04 Nov 2026 · Solo AM / Joint PM (1★ ➔ 6★)</div>
       <div class="meta-pills">
-        <div class="meta-pill">🌿 <strong>09:30</strong> Perdana Botanical Gardens Canopy &amp; Lake (2★)</div>
+        <div class="meta-pill">🚇 <strong>08:45</strong> LRT Lembah Subang (1★) ➔ Perdana Gardens (2★)</div>
         <div class="meta-pill">🏺 <strong>11:15</strong> Islamic Arts Museum Malaysia (IAMM) Domes (3★)</div>
         <div class="meta-pill">🕌 <strong>13:45</strong> National Mosque (Masjid Negara) Architecture (4★)</div>
         <div class="meta-pill">🛍️ <strong>18:30</strong> Pavilion KL (5★) &amp; Lot 10 Hutong Farewell Feast (6★)</div>
@@ -222,7 +222,7 @@
 
         <div class="legend-row">
           <div class="num-star-circle mini pin-hostel">1★</div>
-          <span>1★ Daiki's Flat (Morning Start)</span>
+          <span>1★ Eve Suite Ara Damansara (Morning Start)</span>
         </div>
 
         <div class="legend-row">
@@ -236,13 +236,13 @@
         </div>
 
         <div class="legend-row">
-          <div class="legend-line line-dotted-red"><span class="legend-arrow" style="color:#ea580c;">▶</span></div>
-          <span>Botanical &amp; Museum Walk (▶)</span>
+          <div class="legend-line line-blue"><span class="legend-arrow">▶</span></div>
+          <span>LRT Kelana Jaya Transit (▶)</span>
         </div>
 
         <div class="legend-row">
-          <div class="legend-line line-blue"><span class="legend-arrow">▶</span></div>
-          <span>Evening Transit to Golden Triangle (▶)</span>
+          <div class="legend-line line-dotted-red"><span class="legend-arrow" style="color:#ea580c;">▶</span></div>
+          <span>Botanical &amp; Museum Walk (▶)</span>
         </div>
       </div>
     </div>
@@ -288,7 +288,7 @@
       }
     })();
 
-    var map = L.map('map', { zoomControl: false }).setView([3.1445, 101.6995], 14);
+    var map = L.map('map', { zoomControl: false }).setView([3.136, 101.652], 12);
 
     L.tileLayer('https://mt{s}.google.com/vt/lyrs=m&x={x}&y={y}&z={z}', {
       subdomains: ['0', '1', '2', '3'],
@@ -350,16 +350,19 @@
       }).addTo(map);
     }
 
-    var routeLine0 = L.polyline([[3.139, 101.695], [3.1432, 101.6848], [3.1419, 101.6897], [3.1418, 101.6917]], { color: "#ea580c", weight: 4, opacity: 1.0, dashArray: "6, 8" }).addTo(map);
-    addDirectionalArrows(routeLine0, "#ea580c", 8, 20, 40, "#ffffff");
+    L.polyline([[3.1132, 101.5916], [3.105, 101.605], [3.11, 101.645], [3.125, 101.67], [3.134, 101.6865], [3.1432, 101.6848]], { color: "#ffffff", weight: 7, opacity: 0.95 }).addTo(map);
+    var routeLine0 = L.polyline([[3.1132, 101.5916], [3.105, 101.605], [3.11, 101.645], [3.125, 101.67], [3.134, 101.6865], [3.1432, 101.6848]], { color: "#0284c7", weight: 4.5, opacity: 1.0 }).addTo(map);
+    addDirectionalArrows(routeLine0, "#0284c7", 9, 25, 50, "#ffffff");
+    var routeLine1 = L.polyline([[3.1432, 101.6848], [3.1419, 101.6897], [3.1418, 101.6917]], { color: "#ea580c", weight: 4, opacity: 1.0, dashArray: "6, 8" }).addTo(map);
+    addDirectionalArrows(routeLine1, "#ea580c", 8, 20, 40, "#ffffff");
     L.polyline([[3.1418, 101.6917], [3.145, 101.701], [3.1489, 101.7133], [3.1465, 101.7116]], { color: "#ffffff", weight: 7, opacity: 0.95 }).addTo(map);
-    var routeLine1 = L.polyline([[3.1418, 101.6917], [3.145, 101.701], [3.1489, 101.7133], [3.1465, 101.7116]], { color: "#0284c7", weight: 4.5, opacity: 1.0 }).addTo(map);
-    addDirectionalArrows(routeLine1, "#0284c7", 9, 25, 50, "#ffffff");
+    var routeLine2 = L.polyline([[3.1418, 101.6917], [3.145, 101.701], [3.1489, 101.7133], [3.1465, 101.7116]], { color: "#0284c7", weight: 4.5, opacity: 1.0 }).addTo(map);
+    addDirectionalArrows(routeLine2, "#0284c7", 9, 25, 50, "#ffffff");
 
-    var bIcon0 = L.divIcon({ className: 'badge-div', html: '<div class="transit-badge">🚇 MRT Muzium Negara ➔ Bukit Bintang</div>', iconSize: [0, 0], iconAnchor: [85, 12] });
-    L.marker([3.1455, 101.7025], { icon: bIcon0 }).addTo(map);
+    var bIcon0 = L.divIcon({ className: 'badge-div', html: '<div class="transit-badge">🚇 Direct LRT from Lembah Subang</div>', iconSize: [0, 0], iconAnchor: [95, 12] });
+    L.marker([3.125, 101.635], { icon: bIcon0 }).addTo(map);
 
-    addChronologicalPin(3.139, 101.695, "1", "Daiki's Flat (Start)", "09:10 AM Depart", "pin-hostel", 14, 14);
+    addChronologicalPin(3.1132, 101.5916, "1", "Eve Suite Ara Damansara", "08:45 AM LRT Depart", "pin-hostel", 14, -22);
     addChronologicalPin(3.1432, 101.6848, "2", "Perdana Botanical Gardens", "09:30 AM Tropical Canopy", "pin-museum", -148, -68);
     addChronologicalPin(3.1419, 101.6897, "3", "Islamic Arts Museum (IAMM)", "11:15 AM Turquoise Domes", "pin-museum", -148, 14);
     addChronologicalPin(3.1418, 101.6917, "4", "National Mosque (Masjid)", "13:45 PM Pleated Star Roof", "pin-museum", 14, -72);

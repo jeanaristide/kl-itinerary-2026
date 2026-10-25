@@ -414,39 +414,39 @@ maps_config = [
         "filename": "day1_klcc_arrival_map.html",
         "png_name": "day1_klcc_arrival_map.png",
         "day_num": 1,
-        "title": "KLIA2 Arrival, KLCC Twin Towers & Jalan Alor Night Route",
+        "title": "KLIA2 Arrival, Eve Suite Check-In, KLCC & Jalan Alor Night Route",
         "short_title": "KLCC & Jalan Alor Route",
         "date_str": "Thu 29 Oct 2026 · Visits (1★ ➔ 6★)",
         "header_pills": [
-            "✈️ <strong>16:55</strong> Arrive KLIA2 (AK585) ➔ KLIA Ekspres to 1★",
-            "🏠 <strong>18:20</strong> Check-In at Daiki's Flat (2★) &amp; Reunion",
-            "🏙️ <strong>19:30</strong> Twin Towers (3★) &amp; Lake Symphony (4★)",
+            "✈️ <strong>16:55</strong> Arrive KLIA2 (AK585) ➔ KLIA Ekspres to KL Sentral (1★)",
+            "🏠 <strong>18:25</strong> Eve Suite Ara Damansara Check-In (2★) &amp; Reunion",
+            "🏙️ <strong>19:30</strong> Direct LRT to Twin Towers (3★) &amp; Symphony (4★)",
             "🍢 <strong>20:45</strong> Jalan Alor Night Feast with Daiki (6★)"
         ],
         "legend_items": [
             ("pin", "pin-arrival", "1★ KL Sentral Hub (KLIA Ekspres)"),
-            ("pin", "pin-hostel", "2★ Daiki's Flat (Host Base)"),
+            ("pin", "pin-hostel", "2★ Eve Suite Ara Damansara (Host Base)"),
             ("pin", "", "3★-6★ Chronological Landmarks"),
             ("line", "line-blue", "LRT Kelana Jaya Line (▶)"),
             ("dotted", "line-dotted-red", "Walking Promenade &amp; Bridge (▶)")
         ],
-        "center": [3.1465, 101.7035],
-        "zoom": 14,
+        "center": [3.1380, 101.6520],
+        "zoom": 12,
         "pins": [
             {"lat": 3.1340, "lng": 101.6865, "num": 1, "name": "KL Sentral (KLIA Ekspres)", "time": "18:08 PM Arrive", "customClass": "pin-arrival", "offX": -145, "offY": -15},
-            {"lat": 3.1390, "lng": 101.6950, "num": 2, "name": "Daiki's Flat (Host Base)", "time": "18:20 PM Check-In", "customClass": "pin-hostel", "offX": 14, "offY": 10},
-            {"lat": 3.1578, "lng": 101.7120, "num": 3, "name": "Petronas Twin Towers & Suria", "time": "19:25 PM Dusk View", "offX": -145, "offY": -32},
+            {"lat": 3.1132, "lng": 101.5916, "num": 2, "name": "Eve Suite Ara Damansara", "time": "18:25 PM Check-In (A-23-08)", "customClass": "pin-hostel", "offX": 14, "offY": -22},
+            {"lat": 3.1578, "lng": 101.7120, "num": 3, "name": "Petronas Twin Towers & Suria", "time": "19:30 PM Dusk View", "offX": -145, "offY": -32},
             {"lat": 3.1554, "lng": 101.7145, "num": 4, "name": "KLCC Park & Lake Symphony", "time": "20:00 PM Fountain Show", "offX": 14, "offY": -58},
             {"lat": 3.1488, "lng": 101.7133, "num": 5, "name": "KLCC-Bukit Bintang Walkway", "time": "20:25 PM Covered Walk", "offX": 14, "offY": 10},
             {"lat": 3.1459, "lng": 101.7088, "num": 6, "name": "Jalan Alor Food Street", "time": "20:45 PM Satay Dinner", "offX": -145, "offY": -62}
         ],
         "polylines": [
-            {"coords": [[3.1340, 101.6865], [3.1390, 101.6950]], "color": "#059669", "weight": 4.5, "arrows": {"color": "#059669", "size": 9, "offset": 20, "repeat": 45}},
-            {"coords": [[3.1390, 101.6950], [3.1445, 101.6995], [3.1578, 101.7120]], "color": "#0284c7", "weight": 5, "casingColor": "#ffffff", "casingWeight": 8, "arrows": {"color": "#0284c7", "size": 9, "offset": 25, "repeat": 50}},
+            {"coords": [[3.1340, 101.6865], [3.1250, 101.6700], [3.1100, 101.6450], [3.1050, 101.6050], [3.1132, 101.5916]], "color": "#059669", "weight": 4.5, "arrows": {"color": "#059669", "size": 9, "offset": 20, "repeat": 45}},
+            {"coords": [[3.1132, 101.5916], [3.1050, 101.6050], [3.1100, 101.6450], [3.1250, 101.6700], [3.1340, 101.6865], [3.1420, 101.6960], [3.1490, 101.6965], [3.1578, 101.7120]], "color": "#0284c7", "weight": 5, "casingColor": "#ffffff", "casingWeight": 8, "arrows": {"color": "#0284c7", "size": 9, "offset": 25, "repeat": 50}},
             {"coords": [[3.1578, 101.7120], [3.1554, 101.7145], [3.1488, 101.7133], [3.1459, 101.7088]], "color": "#ea580c", "weight": 4, "dashArray": "6, 8", "arrows": {"color": "#ea580c", "size": 8, "offset": 20, "repeat": 40}}
         ],
         "badges": [
-            {"lat": 3.1500, "lng": 101.7040, "html": '<div class="transit-badge">🚇 LRT Kelana Jaya Line</div>', "iconAnchor": [60, 12]}
+            {"lat": 3.1220, "lng": 101.6350, "html": '<div class="transit-badge">🚇 Direct Kelana Jaya LRT (Lembah Subang ➔ KLCC)</div>', "iconAnchor": [110, 12]}
         ]
     },
     # DAY 2
@@ -458,22 +458,22 @@ maps_config = [
         "short_title": "Chinatown & Merdeka Route",
         "date_str": "Fri 30 Oct 2026 · Visits (1★ ➔ 8★)",
         "header_pills": [
-            "🏮 <strong>10:00</strong> Kwai Chai Hong (2★) &amp; Guan Di Temple (3★)",
-            "🕉️ <strong>11:45</strong> Sri Maha Mariamman (4★) &amp; Petaling St (5★)",
+            "🚇 <strong>09:30</strong> Direct LRT from Lembah Subang (1★) to Chinatown (2★)",
+            "🏮 <strong>10:00</strong> Kwai Chai Hong (2★), Guan Di (3★) &amp; Sri Maha (4★)",
             "🏛️ <strong>14:30</strong> Sultan Abdul Samad (6★) &amp; Merdeka Sq (7★)",
             "🛍️ <strong>18:30</strong> Evening Dinner at Pavilion KL with Daiki (8★)"
         ],
         "legend_items": [
-            ("pin", "pin-hostel", "1★ Daiki's Flat (Morning Start)"),
+            ("pin", "pin-hostel", "1★ Eve Suite Ara Damansara (Start)"),
             ("pin", "pin-temple", "3★-4★ Historic Chinatown Shrines"),
             ("pin", "", "2★, 5★-8★ Heritage &amp; Shopping Stops"),
-            ("dotted", "line-dotted-red", "Chinatown &amp; Colonial Walk (▶)"),
-            ("line", "line-blue", "Evening Transit to Bukit Bintang (▶)")
+            ("line", "line-blue", "LRT Kelana Jaya Direct Line (▶)"),
+            ("dotted", "line-dotted-red", "Chinatown &amp; Colonial Walk (▶)")
         ],
-        "center": [3.1452, 101.7015],
-        "zoom": 15,
+        "center": [3.1360, 101.6520],
+        "zoom": 12,
         "pins": [
-            {"lat": 3.1390, "lng": 101.6950, "num": 1, "name": "Daiki's Flat (Start)", "time": "09:30 AM Depart", "customClass": "pin-hostel", "offX": -148, "offY": 16},
+            {"lat": 3.1132, "lng": 101.5916, "num": 1, "name": "Eve Suite Ara Damansara", "time": "09:30 AM LRT Depart", "customClass": "pin-hostel", "offX": 14, "offY": -22},
             {"lat": 3.1417, "lng": 101.6983, "num": 2, "name": "Kwai Chai Hong Murals", "time": "10:00 AM Heritage Lane", "offX": 14, "offY": 18},
             {"lat": 3.1436, "lng": 101.6967, "num": 3, "name": "Guan Di Temple (1888)", "time": "11:00 AM Taoist Shrine", "customClass": "pin-temple", "offX": -148, "offY": -72},
             {"lat": 3.1432, "lng": 101.6964, "num": 4, "name": "Sri Maha Mariamman", "time": "11:45 AM Gopuram Tower", "customClass": "pin-temple", "offX": -148, "offY": -4},
@@ -483,11 +483,12 @@ maps_config = [
             {"lat": 3.1489, "lng": 101.7133, "num": 8, "name": "Pavilion KL (Bukit Bintang)", "time": "18:30 PM Dinner w/ Daiki", "offX": -145, "offY": -20}
         ],
         "polylines": [
-            {"coords": [[3.1390, 101.6950], [3.1417, 101.6983], [3.1436, 101.6967], [3.1432, 101.6964], [3.1444, 101.6978], [3.1488, 101.6946], [3.1485, 101.6938]], "color": "#ea580c", "weight": 4, "dashArray": "6, 8", "arrows": {"color": "#ea580c", "size": 8, "offset": 20, "repeat": 40}},
+            {"coords": [[3.1132, 101.5916], [3.1050, 101.6050], [3.1100, 101.6450], [3.1250, 101.6700], [3.1340, 101.6865], [3.1417, 101.6983]], "color": "#0284c7", "weight": 4.5, "casingColor": "#ffffff", "casingWeight": 7, "arrows": {"color": "#0284c7", "size": 9, "offset": 25, "repeat": 50}},
+            {"coords": [[3.1417, 101.6983], [3.1436, 101.6967], [3.1432, 101.6964], [3.1444, 101.6978], [3.1488, 101.6946], [3.1485, 101.6938]], "color": "#ea580c", "weight": 4, "dashArray": "6, 8", "arrows": {"color": "#ea580c", "size": 8, "offset": 20, "repeat": 40}},
             {"coords": [[3.1485, 101.6938], [3.1470, 101.7030], [3.1489, 101.7133]], "color": "#0284c7", "weight": 4.5, "casingColor": "#ffffff", "casingWeight": 7, "arrows": {"color": "#0284c7", "size": 9, "offset": 25, "repeat": 50}}
         ],
         "badges": [
-            {"lat": 3.1476, "lng": 101.7042, "html": '<div class="transit-badge">🚇 MRT Kajang Line</div>', "iconAnchor": [55, 12]}
+            {"lat": 3.1250, "lng": 101.6400, "html": '<div class="transit-badge">🚇 Direct LRT (KJ25 Lembah Subang ➔ KJ14 Pasar Seni)</div>', "iconAnchor": [115, 12]}
         ]
     },
     # DAY 3
@@ -542,31 +543,31 @@ maps_config = [
             "⛪ <strong>10:00</strong> LDS Sacrament Service at Taman U Thant (2★)",
             "🍲 <strong>12:30</strong> Sunday Fellowship Lunch in Ampang (3★)",
             "🏮 <strong>14:30</strong> Suggested: Thean Hou Temple Robson Heights (4★)",
-            "🏠 <strong>17:30</strong> Return to Flat for Rested Sunday Evening (5★)"
+            "🏠 <strong>17:30</strong> Return to Eve Suite Ara Damansara (5★)"
         ],
         "legend_items": [
-            ("pin", "pin-hostel", "1★, 5★ Daiki's Flat (Host Base)"),
+            ("pin", "pin-hostel", "1★, 5★ Eve Suite Ara Damansara (Host Base)"),
             ("pin", "pin-temple", "2★ KL LDS Meetinghouse (Worship)"),
             ("pin", "", "3★-4★ Sunday Dining &amp; Thean Hou"),
             ("line", "line-green", "Morning Grab to Taman U Thant (▶)"),
             ("line", "line-blue", "Afternoon Route to Robson Heights (▶)")
         ],
-        "center": [3.1400, 101.7100],
-        "zoom": 13,
+        "center": [3.1380, 101.6650],
+        "zoom": 12,
         "pins": [
-            {"lat": 3.1390, "lng": 101.6950, "num": 1, "name": "Daiki's Flat (Morning)", "time": "09:15 AM Depart Together", "customClass": "pin-hostel", "offX": -145, "offY": -35},
+            {"lat": 3.1132, "lng": 101.5916, "num": 1, "name": "Eve Suite Ara Damansara", "time": "09:15 AM Depart Together", "customClass": "pin-hostel", "offX": 14, "offY": -22},
             {"lat": 3.1577, "lng": 101.7371, "num": 2, "name": "KL LDS Meetinghouse", "time": "10:00 AM Worship Service", "customClass": "pin-temple", "offX": -140, "offY": -28},
             {"lat": 3.1545, "lng": 101.7285, "num": 3, "name": "Ampang Hilir Dining", "time": "12:30 PM Sunday Lunch", "offX": 14, "offY": 6},
             {"lat": 3.1219, "lng": 101.6873, "num": 4, "name": "Thean Hou Temple (Mazu)", "time": "14:30 PM 6-Tiered Shrine", "customClass": "pin-temple", "offX": -145, "offY": 10},
-            {"lat": 3.1385, "lng": 101.6955, "num": 5, "name": "Return to Daiki's Flat", "time": "17:30 PM Evening Rest", "customClass": "pin-hostel", "offX": 16, "offY": -10}
+            {"lat": 3.1132, "lng": 101.5916, "num": 5, "name": "Return to Eve Suite", "time": "17:30 PM Rested Evening", "customClass": "pin-hostel", "offX": 14, "offY": 12}
         ],
         "polylines": [
-            {"coords": [[3.1390, 101.6950], [3.1577, 101.7371]], "color": "#059669", "weight": 4.5, "casingColor": "#ffffff", "casingWeight": 7, "arrows": {"color": "#059669", "size": 9, "offset": 25, "repeat": 50}},
-            {"coords": [[3.1577, 101.7371], [3.1545, 101.7285], [3.1219, 101.6873]], "color": "#0284c7", "weight": 4.5, "casingColor": "#ffffff", "casingWeight": 7, "arrows": {"color": "#0284c7", "size": 9, "offset": 25, "repeat": 50}},
-            {"coords": [[3.1219, 101.6873], [3.1385, 101.6955]], "color": "#7c3aed", "weight": 4, "dashArray": "6, 8", "arrows": {"color": "#7c3aed", "size": 8, "offset": 20, "repeat": 40}}
+            {"coords": [[3.1132, 101.5916], [3.1300, 101.6500], [3.1500, 101.7000], [3.1577, 101.7371]], "color": "#059669", "weight": 4.5, "casingColor": "#ffffff", "casingWeight": 7, "arrows": {"color": "#059669", "size": 9, "offset": 25, "repeat": 50}},
+            {"coords": [[3.1577, 101.7371], [3.1545, 101.7285], [3.1350, 101.7100], [3.1219, 101.6873]], "color": "#0284c7", "weight": 4.5, "casingColor": "#ffffff", "casingWeight": 7, "arrows": {"color": "#0284c7", "size": 9, "offset": 25, "repeat": 50}},
+            {"coords": [[3.1219, 101.6873], [3.1150, 101.6400], [3.1132, 101.5916]], "color": "#7c3aed", "weight": 4, "dashArray": "6, 8", "arrows": {"color": "#7c3aed", "size": 8, "offset": 20, "repeat": 40}}
         ],
         "badges": [
-            {"lat": 3.1495, "lng": 101.7160, "html": '<div class="transit-badge badge-bus">🚗 15-min Grab to Meetinghouse</div>', "iconAnchor": [70, 12]}
+            {"lat": 3.1420, "lng": 101.6550, "html": '<div class="transit-badge badge-bus">🚗 Grab Cross-City to Meetinghouse</div>', "iconAnchor": [95, 12]}
         ]
     },
     # DAY 5
@@ -659,22 +660,22 @@ maps_config = [
         "short_title": "Islamic Arts & Bukit Bintang",
         "date_str": "Wed 04 Nov 2026 · Solo AM / Joint PM (1★ ➔ 6★)",
         "header_pills": [
-            "🌿 <strong>09:30</strong> Perdana Botanical Gardens Canopy &amp; Lake (2★)",
+            "🚇 <strong>08:45</strong> LRT Lembah Subang (1★) ➔ Perdana Gardens (2★)",
             "🏺 <strong>11:15</strong> Islamic Arts Museum Malaysia (IAMM) Domes (3★)",
             "🕌 <strong>13:45</strong> National Mosque (Masjid Negara) Architecture (4★)",
             "🛍️ <strong>18:30</strong> Pavilion KL (5★) &amp; Lot 10 Hutong Farewell Feast (6★)"
         ],
         "legend_items": [
-            ("pin", "pin-hostel", "1★ Daiki's Flat (Morning Start)"),
+            ("pin", "pin-hostel", "1★ Eve Suite Ara Damansara (Morning Start)"),
             ("pin", "pin-museum", "2★-4★ Lake Gardens &amp; IAMM Precinct"),
             ("pin", "", "5★-6★ Bukit Bintang Farewell Night"),
-            ("dotted", "line-dotted-red", "Botanical &amp; Museum Walk (▶)"),
-            ("line", "line-blue", "Evening Transit to Golden Triangle (▶)")
+            ("line", "line-blue", "LRT Kelana Jaya Transit (▶)"),
+            ("dotted", "line-dotted-red", "Botanical &amp; Museum Walk (▶)")
         ],
-        "center": [3.1445, 101.6995],
-        "zoom": 14,
+        "center": [3.1360, 101.6520],
+        "zoom": 12,
         "pins": [
-            {"lat": 3.1390, "lng": 101.6950, "num": 1, "name": "Daiki's Flat (Start)", "time": "09:10 AM Depart", "customClass": "pin-hostel", "offX": 14, "offY": 14},
+            {"lat": 3.1132, "lng": 101.5916, "num": 1, "name": "Eve Suite Ara Damansara", "time": "08:45 AM LRT Depart", "customClass": "pin-hostel", "offX": 14, "offY": -22},
             {"lat": 3.1432, "lng": 101.6848, "num": 2, "name": "Perdana Botanical Gardens", "time": "09:30 AM Tropical Canopy", "customClass": "pin-museum", "offX": -148, "offY": -68},
             {"lat": 3.1419, "lng": 101.6897, "num": 3, "name": "Islamic Arts Museum (IAMM)", "time": "11:15 AM Turquoise Domes", "customClass": "pin-museum", "offX": -148, "offY": 14},
             {"lat": 3.1418, "lng": 101.6917, "num": 4, "name": "National Mosque (Masjid)", "time": "13:45 PM Pleated Star Roof", "customClass": "pin-museum", "offX": 14, "offY": -72},
@@ -682,11 +683,12 @@ maps_config = [
             {"lat": 3.1465, "lng": 101.7116, "num": 6, "name": "Lot 10 Hutong Heritage", "time": "19:30 PM Farewell Dinner", "offX": 14, "offY": 8}
         ],
         "polylines": [
-            {"coords": [[3.1390, 101.6950], [3.1432, 101.6848], [3.1419, 101.6897], [3.1418, 101.6917]], "color": "#ea580c", "weight": 4, "dashArray": "6, 8", "arrows": {"color": "#ea580c", "size": 8, "offset": 20, "repeat": 40}},
+            {"coords": [[3.1132, 101.5916], [3.1050, 101.6050], [3.1100, 101.6450], [3.1250, 101.6700], [3.1340, 101.6865], [3.1432, 101.6848]], "color": "#0284c7", "weight": 4.5, "casingColor": "#ffffff", "casingWeight": 7, "arrows": {"color": "#0284c7", "size": 9, "offset": 25, "repeat": 50}},
+            {"coords": [[3.1432, 101.6848], [3.1419, 101.6897], [3.1418, 101.6917]], "color": "#ea580c", "weight": 4, "dashArray": "6, 8", "arrows": {"color": "#ea580c", "size": 8, "offset": 20, "repeat": 40}},
             {"coords": [[3.1418, 101.6917], [3.1450, 101.7010], [3.1489, 101.7133], [3.1465, 101.7116]], "color": "#0284c7", "weight": 4.5, "casingColor": "#ffffff", "casingWeight": 7, "arrows": {"color": "#0284c7", "size": 9, "offset": 25, "repeat": 50}}
         ],
         "badges": [
-            {"lat": 3.1455, "lng": 101.7025, "html": '<div class="transit-badge">🚇 MRT Muzium Negara ➔ Bukit Bintang</div>', "iconAnchor": [85, 12]}
+            {"lat": 3.1250, "lng": 101.6350, "html": '<div class="transit-badge">🚇 Direct LRT from Lembah Subang</div>', "iconAnchor": [95, 12]}
         ]
     },
     # DAY 8
@@ -694,32 +696,32 @@ maps_config = [
         "filename": "day8_kl_sentral_homeward_transit_map.html",
         "png_name": "day8_kl_sentral_homeward_transit_map.png",
         "day_num": 8,
-        "title": "KL Sentral Farewell, KLIA Ekspres & Flight AK584 to Manila",
-        "short_title": "KL Sentral ➔ KLIA2 Departure",
+        "title": "Eve Suite Farewell, KL Sentral, KLIA Ekspres & Flight AK584",
+        "short_title": "Eve Suite ➔ KLIA2 Departure",
         "date_str": "Thu 05 Nov 2026 · Homeward Transit (1★ ➔ 5★)",
         "header_pills": [
-            "🏠 <strong>07:30</strong> Farewell Breakfast w/ Daiki &amp; Packing at Flat (1★)",
+            "🏠 <strong>07:30</strong> Farewell Breakfast &amp; Packing at Eve Suite (1★)",
             "🛍️ <strong>12:30</strong> Nu Sentral Mall Lunch &amp; Last-Minute Treats (2★)",
             "🚄 <strong>14:30</strong> Non-Stop KLIA Ekspres from KL Sentral (3★)",
             "✈️ <strong>18:20</strong> AirAsia AK584 Departs KLIA2 (4★-5★) ➔ 22:25 MNL"
         ],
         "legend_items": [
-            ("pin", "pin-hostel", "1★ Daiki's Flat (Check-Out)"),
+            ("pin", "pin-hostel", "1★ Eve Suite Ara Damansara (Check-Out)"),
             ("pin", "pin-rail", "2★-3★ Nu Sentral &amp; KL Sentral Hub"),
             ("pin", "pin-arrival", "4★-5★ KLIA Terminal 2 (Flight AK584)"),
             ("rail", "line-purple", "KLIA Ekspres High-Speed Rail (▶)")
         ],
-        "center": [2.9400, 101.6860],
+        "center": [2.9280, 101.6400],
         "zoom": 11,
         "pins": [
-            {"lat": 3.1390, "lng": 101.6950, "num": 1, "name": "Daiki's Flat (Farewell)", "time": "07:30 AM Breakfast & Pack", "customClass": "pin-hostel", "offX": 14, "offY": -72},
+            {"lat": 3.1132, "lng": 101.5916, "num": 1, "name": "Eve Suite Ara Damansara", "time": "07:30 AM Breakfast & Pack", "customClass": "pin-hostel", "offX": 14, "offY": -22},
             {"lat": 3.1332, "lng": 101.6872, "num": 2, "name": "Nu Sentral Mall", "time": "12:30 PM Lunch & Gifts", "offX": 14, "offY": 12},
             {"lat": 3.1340, "lng": 101.6865, "num": 3, "name": "KL Sentral Ekspres Platform", "time": "14:30 PM Board Express", "customClass": "pin-rail", "offX": -145, "offY": -15},
             {"lat": 2.7433, "lng": 101.6853, "num": 4, "name": "KLIA Terminal 2 (Bag Drop)", "time": "15:00 PM Check-In 20kg", "customClass": "pin-arrival", "offX": -145, "offY": -25},
             {"lat": 2.7410, "lng": 101.6875, "num": 5, "name": "International Gate (AK584)", "time": "18:20 PM Fly to Manila", "customClass": "pin-arrival", "offX": 14, "offY": -15}
         ],
         "polylines": [
-            {"coords": [[3.1390, 101.6950], [3.1332, 101.6872], [3.1340, 101.6865]], "color": "#059669", "weight": 4.5, "arrows": {"color": "#059669", "size": 8, "offset": 20, "repeat": 40}},
+            {"coords": [[3.1132, 101.5916], [3.1050, 101.6050], [3.1100, 101.6450], [3.1250, 101.6700], [3.1332, 101.6872], [3.1340, 101.6865]], "color": "#059669", "weight": 4.5, "arrows": {"color": "#059669", "size": 8, "offset": 20, "repeat": 40}},
             {"coords": [[3.1340, 101.6865], [3.0400, 101.7050], [2.9312, 101.6712], [2.8000, 101.6800], [2.7433, 101.6853]], "color": "#7c3aed", "weight": 5.5, "casingColor": "#ffffff", "casingWeight": 8.5, "arrows": {"color": "#7c3aed", "size": 9, "offset": 30, "repeat": 65}}
         ],
         "badges": [

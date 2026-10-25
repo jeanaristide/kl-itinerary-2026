@@ -199,7 +199,7 @@
         <div class="meta-pill">⛪ <strong>10:00</strong> LDS Sacrament Service at Taman U Thant (2★)</div>
         <div class="meta-pill">🍲 <strong>12:30</strong> Sunday Fellowship Lunch in Ampang (3★)</div>
         <div class="meta-pill">🏮 <strong>14:30</strong> Suggested: Thean Hou Temple Robson Heights (4★)</div>
-        <div class="meta-pill">🏠 <strong>17:30</strong> Return to Flat for Rested Sunday Evening (5★)</div>
+        <div class="meta-pill">🏠 <strong>17:30</strong> Return to Eve Suite Ara Damansara (5★)</div>
       </div>
     </div>
   </div>
@@ -222,7 +222,7 @@
 
         <div class="legend-row">
           <div class="num-star-circle mini pin-hostel">1★</div>
-          <span>1★, 5★ Daiki's Flat (Host Base)</span>
+          <span>1★, 5★ Eve Suite Ara Damansara (Host Base)</span>
         </div>
 
         <div class="legend-row">
@@ -288,7 +288,7 @@
       }
     })();
 
-    var map = L.map('map', { zoomControl: false }).setView([3.14, 101.71], 13);
+    var map = L.map('map', { zoomControl: false }).setView([3.138, 101.665], 12);
 
     L.tileLayer('https://mt{s}.google.com/vt/lyrs=m&x={x}&y={y}&z={z}', {
       subdomains: ['0', '1', '2', '3'],
@@ -350,23 +350,23 @@
       }).addTo(map);
     }
 
-    L.polyline([[3.139, 101.695], [3.1577, 101.7371]], { color: "#ffffff", weight: 7, opacity: 0.95 }).addTo(map);
-    var routeLine0 = L.polyline([[3.139, 101.695], [3.1577, 101.7371]], { color: "#059669", weight: 4.5, opacity: 1.0 }).addTo(map);
+    L.polyline([[3.1132, 101.5916], [3.13, 101.65], [3.15, 101.7], [3.1577, 101.7371]], { color: "#ffffff", weight: 7, opacity: 0.95 }).addTo(map);
+    var routeLine0 = L.polyline([[3.1132, 101.5916], [3.13, 101.65], [3.15, 101.7], [3.1577, 101.7371]], { color: "#059669", weight: 4.5, opacity: 1.0 }).addTo(map);
     addDirectionalArrows(routeLine0, "#059669", 9, 25, 50, "#ffffff");
-    L.polyline([[3.1577, 101.7371], [3.1545, 101.7285], [3.1219, 101.6873]], { color: "#ffffff", weight: 7, opacity: 0.95 }).addTo(map);
-    var routeLine1 = L.polyline([[3.1577, 101.7371], [3.1545, 101.7285], [3.1219, 101.6873]], { color: "#0284c7", weight: 4.5, opacity: 1.0 }).addTo(map);
+    L.polyline([[3.1577, 101.7371], [3.1545, 101.7285], [3.135, 101.71], [3.1219, 101.6873]], { color: "#ffffff", weight: 7, opacity: 0.95 }).addTo(map);
+    var routeLine1 = L.polyline([[3.1577, 101.7371], [3.1545, 101.7285], [3.135, 101.71], [3.1219, 101.6873]], { color: "#0284c7", weight: 4.5, opacity: 1.0 }).addTo(map);
     addDirectionalArrows(routeLine1, "#0284c7", 9, 25, 50, "#ffffff");
-    var routeLine2 = L.polyline([[3.1219, 101.6873], [3.1385, 101.6955]], { color: "#7c3aed", weight: 4, opacity: 1.0, dashArray: "6, 8" }).addTo(map);
+    var routeLine2 = L.polyline([[3.1219, 101.6873], [3.115, 101.64], [3.1132, 101.5916]], { color: "#7c3aed", weight: 4, opacity: 1.0, dashArray: "6, 8" }).addTo(map);
     addDirectionalArrows(routeLine2, "#7c3aed", 8, 20, 40, "#ffffff");
 
-    var bIcon0 = L.divIcon({ className: 'badge-div', html: '<div class="transit-badge badge-bus">🚗 15-min Grab to Meetinghouse</div>', iconSize: [0, 0], iconAnchor: [70, 12] });
-    L.marker([3.1495, 101.716], { icon: bIcon0 }).addTo(map);
+    var bIcon0 = L.divIcon({ className: 'badge-div', html: '<div class="transit-badge badge-bus">🚗 Grab Cross-City to Meetinghouse</div>', iconSize: [0, 0], iconAnchor: [95, 12] });
+    L.marker([3.142, 101.655], { icon: bIcon0 }).addTo(map);
 
-    addChronologicalPin(3.139, 101.695, "1", "Daiki's Flat (Morning)", "09:15 AM Depart Together", "pin-hostel", -145, -35);
+    addChronologicalPin(3.1132, 101.5916, "1", "Eve Suite Ara Damansara", "09:15 AM Depart Together", "pin-hostel", 14, -22);
     addChronologicalPin(3.1577, 101.7371, "2", "KL LDS Meetinghouse", "10:00 AM Worship Service", "pin-temple", -140, -28);
     addChronologicalPin(3.1545, 101.7285, "3", "Ampang Hilir Dining", "12:30 PM Sunday Lunch", "", 14, 6);
     addChronologicalPin(3.1219, 101.6873, "4", "Thean Hou Temple (Mazu)", "14:30 PM 6-Tiered Shrine", "pin-temple", -145, 10);
-    addChronologicalPin(3.1385, 101.6955, "5", "Return to Daiki's Flat", "17:30 PM Evening Rest", "pin-hostel", 16, -10);
+    addChronologicalPin(3.1132, 101.5916, "5", "Return to Eve Suite", "17:30 PM Rested Evening", "pin-hostel", 14, 12);
 
     map.on('click', function() {
       if (window.innerWidth <= 768) {

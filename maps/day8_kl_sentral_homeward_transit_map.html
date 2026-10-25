@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <title>Day 8 · KL Sentral Farewell, KLIA Ekspres & Flight AK584 to Manila</title>
+  <title>Day 8 · Eve Suite Farewell, KL Sentral, KLIA Ekspres & Flight AK584</title>
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
   <script src="https://unpkg.com/leaflet-polylinedecorator@1.6.0/dist/leaflet.polylineDecorator.js"></script>
@@ -184,19 +184,19 @@
   <div id="headerCard" class="map-card map-header-card">
     <button class="card-pill-btn" onclick="toggleCard('headerCard', true)" aria-label="Expand Overview">
       <span class="badge-day">Day 8</span>
-      <span class="pill-text">KL Sentral ➔ KLIA2 Departure</span>
+      <span class="pill-text">Eve Suite ➔ KLIA2 Departure</span>
       <span class="pill-chevron">▾</span>
     </button>
     <div class="card-body">
       <div class="card-top-bar">
-        <h1><span class="badge-day">Day 8</span> KL Sentral ➔ KLIA2 Departure</h1>
+        <h1><span class="badge-day">Day 8</span> Eve Suite ➔ KLIA2 Departure</h1>
         <button class="card-close-btn" onclick="toggleCard('headerCard', false)" title="Minimize" aria-label="Minimize">
           <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line></svg>
         </button>
       </div>
       <div class="desc">Thu 05 Nov 2026 · Homeward Transit (1★ ➔ 5★)</div>
       <div class="meta-pills">
-        <div class="meta-pill">🏠 <strong>07:30</strong> Farewell Breakfast w/ Daiki &amp; Packing at Flat (1★)</div>
+        <div class="meta-pill">🏠 <strong>07:30</strong> Farewell Breakfast &amp; Packing at Eve Suite (1★)</div>
         <div class="meta-pill">🛍️ <strong>12:30</strong> Nu Sentral Mall Lunch &amp; Last-Minute Treats (2★)</div>
         <div class="meta-pill">🚄 <strong>14:30</strong> Non-Stop KLIA Ekspres from KL Sentral (3★)</div>
         <div class="meta-pill">✈️ <strong>18:20</strong> AirAsia AK584 Departs KLIA2 (4★-5★) ➔ 22:25 MNL</div>
@@ -222,7 +222,7 @@
 
         <div class="legend-row">
           <div class="num-star-circle mini pin-hostel">1★</div>
-          <span>1★ Daiki's Flat (Check-Out)</span>
+          <span>1★ Eve Suite Ara Damansara (Check-Out)</span>
         </div>
 
         <div class="legend-row">
@@ -283,7 +283,7 @@
       }
     })();
 
-    var map = L.map('map', { zoomControl: false }).setView([2.94, 101.686], 11);
+    var map = L.map('map', { zoomControl: false }).setView([2.928, 101.64], 11);
 
     L.tileLayer('https://mt{s}.google.com/vt/lyrs=m&x={x}&y={y}&z={z}', {
       subdomains: ['0', '1', '2', '3'],
@@ -345,7 +345,7 @@
       }).addTo(map);
     }
 
-    var routeLine0 = L.polyline([[3.139, 101.695], [3.1332, 101.6872], [3.134, 101.6865]], { color: "#059669", weight: 4.5, opacity: 1.0 }).addTo(map);
+    var routeLine0 = L.polyline([[3.1132, 101.5916], [3.105, 101.605], [3.11, 101.645], [3.125, 101.67], [3.1332, 101.6872], [3.134, 101.6865]], { color: "#059669", weight: 4.5, opacity: 1.0 }).addTo(map);
     addDirectionalArrows(routeLine0, "#059669", 8, 20, 40, "#ffffff");
     L.polyline([[3.134, 101.6865], [3.04, 101.705], [2.9312, 101.6712], [2.8, 101.68], [2.7433, 101.6853]], { color: "#ffffff", weight: 8.5, opacity: 0.95 }).addTo(map);
     var routeLine1 = L.polyline([[3.134, 101.6865], [3.04, 101.705], [2.9312, 101.6712], [2.8, 101.68], [2.7433, 101.6853]], { color: "#7c3aed", weight: 5.5, opacity: 1.0 }).addTo(map);
@@ -354,7 +354,7 @@
     var bIcon0 = L.divIcon({ className: 'badge-div', html: '<div class="transit-badge" style="background:#7c3aed;">🚄 KLIA Ekspres Non-Stop (28 min)</div>', iconSize: [0, 0], iconAnchor: [85, 12] });
     L.marker([2.9312, 101.6712], { icon: bIcon0 }).addTo(map);
 
-    addChronologicalPin(3.139, 101.695, "1", "Daiki's Flat (Farewell)", "07:30 AM Breakfast & Pack", "pin-hostel", 14, -72);
+    addChronologicalPin(3.1132, 101.5916, "1", "Eve Suite Ara Damansara", "07:30 AM Breakfast & Pack", "pin-hostel", 14, -22);
     addChronologicalPin(3.1332, 101.6872, "2", "Nu Sentral Mall", "12:30 PM Lunch & Gifts", "", 14, 12);
     addChronologicalPin(3.134, 101.6865, "3", "KL Sentral Ekspres Platform", "14:30 PM Board Express", "pin-rail", -145, -15);
     addChronologicalPin(2.7433, 101.6853, "4", "KLIA Terminal 2 (Bag Drop)", "15:00 PM Check-In 20kg", "pin-arrival", -145, -25);

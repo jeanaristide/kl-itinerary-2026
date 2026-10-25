@@ -245,6 +245,18 @@ const visitedLocations = [
     day: "Day 7 (04 Nov)",
     desc: "KL's heritage 226-acre colonial green lung established in 1888, featuring sunken gardens, tropical bamboo playhouses, orchid collection, and tranquil lake boardwalks.",
     gmapsQuery: "Perdana Botanical Gardens, Jalan Kebun Bunga, Tasik Perdana, Kuala Lumpur"
+  },
+  {
+    pinId: 21,
+    name: "Daiki's Apartment (Eve Suite Ara Damansara)",
+    nativeName: "Eve Suite Ara Damansara (Unit A-23-08)",
+    region: "Petaling Jaya, Selangor",
+    category: "Host Accommodations & Home Base",
+    color: "#7c3aed",
+    coords: [3.1132, 101.5916],
+    day: "Base (29 Oct – 05 Nov)",
+    desc: "Unit A-23-08, Eve Suite Ara Damansara, Jalan PJU 1A/41, 47301 Petaling Jaya, Selangor. Direct covered link bridge to LRT Lembah Subang (Kelana Jaya Line KJ25) providing direct train transit to KL Sentral, Pasar Seni (Chinatown), and KLCC.",
+    gmapsQuery: "Eve Suite Ara Damansara, Jalan PJU 1A/41, Petaling Jaya, Selangor"
   }
 ];
 
@@ -425,7 +437,7 @@ const itineraryData = [
     landmarks: [
       { name: "KLIA Terminal 2 (AirAsia AK585)", pin: "#17" },
       { name: "KLIA Ekspres Non-Stop Train", pin: "🚄" },
-      { name: "Daiki's Apartment (Host Base)", pin: "🏠" },
+      { name: "Daiki's Apartment (Eve Suite Ara Damansara, PJ)", pin: "🏠" },
       { name: "Petronas Twin Towers & Suria KLCC", pin: "#2" },
       { name: "KLCC Park & Lake Symphony", pin: "#1" },
       { name: "Jalan Alor Food Street", pin: "#3" }
@@ -433,17 +445,15 @@ const itineraryData = [
     cultureBadge: "🏙️ Modern Metropolis & Golden Triangle Sunset",
     activities: [
       "Depart Manila (MNL Terminal 3) on Thursday 29 Oct at <span class=\"time-chip\">12:55 PM</span> and touch down at <u>KLIA Terminal 2</u> at <span class=\"time-chip\">04:55 PM</span> (16:55) aboard AirAsia Flight AK585.",
-      "Clear customs, collect 20 kg checked luggage, and board the non-stop <u>KLIA Ekspres</u> at <span class=\"time-chip\">05:40 PM</span> to <u>KL Sentral</u>, reaching the city center in just 28 minutes.",
-      "Take a short Grab ride to <u>Daiki's apartment</u>, arriving by <span class=\"time-chip\">06:20 PM</span> to unpack, freshen up, and settle into your guest accommodations.",
-      "Reunite warmly with friend and host Daiki at <span class=\"time-chip\">07:00 PM</span>, heading out together via LRT to <u>Suria KLCC</u>.",
+      "Clear customs, collect 20 kg checked luggage, and take the non-stop <u>KLIA Ekspres</u> (28 min to KL Sentral, then Kelana Jaya LRT to Lembah Subang) or direct Grab to <u>Eve Suite Ara Damansara</u> (Unit A-23-08, Petaling Jaya), arriving by <span class=\"time-chip\">06:25 PM</span> to unpack, freshen up, and settle into your guest accommodations.",
+      "Reunite warmly with friend and host Daiki at <span class=\"time-chip\">07:00 PM</span>, heading out together via direct Kelana Jaya LRT from <u>Lembah Subang LRT Station</u> (connected directly to Eve Suite via covered walkway) straight to <u>Suria KLCC</u>.",
       "Stroll through the landscaped pathways of <u>KLCC Park</u> with Daiki and photograph the illuminated steel-and-glass facade of the <u>Petronas Twin Towers</u> in the dusk sky.",
       "Watch the colorful musical fountain light display at <u>Lake Symphony</u> with Daiki at <span class=\"time-chip\">08:00 PM</span>.",
       "Walk over to <u>Jalan Alor Food Street</u> with Daiki at <span class=\"time-chip\">08:45 PM</span> for a celebratory dinner featuring charcoal-grilled chicken satay, roti canai, and chilled coconut water before Daiki begins his 10:00 PM shift."
     ],
     costs: [
-      { item: "KLIA Ekspres to KL Sentral", amount: "RM 55.00" },
-      { item: "Grab to Daiki's Flat", amount: "RM 15.00" },
-      { item: "LRT to KLCC", amount: "RM 2.80" },
+      { item: "KLIA Ekspres / Grab to Eve Suite", amount: "RM 55.00" },
+      { item: "LRT Lembah Subang to KLCC", amount: "RM 4.00" },
       { item: "Dinner at Jalan Alor with Daiki", amount: "RM 35.00" }
     ],
     dayTotal: "RM 107.80",
@@ -467,15 +477,15 @@ const itineraryData = [
     ],
     cultureBadge: "🏮 Old Malaya Heritage, Guild Temples & River of Life",
     activities: [
-      "Quietly exit the apartment at <span class=\"time-chip\">08:30 AM</span> so Daiki can sleep soundly through the morning.",
-      "Arrive at <u>Kwai Chai Hong</u> at <span class=\"time-chip\">09:00 AM</span> to photograph the restored 1960s shophouse murals and historic red timber bridge in serene morning light.",
+      "Quietly exit the apartment at <span class=\"time-chip\">08:30 AM</span>, taking the covered bridge from Eve Suite to <u>Lembah Subang LRT Station</u>, riding the direct Kelana Jaya Line to <u>Pasar Seni Station</u> in Chinatown with zero transfers.",
+      "Arrive at <u>Kwai Chai Hong</u> at <span class=\"time-chip\">09:05 AM</span> to photograph the restored 1960s shophouse murals and historic red timber bridge in serene morning light.",
       "Visit the 1888 Taoist temple <u>Guan Di Temple Chinatown Tun H.S Lee</u> at <span class=\"time-chip\">09:45 AM</span> and admire the historic statues of Guan Sheng Di Jun and intricate ceramic roof carvings.",
       "Walk directly across the street at <span class=\"time-chip\">10:15 AM</span> to inspect the 75-foot Raja Gopuram tower of <u>Sri Maha Mariamman Temple</u>, the oldest functioning Hindu temple in Kuala Lumpur.",
       "Browse traditional tea shops, dried fruit stalls, and woven goods along pedestrianized <u>Petaling Street Market</u> from <span class=\"time-chip\">10:45 AM</span>.",
       "Walk across the River of Life pedestrian bridge at <span class=\"time-chip\">11:45 AM</span> to marvel at the 41-meter copper-domed clock tower of <u>Bangunan Sultan Abdul Samad</u>.",
       "Step onto the sweeping manicured lawn of <u>Merdeka Square</u> at <span class=\"time-chip\">12:15 PM</span> where the Malayan flag was first raised in 1957.",
       "Enjoy a lunch of claypot chicken rice and fresh calamansi juice at a sheltered heritage cafe at <span class=\"time-chip\">01:00 PM</span>.",
-      "Return to Daiki's flat by <span class=\"time-chip\">03:00 PM</span> for afternoon refreshments as Daiki completes his daytime sleep cycle.",
+      "Ride the direct Kelana Jaya LRT back to <u>Lembah Subang LRT Station</u>, returning to <u>Eve Suite Ara Damansara</u> by <span class=\"time-chip\">02:45 PM</span> for afternoon refreshments as Daiki completes his daytime sleep cycle.",
       "Head out together with Daiki at <span class=\"time-chip\">04:30 PM</span> to explore <u>Pavilion Kuala Lumpur</u> and share dinner together by <span class=\"time-chip\">07:30 PM</span> before his final work shift of the week."
     ],
     costs: [
@@ -542,7 +552,7 @@ const itineraryData = [
     ],
     cultureBadge: "✨ Sacred LDS Sunday Worship · Kuala Lumpur Branch Sabbath Service & Suggested Afternoon Option",
     activities: [
-      "Dress in Sunday attire and depart together with Daiki at <span class=\"time-chip\">09:15 AM</span> for the embassy precinct of Ampang Hilir.",
+      "Dress in Sunday attire and depart Eve Suite Ara Damansara together with Daiki via Grab at <span class=\"time-chip\">09:15 AM</span> for the embassy precinct of Ampang Hilir.",
       "Arrive with Daiki at the <u>Kuala Lumpur Meetinghouse</u> (No. 4 Jalan Ampang Tengah, Taman U Thant) by <span class=\"time-chip\">09:45 AM</span> for personal reverent preparation.",
       "Participate with Daiki in the 2-hour Sunday worship block (Sacrament Meeting followed by Sunday School / Priesthood / Relief Society) from <span class=\"time-chip\">10:00 AM</span> to <span class=\"time-chip\">12:00 PM</span>.",
       "Meet local members, international expats, and friends with Daiki for fellowship in the foyer following the conclusion of meetings at <span class=\"time-chip\">12:15 PM</span>.",
@@ -550,7 +560,7 @@ const itineraryData = [
       "<span class=\"suggested-badge\">Suggested Option</span> Travel together with Daiki to a tranquil restaurant in <u>Ampang</u> for a peaceful Sabbath fellowship lunch at <span class=\"time-chip\">01:00 PM</span>.",
       "<span class=\"suggested-badge\">Suggested Option</span> Take an afternoon ride with Daiki up to the crest of <u>Robson Heights</u> to tour the six-tiered Chinese sanctuary <u>Thean Hou Temple</u> at <span class=\"time-chip\">03:00 PM</span>.",
       "<span class=\"suggested-badge\">Suggested Option</span> Admire the syncretic blend of Buddhism, Taoism, and Confucianism, walk beneath hundreds of traditional red hanging lanterns, and take in panoramic skyline views of <u>Kuala Lumpur</u>.",
-      "<span class=\"suggested-badge\">Suggested Option</span> Return home with Daiki by <span class=\"time-chip\">05:30 PM</span> for a relaxed, restorative evening together sharing memories and an early quiet dinner."
+      "<span class=\"suggested-badge\">Suggested Option</span> Return home to <u>Eve Suite Ara Damansara</u> with Daiki by <span class=\"time-chip\">05:30 PM</span> for a relaxed, restorative evening together sharing memories and an early quiet dinner."
     ],
     costs: [
       { item: "Grab to Church & Thean Hou", amount: "RM 35.00" },
@@ -578,14 +588,14 @@ const itineraryData = [
     ],
     cultureBadge: "🪔 Spiritual & Geological Wonder · Ancient Limestone Caverns & Flexible Exploration with Daiki",
     activities: [
-      "Enjoy a relaxed Monday morning together with Daiki—since Monday morning in Malaysia is still Sunday evening in the US, Daiki has no overnight work shift and is completely off duty.",
-      "Board the KTM Komuter train at <u>KL Sentral</u> at <span class=\"time-chip\">08:30 AM</span> heading straight to <u>Batu Caves Station</u>.",
+      "Enjoy a relaxed Monday morning together with Daiki at <u>Eve Suite Ara Damansara</u>—since Monday morning in Malaysia is still Sunday evening in the US, Daiki has no overnight work shift and is completely off duty.",
+      "Board the Kelana Jaya LRT at <u>Lembah Subang LRT Station</u> to <u>KL Sentral</u> at <span class=\"time-chip\">08:00 AM</span>, transferring seamlessly to the KTM Komuter train heading straight to <u>Batu Caves Station</u>.",
       "Arrive at <u>Batu Caves</u> by <span class=\"time-chip\">09:15 AM</span> to beat the tropical midday heat and gaze upon the 140-foot golden statue of Lord Murugan.",
       "Ascend the iconic 272 rainbow-colored limestone steps to explore the grand interior cavern of <u>Temple Cave (Cathedral Cave)</u>.",
       "Descend to the foot of the hill at <span class=\"time-chip\">10:45 AM</span> to enter <u>Ramayana Cave - Suyambu Lingam</u>, marveling at the vibrant epic dioramas and naturally formed stalactite lingam.",
       "Rehydrate with fresh green coconut water and savor a South Indian thali lunch together near the temple entrance at <span class=\"time-chip\">12:00 PM</span>.",
       "Take the KTM Komuter back to the city center and browse Malaysian pewter, wood carvings, and batik prints at <u>Central Market (Pasar Seni)</u> from <span class=\"time-chip\">01:45 PM</span> to <span class=\"time-chip\">03:30 PM</span>.",
-      "Spend a relaxed late afternoon exploring the city together with Daiki or resting comfortably at the flat before Daiki's work week starts.",
+      "Spend a relaxed late afternoon exploring the city together with Daiki or resting comfortably at Eve Suite before Daiki's work week starts.",
       "Walk the illuminated pedestrian bridge <u>Saloma Link</u> at <span class=\"time-chip\">06:30 PM</span> for glittering skyline views, followed by a special dinner with Daiki at <span class=\"time-chip\">07:30 PM</span> before his first US tech shift begins at <span class=\"time-chip\">22:00 PM</span>."
     ],
     costs: [
@@ -593,7 +603,7 @@ const itineraryData = [
       { item: "Batu Caves Main Cave Entry", amount: "Free" },
       { item: "Ramayana Cave Admission", amount: "RM 5.00" },
       { item: "Coconut Water & Indian Thali", amount: "RM 20.00" },
-      { item: "Monorail / LRT Transit", amount: "RM 4.00" },
+      { item: "LRT Transit", amount: "RM 4.00" },
       { item: "Dinner with Daiki", amount: "RM 55.00" }
     ],
     dayTotal: "RM 89.20",
@@ -608,7 +618,7 @@ const itineraryData = [
     phaseLabel: "Solo AM / Joint PM",
     city: "Putrajaya Administrative Center & Lakeside",
     landmarks: [
-      { name: "Morning Coffee with Daiki", pin: "☕" },
+      { name: "Morning Breakfast with Daiki", pin: "🍳" },
       { name: "MRT Putrajaya Line / KLIA Transit", pin: "🚆" },
       { name: "Putra Mosque & Putrajaya Lake", pin: "#18" },
       { name: "Perdana Putra & Lake Promenade", pin: "🏛️" },
@@ -617,8 +627,8 @@ const itineraryData = [
     ],
     cultureBadge: "🕌 Federal Administrative Jewel · Rose-Granite Lakeside Mosque & Waterfront Gardens",
     activities: [
-      "Greet Daiki as his first overnight US shift finishes at <span class=\"time-chip\">07:00 AM</span> Tuesday morning, and share morning coffee and toast together at a local kopitiam until <span class=\"time-chip\">08:15 AM</span>.",
-      "Allow Daiki to rest undisturbed during his morning sleep window while you take the <u>MRT Putrajaya Line</u> or <u>KLIA Transit</u> south to <u>Putrajaya Sentral</u> at <span class=\"time-chip\">09:30 AM</span>.",
+      "Greet Daiki as his first overnight US shift finishes at <span class=\"time-chip\">07:00 AM</span> Tuesday morning, and share morning breakfast and warm drinks together at a local kopitiam until <span class=\"time-chip\">08:15 AM</span>.",
+      "Allow Daiki to rest undisturbed during his morning sleep window at Eve Suite while you take the Kelana Jaya LRT from <u>Lembah Subang</u> to <u>KL Sentral</u>, connecting to the <u>KLIA Transit</u> or <u>MRT Putrajaya Line</u> south to <u>Putrajaya Sentral</u> at <span class=\"time-chip\">09:30 AM</span>.",
       "Arrive at <u>Dataran Putra</u> by <span class=\"time-chip\">10:15 AM</span> and admire the architectural splendor of <u>Putra Mosque (Masjid Putra)</u>, renowned for its rose-tinted granite domes and 116-meter minaret overlooking the lake.",
       "Take a peaceful stroll along the lakeside boardwalk fronting <u>Putrajaya Lake</u> and photograph the grand neoclassical complex of <u>Perdana Putra</u> (Prime Minister's Office) at <span class=\"time-chip\">11:30 AM</span>.",
       "Enjoy a scenic lunch of laksa Johor or ayam percik at a waterfront cafe along <u>Putrajaya Waterfront</u> at <span class=\"time-chip\">12:45 PM</span>.",
@@ -654,12 +664,12 @@ const itineraryData = [
     ],
     cultureBadge: "🌿 Botanical Heritage & Islamic Arts · Southeast Asia's Premier Museum & Vibrant Bukit Bintang",
     activities: [
-      "Quietly head out at <span class=\"time-chip\">08:45 AM</span> while Daiki rests peacefully from his Tuesday overnight work shift.",
+      "Quietly head out from <u>Eve Suite Ara Damansara</u> at <span class=\"time-chip\">08:45 AM</span> via <u>Lembah Subang LRT</u> while Daiki rests peacefully from his Tuesday overnight work shift.",
       "Begin the morning surrounded by lush tropical greenery and heritage rain trees at <u>Perdana Botanical Gardens</u>, exploring the sunken gardens and tranquil lake pavilions from <span class=\"time-chip\">09:15 AM</span>.",
       "Walk over to <u>Islamic Arts Museum Malaysia (IAMM)</u> at <span class=\"time-chip\">10:30 AM</span> to tour Southeast Asia's largest Islamic arts museum, marveling at hand-painted tile domes, ancient calligraphy, jeweled weapons, and scale models of world mosques.",
       "Visit the nearby <u>National Mosque of Malaysia (Masjid Negara)</u> at <span class=\"time-chip\">12:30 PM</span> to observe its 73-meter minaret and distinctive 16-pointed blue folded star-shaped umbrella dome.",
       "Enjoy a traditional lunch of aromatic Nasi Kandar with spiced chicken and okra at a local heritage restaurant at <span class=\"time-chip\">01:15 PM</span>.",
-      "Return to the flat by <span class=\"time-chip\">03:00 PM</span> to rest, recharge, and begin organizing luggage for the return flight.",
+      "Return to <u>Eve Suite Ara Damansara</u> by <span class=\"time-chip\">03:00 PM</span> to rest, recharge, and begin organizing luggage for the return flight.",
       "Reconnect with Daiki at <span class=\"time-chip\">05:00 PM</span> as he wakes up, heading out together via MRT to the vibrant shopping district of <u>Bukit Bintang</u>.",
       "Browse Malaysian snacks, specialty teas, and gift items inside <u>Pavilion Kuala Lumpur</u> and <u>Lot 10</u> from <span class=\"time-chip\">05:45 PM</span>.",
       "Share an unforgettable final celebratory dinner with Daiki at <span class=\"time-chip\">07:30 PM</span>, reminiscing on the 8-day journey before his final weeknight shift commences at <span class=\"time-chip\">22:00 PM</span>."
@@ -683,7 +693,7 @@ const itineraryData = [
     phaseLabel: "Farewell & Departure",
     city: "KL City Center & Sepang Gateway",
     landmarks: [
-      { name: "Farewell Breakfast with Daiki", pin: "☕" },
+      { name: "Farewell Breakfast with Daiki", pin: "🍳" },
       { name: "KL Sentral & Nu Sentral Mall", pin: "🛍️" },
       { name: "KLIA Ekspres Non-Stop Train", pin: "🚄" },
       { name: "KLIA Terminal 2 (AirAsia AK584)", pin: "#17" },
@@ -691,13 +701,13 @@ const itineraryData = [
     ],
     cultureBadge: "✈️ Homeward Transit · AirAsia Flight AK584 Departure to Manila",
     activities: [
-      "Greet Daiki as his final overnight shift concludes at <span class=\"time-chip\">07:00 AM</span> Thursday morning, and share a celebratory farewell breakfast together from <span class=\"time-chip\">07:30 AM</span> to <span class=\"time-chip\">08:30 AM</span>.",
+      "Greet Daiki as his final overnight shift concludes at <span class=\"time-chip\">07:00 AM</span> Thursday morning, and share a celebratory farewell breakfast together at Eve Suite from <span class=\"time-chip\">07:30 AM</span> to <span class=\"time-chip\">08:30 AM</span>.",
       "Allow Daiki to get restful daytime sleep starting at <span class=\"time-chip\">08:30 AM</span>, while you complete packing all belongings into your 20 kg checked bag and 7 kg carry-on.",
-      "Quietly leave the apartment at <span class=\"time-chip\">11:30 AM</span>, leaving keys as arranged, and take the short ride to <u>KL Sentral</u>.",
-      "Store baggage or stroll through <u>Nu Sentral Mall</u> from <span class=\"time-chip\">12:00 PM</span> to <span class=\"time-chip\">02:15 PM</span> for last-minute Malaysian treats (Beryl's chocolates, Boh tea, white coffee) and a leisurely sit-down lunch.",
+      "Quietly leave <u>Eve Suite Ara Damansara</u> at <span class=\"time-chip\">11:30 AM</span>, leaving keys as arranged, and take the direct Kelana Jaya LRT from <u>Lembah Subang</u> or Grab to <u>KL Sentral</u>.",
+      "Store baggage or stroll through <u>Nu Sentral Mall</u> from <span class=\"time-chip\">12:00 PM</span> to <span class=\"time-chip\">02:15 PM</span> for last-minute Malaysian treats (Beryl's chocolates, Boh herbal infusions, local delicacies) and a leisurely sit-down lunch.",
       "Say heartfelt digital farewells to Daiki and board the non-stop <u>KLIA Ekspres</u> at <u>KL Sentral</u> at <span class=\"time-chip\">02:45 PM</span> (14:45), gliding to <u>KLIA Terminal 2</u> in 28 minutes by <span class=\"time-chip\">03:15 PM</span>.",
       "Drop off your 20 kg checked luggage at the AirAsia bag drop counter and clear immigration and security with a comfortable 2.5-hour cushion.",
-      "Browse duty-free shops and enjoy a relaxing tea at <u>Gateway@klia2</u> by <span class=\"time-chip\">04:30 PM</span>.",
+      "Browse duty-free shops and enjoy a refreshing herbal drink or fruit juice at <u>Gateway@klia2</u> by <span class=\"time-chip\">04:30 PM</span>.",
       "Proceed to the departure gate for boarding at <span class=\"time-chip\">05:40 PM</span> (17:40) aboard AirAsia Flight AK584 for your confirmed <span class=\"time-chip\">06:20 PM</span> (18:20) non-stop flight to Manila.",
       "Enjoy your pre-booked Santan Bukhara Chicken Briyani meal inflight, touching down smoothly at <u>Manila (MNL Terminal 3)</u> at <span class=\"time-chip\">10:25 PM</span> (22:25)."
     ],

@@ -129,3 +129,4 @@ with open(HTML_FILE, "w", encoding="utf-8") as f:
     f.write(content)
 
 print("Updated index.html successfully!")
+

@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <title>Day 1 · KLIA2 Arrival, KLCC Twin Towers & Jalan Alor Night Route</title>
+  <title>Day 1 · KLIA2 Arrival, Eve Suite Check-In, KLCC & Jalan Alor Night Route</title>
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
   <script src="https://unpkg.com/leaflet-polylinedecorator@1.6.0/dist/leaflet.polylineDecorator.js"></script>
@@ -196,9 +196,9 @@
       </div>
       <div class="desc">Thu 29 Oct 2026 · Visits (1★ ➔ 6★)</div>
       <div class="meta-pills">
-        <div class="meta-pill">✈️ <strong>16:55</strong> Arrive KLIA2 (AK585) ➔ KLIA Ekspres to 1★</div>
-        <div class="meta-pill">🏠 <strong>18:20</strong> Check-In at Daiki's Flat (2★) &amp; Reunion</div>
-        <div class="meta-pill">🏙️ <strong>19:30</strong> Twin Towers (3★) &amp; Lake Symphony (4★)</div>
+        <div class="meta-pill">✈️ <strong>16:55</strong> Arrive KLIA2 (AK585) ➔ KLIA Ekspres to KL Sentral (1★)</div>
+        <div class="meta-pill">🏠 <strong>18:25</strong> Eve Suite Ara Damansara Check-In (2★) &amp; Reunion</div>
+        <div class="meta-pill">🏙️ <strong>19:30</strong> Direct LRT to Twin Towers (3★) &amp; Symphony (4★)</div>
         <div class="meta-pill">🍢 <strong>20:45</strong> Jalan Alor Night Feast with Daiki (6★)</div>
       </div>
     </div>
@@ -227,7 +227,7 @@
 
         <div class="legend-row">
           <div class="num-star-circle mini pin-hostel">1★</div>
-          <span>2★ Daiki's Flat (Host Base)</span>
+          <span>2★ Eve Suite Ara Damansara (Host Base)</span>
         </div>
 
         <div class="legend-row">
@@ -288,7 +288,7 @@
       }
     })();
 
-    var map = L.map('map', { zoomControl: false }).setView([3.1465, 101.7035], 14);
+    var map = L.map('map', { zoomControl: false }).setView([3.138, 101.652], 12);
 
     L.tileLayer('https://mt{s}.google.com/vt/lyrs=m&x={x}&y={y}&z={z}', {
       subdomains: ['0', '1', '2', '3'],
@@ -350,20 +350,20 @@
       }).addTo(map);
     }
 
-    var routeLine0 = L.polyline([[3.134, 101.6865], [3.139, 101.695]], { color: "#059669", weight: 4.5, opacity: 1.0 }).addTo(map);
+    var routeLine0 = L.polyline([[3.134, 101.6865], [3.125, 101.67], [3.11, 101.645], [3.105, 101.605], [3.1132, 101.5916]], { color: "#059669", weight: 4.5, opacity: 1.0 }).addTo(map);
     addDirectionalArrows(routeLine0, "#059669", 9, 20, 45, "#ffffff");
-    L.polyline([[3.139, 101.695], [3.1445, 101.6995], [3.1578, 101.712]], { color: "#ffffff", weight: 8, opacity: 0.95 }).addTo(map);
-    var routeLine1 = L.polyline([[3.139, 101.695], [3.1445, 101.6995], [3.1578, 101.712]], { color: "#0284c7", weight: 5, opacity: 1.0 }).addTo(map);
+    L.polyline([[3.1132, 101.5916], [3.105, 101.605], [3.11, 101.645], [3.125, 101.67], [3.134, 101.6865], [3.142, 101.696], [3.149, 101.6965], [3.1578, 101.712]], { color: "#ffffff", weight: 8, opacity: 0.95 }).addTo(map);
+    var routeLine1 = L.polyline([[3.1132, 101.5916], [3.105, 101.605], [3.11, 101.645], [3.125, 101.67], [3.134, 101.6865], [3.142, 101.696], [3.149, 101.6965], [3.1578, 101.712]], { color: "#0284c7", weight: 5, opacity: 1.0 }).addTo(map);
     addDirectionalArrows(routeLine1, "#0284c7", 9, 25, 50, "#ffffff");
     var routeLine2 = L.polyline([[3.1578, 101.712], [3.1554, 101.7145], [3.1488, 101.7133], [3.1459, 101.7088]], { color: "#ea580c", weight: 4, opacity: 1.0, dashArray: "6, 8" }).addTo(map);
     addDirectionalArrows(routeLine2, "#ea580c", 8, 20, 40, "#ffffff");
 
-    var bIcon0 = L.divIcon({ className: 'badge-div', html: '<div class="transit-badge">🚇 LRT Kelana Jaya Line</div>', iconSize: [0, 0], iconAnchor: [60, 12] });
-    L.marker([3.15, 101.704], { icon: bIcon0 }).addTo(map);
+    var bIcon0 = L.divIcon({ className: 'badge-div', html: '<div class="transit-badge">🚇 Direct Kelana Jaya LRT (Lembah Subang ➔ KLCC)</div>', iconSize: [0, 0], iconAnchor: [110, 12] });
+    L.marker([3.122, 101.635], { icon: bIcon0 }).addTo(map);
 
     addChronologicalPin(3.134, 101.6865, "1", "KL Sentral (KLIA Ekspres)", "18:08 PM Arrive", "pin-arrival", -145, -15);
-    addChronologicalPin(3.139, 101.695, "2", "Daiki's Flat (Host Base)", "18:20 PM Check-In", "pin-hostel", 14, 10);
-    addChronologicalPin(3.1578, 101.712, "3", "Petronas Twin Towers & Suria", "19:25 PM Dusk View", "", -145, -32);
+    addChronologicalPin(3.1132, 101.5916, "2", "Eve Suite Ara Damansara", "18:25 PM Check-In (A-23-08)", "pin-hostel", 14, -22);
+    addChronologicalPin(3.1578, 101.712, "3", "Petronas Twin Towers & Suria", "19:30 PM Dusk View", "", -145, -32);
     addChronologicalPin(3.1554, 101.7145, "4", "KLCC Park & Lake Symphony", "20:00 PM Fountain Show", "", 14, -58);
     addChronologicalPin(3.1488, 101.7133, "5", "KLCC-Bukit Bintang Walkway", "20:25 PM Covered Walk", "", 14, 10);
     addChronologicalPin(3.1459, 101.7088, "6", "Jalan Alor Food Street", "20:45 PM Satay Dinner", "", -145, -62);
