@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Day 6 · Putrajaya Rose-Granite Mosque, Lake Promenade & Gardens</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="https://unpkg.com/leaflet-polylinedecorator@1.6.0/dist/leaflet.polylineDecorator.js"></script>
+  <style>
+    * { box-sizing: border-box; }
+    body, html { margin:0; padding:0; width:100%; height:100%; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; overflow: hidden; background: #e5e7eb; }
+    #map { width: 100%; height: 100%; }
+
+    .map-card {
+      position: absolute; z-index: 1000;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      user-select: none; transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .card-pill-btn {
+      display: none; align-items: center; gap: 6px;
+      background: rgba(255, 255, 255, 0.94);
+      backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+      border: 1px solid rgba(203, 213, 225, 0.9);
+      padding: 5px 11px; border-radius: 9999px;
+      box-shadow: 0 4px 12px rgba(15, 23, 42, 0.12), 0 1px 3px rgba(0, 0, 0, 0.05);
+      font-size: 11px; font-weight: 700; color: #0f172a;
+      cursor: pointer; outline: none; transition: all 0.15s ease;
+      white-space: nowrap; line-height: 1;
+    }
+    .card-pill-btn:hover {
+      background: #ffffff;
+      box-shadow: 0 6px 16px rgba(15, 23, 42, 0.18);
+      transform: translateY(-1px);
+    }
+    .card-pill-btn .pill-chevron {
+      font-size: 10px; color: #64748b; font-weight: 800;
+    }
+
+    .card-body {
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+      border-radius: 12px;
+      box-shadow: 0 8px 24px -4px rgba(15, 23, 42, 0.14), 0 0 0 1px rgba(0, 0, 0, 0.06);
+      padding: 10px 13px;
+    }
+
+    .map-card.is-collapsed .card-body { display: none !important; }
+    .map-card.is-collapsed .card-pill-btn { display: inline-flex !important; }
+    .map-card:not(.is-collapsed) .card-body { display: block; }
+    .map-card:not(.is-collapsed) .card-pill-btn { display: none; }
+
+    .card-top-bar {
+      display: flex; align-items: center; justify-content: space-between;
+      gap: 8px; margin-bottom: 4px;
+    }
+    .card-close-btn {
+      background: #f1f5f9; border: none; color: #64748b;
+      width: 20px; height: 20px; border-radius: 5px;
+      display: flex; align-items: center; justify-content: center;
+      cursor: pointer; transition: all 0.15s; flex-shrink: 0; padding: 0;
+    }
+    .card-close-btn:hover { background: #e2e8f0; color: #0f172a; }
+
+    .map-header-card {
+      top: 14px; left: 16px;
+      max-width: 305px;
+    }
+    .map-header-card h1 {
+      margin: 0; font-size: 13px; font-weight: 800; color: #0f172a;
+      display: flex; align-items: center; gap: 6px;
+    }
+    .badge-day {
+      background: #0284c7; color: #fff; padding: 2px 7px; border-radius: 5px; font-size: 10.5px; font-weight: 700;
+    }
+    .map-header-card .desc {
+      font-size: 10px; color: #475569; font-weight: 500; margin-bottom: 5px;
+    }
+    .meta-pills { display: flex; flex-direction: column; gap: 3px; }
+    .meta-pill {
+      background: #f8fafc; border: 1px solid #f1f5f9; color: #334155;
+      padding: 2.5px 7px; border-radius: 5px; font-size: 9.5px; font-weight: 600;
+      line-height: 1.25;
+    }
+    .meta-pill strong { color: #0f172a; }
+
+    .map-legend-card {
+      bottom: 14px; right: 16px;
+      max-width: 250px; min-width: 210px;
+    }
+    .legend-title {
+      font-size: 9.5px; font-weight: 800; color: #0f172a; text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .legend-items { margin-top: 5px; border-top: 1px solid #f1f5f9; padding-top: 5px; }
+    .legend-row {
+      display: flex; align-items: center; gap: 7px; margin-bottom: 4px;
+      font-size: 10px; font-weight: 600; color: #334155; line-height: 1.2;
+    }
+    .legend-row:last-child { margin-bottom: 0; }
+    .legend-line { width: 22px; height: 4.5px; border-radius: 2px; flex-shrink: 0; display: inline-flex; align-items: center; justify-content: center; }
+    .line-green { background: #059669; }
+    .line-blue { background: #0284c7; }
+    .line-purple { background: #7c3aed; }
+    .line-gold { background: #f59e0b; border: 1px solid #1e3a8a; }
+    .line-red { background: #dc2626; }
+    .line-dotted-red { height: 0px; border-top: 3.5px dotted #ea580c; }
+    .line-dotted-blue { height: 0px; border-top: 3.5px dotted #0284c7; }
+    .legend-arrow { font-size: 7px; color: #ffffff; line-height: 1; margin-left: 1px; }
+
+    @media (max-width: 768px) {
+      .map-header-card {
+        top: 10px; left: 10px; max-width: calc(100vw - 20px);
+      }
+      .map-legend-card {
+        bottom: 10px; right: 10px; max-width: calc(100vw - 20px); min-width: auto;
+      }
+      .card-body {
+        max-width: 300px;
+        box-shadow: 0 12px 30px rgba(15, 23, 42, 0.22), 0 0 0 1px rgba(0, 0, 0, 0.08);
+      }
+      .card-pill-btn {
+        padding: 5px 10px; font-size: 10.5px;
+      }
+    }
+
+    .gmap-star-pin {
+      display: inline-flex; align-items: flex-start; gap: 5px;
+      background: #ffffff; border-radius: 9px; padding: 3px 7px 3px 3px;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.18), 0 0 0 1px rgba(0,0,0,0.06);
+      border: 1.5px solid #cbd5e1;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      max-width: 135px; white-space: normal; line-height: 1.2; pointer-events: auto;
+    }
+    .num-star-circle {
+      width: 20px; height: 20px; border-radius: 50%;
+      background: #ea580c; color: #ffffff;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 9px; font-weight: 800;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.3); flex-shrink: 0; margin-top: 1px;
+    }
+    .num-star-circle.mini {
+      width: 17px; height: 17px; font-size: 8px;
+    }
+    .pin-content {
+      display: flex; flex-direction: column; min-width: 0;
+    }
+    .pin-title {
+      font-size: 10.5px; font-weight: 800; color: #0f172a; line-height: 1.25;
+      word-wrap: break-word;
+    }
+    .pin-time {
+      font-size: 9px; font-weight: 600; color: #64748b; margin-top: 1.5px; line-height: 1.2;
+    }
+
+    .gmap-star-pin.pin-rail { border-color: #f59e0b; }
+    .gmap-star-pin.pin-rail .num-star-circle { background: #f59e0b; color: #000; }
+    .gmap-star-pin.pin-museum { border-color: #0284c7; }
+    .gmap-star-pin.pin-museum .num-star-circle { background: #0284c7; }
+    .gmap-star-pin.pin-temple { border-color: #b45309; }
+    .gmap-star-pin.pin-temple .num-star-circle { background: #b45309; }
+    .gmap-star-pin.pin-arrival { border-color: #059669; }
+    .gmap-star-pin.pin-arrival .num-star-circle { background: #059669; }
+    .gmap-star-pin.pin-hostel { border-color: #7c3aed; }
+    .gmap-star-pin.pin-hostel .num-star-circle { background: #7c3aed; }
+
+    .badge-div { width: auto !important; height: auto !important; }
+    .transit-badge {
+      display: inline-block;
+      background: #0284c7; color: #ffffff; font-size: 9.5px; font-weight: 800;
+      padding: 2.5px 7px; border-radius: 10px; border: 1.5px solid #ffffff;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.3); white-space: nowrap;
+    }
+    .transit-badge.badge-rail { background: #f59e0b; color: #1e3a8a; border-color: #1e3a8a; }
+    .transit-badge.badge-bus { background: #059669; }
+    .transit-badge.badge-gondola { background: #dc2626; }
+  </style>
+</head>
+<body>
+  <div id="map"></div>
+
+  <!-- Header Card (Collapsible) -->
+  <div id="headerCard" class="map-card map-header-card">
+    <button class="card-pill-btn" onclick="toggleCard('headerCard', true)" aria-label="Expand Overview">
+      <span class="badge-day">Day 6</span>
+      <span class="pill-text">Putrajaya Lakeside Route</span>
+      <span class="pill-chevron">▾</span>
+    </button>
+    <div class="card-body">
+      <div class="card-top-bar">
+        <h1><span class="badge-day">Day 6</span> Putrajaya Lakeside Route</h1>
+        <button class="card-close-btn" onclick="toggleCard('headerCard', false)" title="Minimize" aria-label="Minimize">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+        </button>
+      </div>
+      <div class="desc">Tue 03 Nov 2026 · Solo AM / Joint PM (1★ ➔ 6★)</div>
+      <div class="meta-pills">
+        <div class="meta-pill">🚆 <strong>09:30</strong> KLIA Transit / MRT to Putrajaya Sentral (1★)</div>
+        <div class="meta-pill">🕌 <strong>10:15</strong> Putra Mosque Rose-Granite Sanctuary (2★)</div>
+        <div class="meta-pill">🏛️ <strong>11:30</strong> Perdana Putra (3★) &amp; Lake Promenade Lunch (4★)</div>
+        <div class="meta-pill">🌺 <strong>14:00</strong> Botanical Garden (5★) ➔ Bangsar Dinner w/ Daiki (6★)</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Legend Card (Collapsible) -->
+  <div id="legendCard" class="map-card map-legend-card">
+    <button class="card-pill-btn" onclick="toggleCard('legendCard', true)" aria-label="Expand Legend">
+      <span>🧭</span>
+      <span class="pill-text">Legend</span>
+      <span class="pill-chevron">▴</span>
+    </button>
+    <div class="card-body">
+      <div class="card-top-bar">
+        <div class="legend-title">Chronology &amp; Transit Modes</div>
+        <button class="card-close-btn" onclick="toggleCard('legendCard', false)" title="Minimize" aria-label="Minimize">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+        </button>
+      </div>
+      <div class="legend-items">
+
+        <div class="legend-row">
+          <div class="num-star-circle mini pin-rail">1★</div>
+          <span>1★, 6★ Putrajaya Sentral Transit Hub</span>
+        </div>
+
+        <div class="legend-row">
+          <div class="num-star-circle mini pin-temple">1★</div>
+          <span>2★ Putra Mosque (Masjid Putra)</span>
+        </div>
+
+        <div class="legend-row">
+          <div class="num-star-circle mini ">1★</div>
+          <span>3★-5★ Lakeside &amp; Botanical Stops</span>
+        </div>
+
+        <div class="legend-row">
+          <div class="legend-line line-green"><span class="legend-arrow">▶</span></div>
+          <span>Putrajaya Shuttle / Grab (▶)</span>
+        </div>
+
+        <div class="legend-row">
+          <div class="legend-line line-dotted-red"><span class="legend-arrow" style="color:#ea580c;">▶</span></div>
+          <span>Scenic Waterfront Walk (▶)</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function toggleCard(cardId, forceState) {
+      var card = document.getElementById(cardId);
+      if (!card) return;
+      var willBeExpanded = (typeof forceState === 'boolean') ? forceState : card.classList.contains('is-collapsed');
+      if (willBeExpanded) {
+        card.classList.remove('is-collapsed');
+        card.style.zIndex = '1002';
+        if (window.innerWidth <= 768) {
+          var otherCardId = cardId === 'headerCard' ? 'legendCard' : 'headerCard';
+          var otherCard = document.getElementById(otherCardId);
+          if (otherCard) {
+            otherCard.classList.add('is-collapsed');
+            otherCard.style.zIndex = '1000';
+          }
+        }
+      } else {
+        card.classList.add('is-collapsed');
+        card.style.zIndex = '1000';
+      }
+    }
+
+    (function initCardStates() {
+      var urlParams = new URLSearchParams(window.location.search);
+      var isMobile = window.innerWidth <= 768 || urlParams.get('mobile') === 'true';
+      var forceCollapsed = urlParams.get('collapsed') === 'true';
+      var forceExpanded = urlParams.get('collapsed') === 'false';
+
+      var header = document.getElementById('headerCard');
+      var legend = document.getElementById('legendCard');
+
+      if (forceCollapsed || (isMobile && !forceExpanded)) {
+        if (header) header.classList.add('is-collapsed');
+        if (legend) legend.classList.add('is-collapsed');
+      } else {
+        if (header) header.classList.remove('is-collapsed');
+        if (legend) legend.classList.remove('is-collapsed');
+      }
+    })();
+
+    var map = L.map('map', { zoomControl: false }).setView([2.9385, 101.687], 14);
+
+    L.tileLayer('https://mt{s}.google.com/vt/lyrs=m&x={x}&y={y}&z={z}', {
+      subdomains: ['0', '1', '2', '3'],
+      maxZoom: 20,
+      attribution: 'Google Maps'
+    }).addTo(map);
+
+    function addChronologicalPin(lat, lng, num, name, timeStr, customClass, offX, offY) {
+      var pinColor = '#ea580c';
+      if (customClass === 'pin-arrival') pinColor = '#059669';
+      else if (customClass === 'pin-hostel') pinColor = '#7c3aed';
+      else if (customClass === 'pin-temple') pinColor = '#b45309';
+      else if (customClass === 'pin-rail') pinColor = '#f59e0b';
+      else if (customClass === 'pin-museum') pinColor = '#0284c7';
+
+      L.circleMarker([lat, lng], {
+        radius: 4.5,
+        color: '#ffffff',
+        weight: 2,
+        fillColor: pinColor,
+        fillOpacity: 1.0
+      }).addTo(map);
+
+      var icon = L.divIcon({
+        className: 'custom-pin-wrap',
+        html: '<div class="gmap-star-pin ' + (customClass||'') + '" style="transform: translate(' + (offX||0) + 'px, ' + (offY||0) + 'px);">' +
+              '<div class="num-star-circle">' + num + '★</div>' +
+              '<div class="pin-content">' +
+              '<div class="pin-title">' + name + '</div>' +
+              (timeStr ? '<div class="pin-time">' + timeStr + '</div>' : '') +
+              '</div>' +
+              '</div>',
+        iconSize: [0, 0], iconAnchor: [0, 0]
+      });
+      L.marker([lat, lng], { icon: icon }).addTo(map);
+    }
+
+    function addDirectionalArrows(polyline, color, size, offset, repeat, borderColor) {
+      if (typeof L.polylineDecorator === 'undefined') return;
+      L.polylineDecorator(polyline, {
+        patterns: [
+          {
+            offset: offset || 25,
+            repeat: repeat || 55,
+            symbol: L.Symbol.arrowHead({
+              pixelSize: size || 9,
+              headAngle: 55,
+              polygon: true,
+              pathOptions: {
+                stroke: true,
+                color: borderColor || '#ffffff',
+                weight: 1.5,
+                fillColor: color,
+                fillOpacity: 1.0
+              }
+            })
+          }
+        ]
+      }).addTo(map);
+    }
+
+    L.polyline([[2.9312, 101.6712], [2.9361, 101.6894]], { color: "#ffffff", weight: 7, opacity: 0.95 }).addTo(map);
+    var routeLine0 = L.polyline([[2.9312, 101.6712], [2.9361, 101.6894]], { color: "#059669", weight: 4.5, opacity: 1.0 }).addTo(map);
+    addDirectionalArrows(routeLine0, "#059669", 9, 25, 45, "#ffffff");
+    var routeLine1 = L.polyline([[2.9361, 101.6894], [2.9385, 101.6922], [2.9345, 101.6908], [2.951, 101.696]], { color: "#ea580c", weight: 4, opacity: 1.0, dashArray: "6, 8" }).addTo(map);
+    addDirectionalArrows(routeLine1, "#ea580c", 8, 20, 40, "#ffffff");
+    var routeLine2 = L.polyline([[2.951, 101.696], [2.9308, 101.672]], { color: "#0284c7", weight: 4, opacity: 1.0, dashArray: "8, 8" }).addTo(map);
+    addDirectionalArrows(routeLine2, "#0284c7", 8, 25, 50, "#ffffff");
+
+    var bIcon0 = L.divIcon({ className: 'badge-div', html: '<div class="transit-badge badge-bus">🚗 5-min Transfer to Dataran Putra</div>', iconSize: [0, 0], iconAnchor: [75, 12] });
+    L.marker([2.9335, 101.68], { icon: bIcon0 }).addTo(map);
+
+    addChronologicalPin(2.9312, 101.6712, "1", "Putrajaya Sentral Hub", "10:00 AM Train Arrival", "pin-rail", -145, -30);
+    addChronologicalPin(2.9361, 101.6894, "2", "Putra Mosque (Pink Dome)", "10:15 AM Lakeside Mosque", "pin-temple", -145, -72);
+    addChronologicalPin(2.9385, 101.6922, "3", "Perdana Putra Viewpoint", "11:30 AM Grand Domes", "", 14, -58);
+    addChronologicalPin(2.9345, 101.6908, "4", "Putrajaya Waterfront Cafe", "12:45 PM Lakefront Lunch", "", 14, 12);
+    addChronologicalPin(2.951, 101.696, "5", "Putrajaya Botanical Garden", "14:00 PM Canopy Walk", "", 14, -18);
+    addChronologicalPin(2.9308, 101.672, "6", "Return to KL & Bangsar", "16:30 PM Train to Dinner", "pin-rail", 14, 12);
+
+    map.on('click', function() {
+      if (window.innerWidth <= 768) {
+        toggleCard('headerCard', false);
+        toggleCard('legendCard', false);
+      }
+    });
+  </script>
+</body>
+</html>

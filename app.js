@@ -1197,6 +1197,7 @@ function renderMasterTable(filter) {
         ${pinsListHtml}
       </ul>
       <div class="culture-badge-pill">${day.cultureBadge}</div>
+      ${getMapThumbnailHtml(day.dayId)}
     `;
 
     // Col 3: Activities
@@ -1262,4 +1263,141 @@ document.addEventListener('DOMContentLoaded', () => {
   renderTripCalendar();
   renderMasterTable('all');
   setupFilterBar();
+});
+
+
+// Per-Day Interactive Route Map Configurations
+const dayMapConfigs = {
+  day1: {
+    url: 'maps/day1_klcc_arrival_map.html',
+    title: 'Day 1 · KLIA2 Arrival, KLCC Twin Towers & Jalan Alor Night Route',
+    subtitle: 'Thu 29 Oct 2026 · Interactive Chronological Route (1★ ➔ 6★)',
+    key: 'day1',
+    img: 'img/day1_klcc_arrival_map.png',
+    badge: '🗺️ Route Map (1★ ➔ 6★)'
+  },
+  day2: {
+    url: 'maps/day2_chinatown_heritage_map.html',
+    title: 'Day 2 · Chinatown Heritage Shophouses, Temples & Merdeka Square',
+    subtitle: 'Fri 30 Oct 2026 · Interactive Chronological Route (1★ ➔ 8★)',
+    key: 'day2',
+    img: 'img/day2_chinatown_heritage_map.png',
+    badge: '🗺️ Route Map (1★ ➔ 8★)'
+  },
+  day3: {
+    url: 'maps/day3_genting_highlands_map.html',
+    title: 'Day 3 · Genting Highlands Awana SkyWay, Chin Swee Temple & SkyAvenue',
+    subtitle: 'Sat 31 Oct 2026 · Interactive Chronological Route (1★ ➔ 6★)',
+    key: 'day3',
+    img: 'img/day3_genting_highlands_map.png',
+    badge: '🗺️ Route Map (1★ ➔ 6★)'
+  },
+  day4: {
+    url: 'maps/day4_lds_worship_thean_hou_map.html',
+    title: 'Day 4 · Sunday LDS Sacrament Worship & Thean Hou Six-Tiered Temple',
+    subtitle: 'Sun 01 Nov 2026 · Interactive Chronological Route (1★ ➔ 5★)',
+    key: 'day4',
+    img: 'img/day4_lds_worship_thean_hou_map.png',
+    badge: '🗺️ Route Map (1★ ➔ 5★)'
+  },
+  day5: {
+    url: 'maps/day5_batu_caves_central_market_map.html',
+    title: 'Day 5 · Batu Caves Morning Pilgrimage, Central Market & Saloma Link',
+    subtitle: 'Mon 02 Nov 2026 · Interactive Chronological Route (1★ ➔ 7★)',
+    key: 'day5',
+    img: 'img/day5_batu_caves_central_market_map.png',
+    badge: '🗺️ Route Map (1★ ➔ 7★)'
+  },
+  day6: {
+    url: 'maps/day6_putrajaya_lakeside_map.html',
+    title: 'Day 6 · Putrajaya Rose-Granite Mosque, Lake Promenade & Gardens',
+    subtitle: 'Tue 03 Nov 2026 · Interactive Chronological Route (1★ ➔ 6★)',
+    key: 'day6',
+    img: 'img/day6_putrajaya_lakeside_map.png',
+    badge: '🗺️ Route Map (1★ ➔ 6★)'
+  },
+  day7: {
+    url: 'maps/day7_islamic_arts_botanical_gardens_map.html',
+    title: 'Day 7 · Perdana Botanical Gardens, Islamic Arts Museum & Bukit Bintang',
+    subtitle: 'Wed 04 Nov 2026 · Interactive Chronological Route (1★ ➔ 6★)',
+    key: 'day7',
+    img: 'img/day7_islamic_arts_botanical_gardens_map.png',
+    badge: '🗺️ Route Map (1★ ➔ 6★)'
+  },
+  day8: {
+    url: 'maps/day8_kl_sentral_homeward_transit_map.html',
+    title: 'Day 8 · KL Sentral Farewell, KLIA Ekspres & Flight AK584 to Manila',
+    subtitle: 'Thu 05 Nov 2026 · Interactive Chronological Route (1★ ➔ 5★)',
+    key: 'day8',
+    img: 'img/day8_kl_sentral_homeward_transit_map.png',
+    badge: '🗺️ Route Map (1★ ➔ 5★)'
+  }
+};
+
+function getMapThumbnailHtml(dayId) {
+  const conf = dayMapConfigs[dayId];
+  if (!conf) return '';
+  const safeTitle = conf.title.replace(/'/g, "\\'");
+  return `
+    <div class="loc-map-thumb-card" onclick="openRouteMapModal('${conf.url}', '${safeTitle}', '${conf.key}')" title="Click to open interactive route map">
+      <div class="loc-map-thumb-img-wrap">
+        <img src="${conf.img}" alt="${conf.title}" loading="lazy" class="loc-map-thumb-img" />
+        <div class="loc-map-thumb-overlay">
+          <span class="loc-map-expand-btn">🔍 Interactive Map</span>
+        </div>
+      </div>
+      <div class="loc-map-thumb-caption">
+        <span class="loc-map-thumb-badge">${conf.badge}</span>
+        <span class="loc-map-thumb-sub">Tap to explore ➔</span>
+      </div>
+    </div>`;
+}
+
+// Interactive Route Map Modal Logic
+function openRouteMapModal(mapUrl, title, dayKey) {
+  const modal = document.getElementById('routeMapModal');
+  const iframe = document.getElementById('routeMapIframe');
+  const titleEl = document.getElementById('routeMapModalTitle');
+  const subtitleEl = document.getElementById('routeMapModalSubtitle');
+  const newTabBtn = document.getElementById('routeMapNewTabBtn');
+
+  if (!modal || !iframe) return;
+
+  const conf = dayMapConfigs[dayKey];
+  if (titleEl) titleEl.textContent = title || (conf ? conf.title : 'Itinerary Route Map');
+  if (subtitleEl) subtitleEl.textContent = conf ? conf.subtitle : 'Interactive Chronological Day Route Map';
+  if (newTabBtn) newTabBtn.href = mapUrl;
+
+  if (iframe.getAttribute('src') !== mapUrl) {
+    iframe.src = mapUrl;
+  }
+
+  modal.classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeRouteMapModal() {
+  const modal = document.getElementById('routeMapModal');
+  const iframe = document.getElementById('routeMapIframe');
+  if (!modal) return;
+
+  modal.classList.remove('active');
+  document.body.style.overflow = '';
+  setTimeout(() => {
+    if (!modal.classList.contains('active') && iframe) {
+      iframe.src = '';
+    }
+  }, 250);
+}
+
+window.openRouteMapModal = openRouteMapModal;
+window.closeRouteMapModal = closeRouteMapModal;
+
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') {
+    const modal = document.getElementById('routeMapModal');
+    if (modal && modal.classList.contains('active')) {
+      closeRouteMapModal();
+    }
+  }
 });
